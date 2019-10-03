@@ -1,0 +1,49 @@
+<?php
+// Kerox\Messenger會出錯，會卡在getCallbackEvents()所以換用BotMan
+
+// 這個不需要打包處理，當作這個為範例，直接使用BotMan即可
+
+composer require botman/botman
+composer require botman/driver-facebook
+
+// require_once HAHAHALIB . '\composite\facebook\facebook.php';
+require_once HAHAHALIB . '\composite\facebook\messenger\facebook_messenger.php';
+//
+use BotMan\BotMan\BotMan;
+use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
+use BotMan\Drivers\Facebook\Extensions\ElementButton;
+// 要找到使用的namespace
+
+$facebook_messenger_ = new \hahahalib\facebook_messenger(
+	'17c1813d6225957e7c18646a4362ae8b',			
+	'EAADjHqxJo3wBAJLbedKG9wkRD2HGVL5LdNQy4ULgyf2h77hs9yKU27NMt56zmPYNSUFUu71QybRjkUjEChQpqF3DFMZBbDfTG5n9vGub0ZAVdMaTXpjyOYBob1312gKA9awOZC5tcjbWtxvnXdU0dHQNdfnZB6A6FSWHewwVcQZDZD',
+	'hahaha'
+);
+
+$facebook_messenger_->Facebook_Messenger_->hears('hello', function(BotMan $bot)
+{
+	$bot->reply("hello");
+	
+});
+
+//測試的要加入開發者
+// https://stackoverflow.com/questions/36803570/facebook-messenger-webhook-setup-but-not-triggered	
+// 出錯太多會卡住，似乎要等到全部錯的跑完才會恢復正常，可以取消訂閱 or 重啟facebook app or 重啟aapche
+// 目前沒找到正確處理方法
+// https://github.com/botman/botman
+// https://botman.io/2.0/installation
+$facebook_messenger_->Facebook_Messenger_->hears('button', function(BotMan $bot)
+{
+	$bot->reply(ButtonTemplate::create('Do you want to know more about BotMan?')
+		->addButton(ElementButton::create('Tell me more')
+			->type('postback')
+			->payload('tellmemore')
+		)
+		->addButton(ElementButton::create('Show me the docs')
+			->url('http://botman.io/')
+		)
+	);
+	
+});
+	
+$facebook_messenger_->Facebook_Messenger_->listen();
