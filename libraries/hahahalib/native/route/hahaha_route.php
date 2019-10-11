@@ -923,7 +923,8 @@ class hahaha_route
 	{		
 		// 為求快，暫時不打算將這段寫成Library使用，避免多include檔案，除非本身要include很多檔案，不然盡量寫在一起
 		$this->Uri_Decode_ = urldecode($this->Uri_);
-		$this->Uri_Token_ = explode('/', $this->Uri_Decode_);
+		$temp_ = explode('?', $this->Uri_Decode_);
+		$this->Uri_Token_ = explode('/', $temp_[0]);
 		// urlenecode應該是因為怕有Inject攻擊，但我這邊自己處理，不會執行什麼指令，所以直接parse token比對
 		// trim space
 		if($this->Pass_Space_)
