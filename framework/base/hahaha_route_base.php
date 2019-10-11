@@ -58,31 +58,74 @@ class hahaha_route_base
 	public function Route()
 	{
 		$route = \hahahalib\hahaha_route::Instance();
+		//$route->Get("/")->Controller("IndexController","Index");
 		// web
+		
 		$route->Group(
-			"/aaa/ha[sss]/vvv",
+			"/aaa/sss/vvv",
 			[
-				"prefix" => "web",
-				"middleware" => ["web"],
-				"namespace"=> "\\hahaha\\route\\web"
+				'prefix' => 'web',
+				'middleware' => ['web'],
+				'namespace' => '\hahaha'
 			],
 			function($route){
-				require_once hahaha_application::Instance()->Root_ . '/app/routes/web.php';
-			}				
+				require hahaha_application::Instance()->Root_ . '/app/routes/web.php';
+
+				$route->Group(
+					"/aaa/sss/vvv",
+					[
+						'prefix' => '/web',
+						'middleware' => ['web1', 'web'],
+						'namespace' => '\controller'
+					],
+					function($route){	
+						
+						$route->Get("/")->Controller("IndexController","index1");					
+					}				
+				);
+
+				
+			}							
+		);
+
+		$route->Group(
+			"/ha[aaa]/sss/vvv",
+			[
+				'prefix' => 'web',
+				'middleware' => ['web'],
+				'namespace' => '\hahaha'
+			],
+			function($route){
+			
+				
+				$route->Group(
+					"/ha[aaa]/sss/vvv/ccc",
+					[
+						'prefix' => '/web',
+						'middleware' => ['web1', 'web'],
+						'namespace' => '\controller'
+					],
+					function($route){	
+						$route->Get("/")->Controller("IndexController","index");					
+					}				
+				);
+				
+			}							
 		);
 		
 		// api
 		$route->Group(
-			"/aaa/ha[sss]/vvvv",
+			"/",
 			[
-				"prefix" => "api",
-				"middleware" => ["api"],
-				"namespace"=> "\\hahaha\\route\\api"
+				'prefix' => 'api',
+				'middleware' => ['api'],
+				'namespace' => '\hahaha\route\api'
 			],
 			function($route){
-				require_once hahaha_application::Instance()->Root_ . '/app/routes/api.php';
+				require hahaha_application::Instance()->Root_ . '/app/routes/api.php';
 			}				
 		);
+		
 	}
 	
 }

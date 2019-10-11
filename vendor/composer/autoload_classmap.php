@@ -21,6 +21,7 @@ return array(
     'ha\\System_Setting' => $baseDir . '/framework/ha/config/System_Setting.php',
     'ha\\_Global' => $baseDir . '/framework/ha/config/Global.php',
     'ha\\ha_log' => $baseDir . '/framework/ha/setting/ha_log.php',
+    'hahaha\\controller\\IndexController' => $baseDir . '/app/controllers/IndexController.php',
     'hahaha\\hahaha_application' => $baseDir . '/framework/hahaha_application.php',
     'hahaha\\hahaha_bootstrap' => $baseDir . '/bootstrap/hahaha_bootstrap.php',
     'hahaha\\hahaha_bootstrap_abc' => $baseDir . '/bootstrap/hahaha_bootstrap_abc.php',

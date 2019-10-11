@@ -22,6 +22,7 @@ class ComposerStaticInitc7b9e45c7c46f431606bb64338aef086
         'ha\\System_Setting' => __DIR__ . '/../..' . '/framework/ha/config/System_Setting.php',
         'ha\\_Global' => __DIR__ . '/../..' . '/framework/ha/config/Global.php',
         'ha\\ha_log' => __DIR__ . '/../..' . '/framework/ha/setting/ha_log.php',
+        'hahaha\\controller\\IndexController' => __DIR__ . '/../..' . '/app/controllers/IndexController.php',
         'hahaha\\hahaha_application' => __DIR__ . '/../..' . '/framework/hahaha_application.php',
         'hahaha\\hahaha_bootstrap' => __DIR__ . '/../..' . '/bootstrap/hahaha_bootstrap.php',
         'hahaha\\hahaha_bootstrap_abc' => __DIR__ . '/../..' . '/bootstrap/hahaha_bootstrap_abc.php',

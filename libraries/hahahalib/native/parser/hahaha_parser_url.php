@@ -6,9 +6,9 @@ class hahaha_parser_url
 {
 	use \hahahalib\hahaha_instance_trait;
 	
-	$Tokens_ = [];
+	public $Tokens_ = [];
 	
-	$Parameters_ = [];
+	public $Parameters_ = [];
 	
 	function __construct()
 	{
