@@ -9,8 +9,8 @@ Opcache下 \
 hello world \
 使用apache ab.exe跑過50000 require \
 ./ab -n 50000 -kc 10 "url(localhost)" \
-在直接match url，QPS 6637 \
-在較差的match url，QPS 3300 \
+在root url match，QPS 4300 \
+在long url match，QPS 3300 \
 // ---------------------------------------------------- \
 最低需求 \
 // ---------------------------------------------------- \
