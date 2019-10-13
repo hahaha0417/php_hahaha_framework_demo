@@ -58,68 +58,27 @@ class hahaha_route_base
 	public function Route()
 	{
 		$route = \hahahalib\hahaha_route::Instance();
-		//$route->Get("/")->Controller("IndexController","Index");
-		// web
-		
+		$route->Overwrite = true;
+		// web		
 		$route->Group(
-			"/aaa/sss/vvv",
+			"/",
 			[
-				'prefix' => 'web',
+				'prefix' => '',
 				'middleware' => ['web'],
-				'namespace' => '\hahaha'
+				'namespace' => "\\"
 			],
 			function($route){
 				require hahaha_application::Instance()->Root_ . '/app/routes/web.php';
-
-				$route->Group(
-					"/aaa/sss/vvv",
-					[
-						'prefix' => '/web',
-						'middleware' => ['web1', 'web'],
-						'namespace' => '\controller'
-					],
-					function($route){	
-						
-						$route->Get("/")->Controller("IndexController","index1");					
-					}				
-				);
-
-				
-			}							
-		);
-
-		$route->Group(
-			"/ha[aaa]/sss/vvv",
-			[
-				'prefix' => 'web',
-				'middleware' => ['web'],
-				'namespace' => '\hahaha'
-			],
-			function($route){
-			
-				
-				$route->Group(
-					"/ha[aaa]/sss/vvv/ccc",
-					[
-						'prefix' => '/web',
-						'middleware' => ['web1', 'web'],
-						'namespace' => '\controller'
-					],
-					function($route){	
-						$route->Get("/")->Controller("IndexController","index");					
-					}				
-				);
-				
 			}							
 		);
 		
 		// api
 		$route->Group(
-			"/",
+			"/api",
 			[
-				'prefix' => 'api',
+				'prefix' => '',
 				'middleware' => ['api'],
-				'namespace' => '\hahaha\route\api'
+				'namespace' => "\\"
 			],
 			function($route){
 				require hahaha_application::Instance()->Root_ . '/app/routes/api.php';

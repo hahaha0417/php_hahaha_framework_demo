@@ -17,7 +17,7 @@ trait hahaha_class_instance_handle_trait
 	*/
 	public static function Examine()
 	{
-		return self::$Hanele_ && self::$Class_Name_::$Instance_;
+		return self::$Hanele_ && self::$Class_Name_::$Instance_ && self::$Hanele_ === self::$Class_Name_::$Instance_;
 	}
 	
 	/*
@@ -53,6 +53,18 @@ trait hahaha_class_instance_handle_trait
 		}
 		
 		self::$Hanele_->Initial();
+	}
+
+	/*
+	釋放單例
+	*/
+	public static function Release()
+	{
+		if(!empty(self::Examine()))
+		{
+			self::$Class_Name_::Release();
+			self::$Hanele_ = NULL;
+		}
 	}
 	
 }

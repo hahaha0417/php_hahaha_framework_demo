@@ -162,15 +162,15 @@ class hahaha_route
 	*/
 	public function Add(&$url, &$parameter, &$callback, $type)
 	{
-		if(isset($parameter["prefix"]))
+		if(!is_null($parameter["prefix"]))
 		{
 			$this->Prefix = $parameter["prefix"];	
 		}
-		if(isset($parameter["middleware"]))
+		if(!is_null($parameter["middleware"]))
 		{
 			$this->Middleware = $parameter["middleware"];	
 		}
-		if(isset($parameter["namespace"]))
+		if(!is_null($parameter["namespace"]))
 		{
 			$this->Namespace = $parameter["namespace"];	
 		}
@@ -386,7 +386,7 @@ class hahaha_route
 
 		// 因為不能用函式接reference，所以用變數接
 		$node_ = &$this->Node_Temp_;
-
+		
 		if($this->Node_Now_)
 		{
 			if(
@@ -407,6 +407,9 @@ class hahaha_route
 					'Middleware' => array_unique(array_merge($node_now_data_['Middleware'], $this->Middleware)),
 					'Namespace' => $node_now_data_['Namespace'] . $this->Namespace,
 				];	
+
+				// callback重置
+				$node_[$this->Token_Parameter_]['Expand'] = false;
 			}					
 		}	 
 		else
@@ -427,6 +430,9 @@ class hahaha_route
 					'Middleware' => $this->Middleware,
 					'Namespace' => $this->Namespace,
 				];
+
+				// callback重置
+				$node_[$this->Token_Parameter_]['Expand'] = false;
 			}	
 		}
 		
@@ -654,7 +660,7 @@ class hahaha_route
 		// 注意，從key 1開始
 
 		// 策略為有找過的紀錄，while直到全部可能找過才結束，然後選項化決定將處理過的標記復原(PHP_FPM要Reset讓下一個用，一般的不用Reset)
-
+		
 		// 使用
 		$this->Node_Now_ = NULL;
 		// 找節點		
@@ -666,246 +672,307 @@ class hahaha_route
 		// 找到的參數
 		$parameters_ = [];
 		$parameters_index_ = 0;
-		
-		
-		$n = count($this->Uri_Token_);
-		for($i = 0; $i < $n; $i++)
-		{	
-			$token = &$this->Uri_Token_[$i];
-			$node_parameter = &$node_[$this->Token_Parameter_];
 
-			$index_ = -1;
-
-			$find_parameter_ = false;
-			// 先找自己node，所有可能			
-			while(1)
-			{		
-				$find_node_ = false;
-				
-				do
-				{
-					$deal_node_ = false;
-					if(!$node_parameter['Node_Find'])
-					{
-						if(!empty($node_[$token]))
-						{
-							// 找到
-							$node_ = &$node_[$token];
-							$find_node_ = true;
-						}
-						$deal_node_ = true;
-						$node_parameter['Node_Find'] = true;					
-					}
-					else if(!$node_parameter['All_Node_Find'])
-					{				
-						if(!empty($node_[$this->Token_All_Node_]))
-						{
-							// 找到
-							$node_ = &$node_[$this->Token_All_Node_];
-							$find_node_ = true;
-							$find_parameter_ = true;
-						}
-						$deal_node_ = true;						
-						$node_parameter['All_Node_Find'] = true;
-					}
-					else if(!$node_parameter['Multiple_All_Node_Find'])
-					{
-						if(!empty($node_[$this->Token_Multiple_All_Node_]))
-						{
-							// 找到
-							$node_ = &$node_[$this->Token_Multiple_All_Node_];
-							$find_node_ = true;
-							$find_parameter_ = true;
-						}
-						$deal_node_ = true;
-						$node_parameter['Multiple_All_Node_Find'] = true;
-					}				
-				}				
-				while(!$find_node_ && $deal_node_);
-				
-				// 如果找不到node
-				if(!$find_node_)
-				{		
-					// 倒著觸發callback，找出路
-					$index_ = count($nodes_) - 1;	
-						
-					$repeat_ = false;	
-					while($index_ >= 0)				
-					{										
-						$target_node_ = &$nodes_[$index_];
-
-						$target_node_parameter = &$target_node_[$this->Token_Parameter_];
-						
-						if(!$target_node_parameter['Expand'])
-						{								
-							if(!empty($target_node_[$this->Token_Node_]))
-							{
-								$target_node_data_ = &$target_node_[$this->Token_Node_];
-								
-								if(!empty($target_node_data_['Callback']))
-								{
-									$target_node_data_callback_ = &$target_node_data_['Callback'];														
-									$target_node_data_callback_($this);
-									
-									// 可能有新節點重找
-									$node_parameter['Node_Find'] = false;
-									$node_parameter['All_Node_Find'] = false;
-									$node_parameter['Multiple_All_Node_Find'] = false;
-									$repeat_ = true;								
-								}								
-							}
-							// 標記已展開Group
-							$target_node_parameter['Expand'] = true;
-							if($repeat_)
-							{
-								break;
-							}
-							
-						}	
-
-						// 沒找到則繼續找上一個節點
-						$index_--;
-					}
-					
-					if($repeat_)
-					{
-						continue;
-					}
-					
-				}	
-
-				// 繼續處理
-				break;	
-			}
-
-			if(!$find_node_)
-			{
-				$last_ = $nodes_index_ - 1;
-				
-				// 刪除最後元素					
-				unset($nodes_[$last_]);	
-				
-				$nodes_index_--;
-				$last_--;
-				
-				if($last_ == -1)
-				{				
-					$node_ = $this->Nodes_;
-				}	
-				else				
-				{					
-					$node_ = &$nodes_[$last_];	
-				}	
-								
-				$this->Node_Now_ = &$node_;	
-				$i -= 2;
-				// 參數取出
-				$parameters_index_--;
-				unset($parameters_[$parameters_index_]);
-				
-				if($i < -1)
-				{
-					// 沒了，跳出
-					break;
-				}
-				continue;			
-			}
-			
-			
-			// 堆疊
-			$nodes_[$nodes_index_] = &$node_;
-			$nodes_index_++;
-			$this->Node_Now_ = &$node_;	
-			// 參數存入
-			if($find_parameter_)
-			{
-				$parameters_[$parameters_index_] = &$token;
-				$parameters_index_++;
-			}
-			else
-			{
-				$parameters_[$parameters_index_] = $this->Token_Blank_;
-				$parameters_index_++;
-			}
-
-			
-		}
-
-		if(!$find_node_)
+		// Root Callback一定要有，先展開
+		if(!empty($this->Nodes_[$this->Token_Node_]))
 		{
-			throw new \Exception("沒有找到url");			
-		}
-
-		$this->Node_Now_ = &$node_;
-		
-		// 本身 callback一定要執行，不然底下要是有Get("/")，則找不到
-		if(!empty($node_[$this->Token_Node_]))
-		{
-			$node_data_ = &$node_[$this->Token_Node_];
+			$node_data_ = &$this->Nodes_[$this->Token_Node_];
 			if(!empty($node_data_['Callback']))
 			{
 				$node_data_callback_ = &$node_data_['Callback'];
 									
 				$node_data_callback_($this);
 				// 可能有新節點重找
-				$node_parameter['Expand'] = true;								
+				$node_parameter = &$node_[$this->Token_Parameter_];
+				$node_parameter['Expand'] = true;											
 			}		
 		}
 		
-		// 找到節點，執行		
-		$server = \hahahalib\external\lite\hahaha_external_variable_server_lite::Instance();
-		$method_ = $this->Parameter_Prefix_ . ucfirst(strtolower($server->Request_Method)) . $this->Parameter_Postfix_;
-
-		if(!empty($node_[$method_]))
+		$n = count($this->Uri_Token_);
+		if($n == 1 && $this->Uri_Token_[0] == '')
 		{
-			$find_ = &$node_[$method_];
+			// Root
+			$find_node_ = true;
+		}
+		else
+		{
+			for($i = 0; $i < $n; $i++)
+			{	
+				$token = &$this->Uri_Token_[$i];
+				$node_parameter = &$node_[$this->Token_Parameter_];
 
-			// 成功，處理
-			$type_ = &$find_['Type'];
-			
-			if($type_ == self::CONSTANT_Method_Controller)
-			{				
-				// 處理參數
-				$use_parameters_ = [];
-				foreach($parameters_ as &$parameter)
-				{
-					if($parameter != $this->Token_Blank_)
+				$index_ = -1;
+
+				$find_parameter_ = false;
+				// 先找自己node，所有可能			
+				while(1)
+				{		
+					$find_node_ = false;
+					
+					do
 					{
-						// 參數
-						$use_parameters_[] = &$parameter;
+						$deal_node_ = false;
+						if(!$node_parameter['Node_Find'])
+						{
+							if(!empty($node_[$token]))
+							{
+								// 找到
+								$node_ = &$node_[$token];
+								$find_node_ = true;
+							}
+							$deal_node_ = true;
+							$node_parameter['Node_Find'] = true;					
+						}
+						else if(!$node_parameter['All_Node_Find'])
+						{				
+							if(!empty($node_[$this->Token_All_Node_]))
+							{
+								// 找到
+								$node_ = &$node_[$this->Token_All_Node_];
+								$find_node_ = true;
+								$find_parameter_ = true;
+							}
+							$deal_node_ = true;						
+							$node_parameter['All_Node_Find'] = true;
+						}
+						else if(!$node_parameter['Multiple_All_Node_Find'])
+						{
+							if(!empty($node_[$this->Token_Multiple_All_Node_]))
+							{
+								// 找到
+								$node_ = &$node_[$this->Token_Multiple_All_Node_];
+								$find_node_ = true;
+								$find_parameter_ = true;
+							}
+							$deal_node_ = true;
+							$node_parameter['Multiple_All_Node_Find'] = true;
+						}				
+					}				
+					while(!$find_node_ && $deal_node_);
+					
+					// 如果找不到node
+					if(!$find_node_)
+					{		
+						// 倒著觸發callback，找出路
+						$index_ = count($nodes_) - 1;	
+							
+						$repeat_ = false;	
+						while($index_ >= 0)				
+						{										
+							$target_node_ = &$nodes_[$index_];
+
+							$target_node_parameter = &$target_node_[$this->Token_Parameter_];
+							
+							if(!$target_node_parameter['Expand'])
+							{								
+								if(!empty($target_node_[$this->Token_Node_]))
+								{
+									$target_node_data_ = &$target_node_[$this->Token_Node_];
+									
+									if(!empty($target_node_data_['Callback']))
+									{
+										$target_node_data_callback_ = &$target_node_data_['Callback'];														
+										$target_node_data_callback_($this);
+																				
+										// 可能有新節點重找
+										$node_parameter['Node_Find'] = false;
+										$node_parameter['All_Node_Find'] = false;
+										$node_parameter['Multiple_All_Node_Find'] = false;
+										$repeat_ = true;								
+									}								
+								}
+								// 標記已展開Group
+								$target_node_parameter['Expand'] = true;
+								if($repeat_)
+								{
+									break;
+								}
+								
+							}	
+
+							// 沒找到則繼續找上一個節點
+							$index_--;
+						}
+						
+						if($repeat_)
+						{
+							continue;
+						}
+						
+					}	
+
+					// 繼續處理
+					break;	
+				}
+
+				if(!$find_node_)
+				{
+					$last_ = $nodes_index_ - 1;
+					
+					// 刪除最後元素					
+					unset($nodes_[$last_]);	
+					
+					$nodes_index_--;
+					$last_--;
+					if($last_ == -1)
+					{				
+						$node_ = &$this->Nodes_;
+					}	
+					else				
+					{					
+						$node_ = &$nodes_[$last_];	
+					}	
+									
+					$this->Node_Now_ = &$node_;	
+					$i -= 2;
+					// 參數取出
+					$parameters_index_--;
+					unset($parameters_[$parameters_index_]);
+					
+					if($i < -1)
+					{
+						// 沒了，跳出
+						break;
 					}
+
+					// 這要順便設定
+					$node_parameter = &$node_[$this->Token_Parameter_];
+					continue;			
 				}
 				
-				$controller_class_ = $node_data_['Namespace'] . '\\' . $find_['Controller']; 
-				$controller_ = new $controller_class_;
-				$action = &$find_['Action'];
-				if(method_exists($controller_, $action))
+				
+				// 堆疊
+				$nodes_[$nodes_index_] = &$node_;
+				$nodes_index_++;
+				$this->Node_Now_ = &$node_;	
+				// 參數存入
+				if($find_parameter_)
 				{
-					call_user_func_array(array($controller_, $action), $use_parameters_);
+					$parameters_[$parameters_index_] = &$token;
+					$parameters_index_++;
 				}
 				else
 				{
-					throw new \Exception('沒有找到' . $controller_class_ . '的方法' . $action);
+					$parameters_[$parameters_index_] = $this->Token_Blank_;
+					$parameters_index_++;
 				}
-				
-				
-			}
-			else if($type_ == self::CONSTANT_Method_Function)
-			{
 
 			}
-			else if($type_ == self::CONSTANT_Method_Callback)
-			{
+		}
+		
+		if(!$find_node_)
+		{
+			throw new \Exception("沒有找到url");			
+		}
 
+		$success_ = false;
+		$callback_reset_ = true;	
+		while(!$success_ && $callback_reset_ )
+		{
+			$callback_reset_ = false;			
+			$this->Node_Now_ = &$node_;
+			
+			// 因為可能找到的是Group，由於寫法問題Group內可能會覆蓋自己，因此重複呼叫callback直到callback皆展開
+			// 本身 callback一定要執行，不然底下要是有Get("/")，則找不到
+			if(!empty($node_[$this->Token_Node_]))
+			{
+				$node_data_ = &$node_[$this->Token_Node_];
+				if(!empty($node_data_['Callback']))
+				{
+					$node_data_callback_ = &$node_data_['Callback'];
+					// 可能有新節點重找，所以callback內可能會重置Expand，所以先設
+					$node_parameter['Expand'] = true;						
+					$node_data_callback_($this);
+					$callback_reset_ = true;											
+				}		
+				else
+				{
+					// 沒有重置了
+					break;
+				}
 			}
-			else if($type_ == self::CONSTANT_Method_Route)
-			{
+			
+			// 找到節點，執行		
+			$server = \hahahalib\external\lite\hahaha_external_variable_server_lite::Instance();
+			$method_ = $this->Parameter_Prefix_ . ucfirst(strtolower($server->Request_Method)) . $this->Parameter_Postfix_;
 
+			if(!empty($node_[$method_]))
+			{
+				$find_ = &$node_[$method_];
+
+				if(!empty($find_['Type']))
+				{
+					// 成功，處理
+					$type_ = &$find_['Type'];
+					
+					if($type_ == self::CONSTANT_Method_Controller)
+					{				
+						// 處理參數
+						$use_parameters_ = [];
+						foreach($parameters_ as &$parameter)
+						{
+							if($parameter != $this->Token_Blank_)
+							{
+								// 參數
+								$use_parameters_[] = &$parameter;
+							}
+						}
+						
+						$controller_class_ = $node_data_['Namespace'] . '\\' . $find_['Controller']; 
+						$controller_ = new $controller_class_;
+						$action = &$find_['Action'];
+						if(method_exists($controller_, $action))
+						{						
+							call_user_func_array(array($controller_, $action), $use_parameters_);
+							$success_ = true;
+						}
+					}
+					else if($type_ == self::CONSTANT_Method_Function)
+					{
+						$success_ = true;
+					}
+					else if($type_ == self::CONSTANT_Method_Callback)
+					{
+						$success_ = true;
+					}
+					else if($type_ == self::CONSTANT_Method_Route)
+					{
+						$success_ = true;
+					}
+				}
+			}
+		}
+
+		if(!$success_)
+		{
+			if(!empty($find_['Type']))
+			{
+				if($type_ == self::CONSTANT_Method_Controller)
+				{				
+					throw new \Exception( '沒有找到' . $controller_class_ . '的方法' . $action);
+				}
+				else if($type_ == self::CONSTANT_Method_Function)
+				{
+
+				}
+				else if($type_ == self::CONSTANT_Method_Callback)
+				{
+ 
+				} 
+				else if($type_ == self::CONSTANT_Method_Route)
+				{
+
+				}
+			}
+			else
+			{
+				throw new \Exception("沒有找到url");	
 			}
 		}
 
 		// 還原
 		$this->Node_Now_ = NULL;
+
 	}
 	
 	/*

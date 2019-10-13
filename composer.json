@@ -14,7 +14,8 @@
 			"libraries",
 			"app",
             "bootstrap",
-			"config"
+            "config",
+            "table"
 
         ]
     },

@@ -17,7 +17,7 @@ trait hahaha_class_instance_handle_trait_lite
 	*/
 	public static function Examine_Lite()
 	{
-		return self::$Hanele_Lite_ && self::$Class_Name_Lite_::$Instance_;
+		return self::$Hanele_Lite_ && self::$Class_Name_Lite_::$Instance_ && self::$Hanele_Lite_ === self::$Class_Name_Lite_::$Instance_;
 	}
 	
 	/*
@@ -53,6 +53,18 @@ trait hahaha_class_instance_handle_trait_lite
 		}
 		
 		self::$Hanele_Lite_->Initial();
+	}
+
+	/*
+	釋放單例
+	*/
+	public static function Release_Lite()
+	{
+		if(!empty(self::Examine_Lite()))
+		{
+			self::$Class_Name_Lite_::Release();
+			self::$Hanele_Lite_ = NULL;
+		}
 	}
 	
 }

@@ -40,7 +40,8 @@ class hahaha_route extends hahaha_route_base
 	{
 		// 有需要把我的註解掉自己填 
 		parent::Route();
-		// $route = \hahahalib\hahaha_route::Instance();
+		// $route = \hahahalib\hahaha_route::Instance(); 
+		
 	}
 	// --------------------------------------------------------------------------
 	// 

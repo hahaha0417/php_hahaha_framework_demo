@@ -21,4 +21,4 @@ class hahaha_cli_function
 		
 		return false;
 	}
-}
+} 
