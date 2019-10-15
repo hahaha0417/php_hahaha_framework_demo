@@ -57,7 +57,7 @@ Windows 10 64bit \
 Console 10 ~ 15 + ms \
 API 15 ~ 20 + ms \
 Web 15 ~ 20 + ms \
- -- 有composer套件(class map越多越慢) -- \
+ -- 有composer套件(越多越慢) -- \
 Console 10 ~ 100 + ms \
 API 15 ~ 100 + ms \
 Web 15 ~ 100 + ms \
