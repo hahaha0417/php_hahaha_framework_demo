@@ -7,7 +7,7 @@ namespace hahaha;
 */
 class hahaha_global
 {	
-	use hahaha_instance_trait;
+	use \hahahalib\hahaha_instance_trait;
 
 	function __construct()
 	{
@@ -46,6 +46,10 @@ class hahaha_global
 		// Route
 		$global->Route->Pass_Space = false;
 		$global->Route->Default = true;
+		// Bootstrap
+		$global->Bootstrap->Enabled = true;
+		// Flow
+		$global->Flow->Enabled = true;
 	}
 	
 	public function Initial()
@@ -55,14 +59,15 @@ class hahaha_global
 		{
 			$this->Initial_Ha($this);
 		}
-		if(hahaha_system_setting::Instance()->develop->default && method_exists(hahaha_global_default::Instance(), "Initial_Ha"))
+		if(hahaha_system_setting::Instance()->Develop->Default && method_exists(hahaha_global_default::Instance(), "Initial_Ha"))
 		{
 			hahaha_global_default::Instance()->Initial_Ha($this);
 		}
-		if(hahaha_system_setting::Instance()->develop->local && method_exists(hahaha_global_local::Instance(), "Initial_Ha"))
+		if(hahaha_system_setting::Instance()->Develop->Local && method_exists(hahaha_global_local::Instance(), "Initial_Ha"))
 		{
 			hahaha_global_local::Instance()->Initial_Ha($this);
 		}
+		return $this;
 	}
 	
 	/*
@@ -82,6 +87,13 @@ class hahaha_global
 		$global->Route = new \stdClass;
 		$global->Route->Pass_Space = false;
 		$global->Route->Default = true;
+		// Bootstrap
+		$global->Bootstrap = new \stdClass;
+		$global->Bootstrap->Enabled = true;
+		// Flow
+		$global->Flow = new \stdClass;
+		$global->Flow->Enabled = true;
+
 	}	
 	
 }

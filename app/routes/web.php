@@ -9,7 +9,7 @@ $route->Group(
     [
         'prefix' => '',
         'middleware' => ['web'],
-        'namespace' => '\hahaha\controller'
+        'namespace' => '\\hahaha\\controller'
     ],
     function($route){
         $route->Get("/")->Controller("index_controller", "Index");	
@@ -23,7 +23,7 @@ $route->Group(
     [
         'prefix' => 'web',
         'middleware' => ['web'],
-        'namespace' => '\hahaha'
+        'namespace' => '\\hahaha'
     ],
     function($route){
         
@@ -32,7 +32,7 @@ $route->Group(
             [
                 'prefix' => '/web',
                 'middleware' => ['web1', 'web'],
-                'namespace' => '\controller'
+                'namespace' => '\\controller'
             ],
             function($route){	
                 
@@ -51,7 +51,7 @@ $route->Group(
     [
         'prefix' => 'web',
         'middleware' => ['web'],
-        'namespace' => '\hahaha'
+        'namespace' => '\\hahaha'
     ],
     function($route){
     
@@ -61,7 +61,7 @@ $route->Group(
             [
                 'prefix' => '/web',
                 'middleware' => ['web1', 'web'],
-                'namespace' => '\controller'
+                'namespace' => '\\controller'
             ],
             function($route){	
                 $route->Get("/")->Controller("index_controller", "Index2");					

@@ -45,11 +45,13 @@ repry message 腳本
 */
 class linebot_reply_message
 {
+    use hahaha_instance_trait;
+    
     /*    
     暫時用，Handle跑完則清空 
     $Linebot_ \LINE\LINEBot
     */
-    private $Linebot_ = NULL;
+    public $Linebot_ = NULL;
 
     function __construct()
     {

@@ -45,6 +45,8 @@ send message 腳本
 */
 class linebot_push_message
 {
+    use hahaha_instance_trait;
+    
     function __construct()
     {
     }

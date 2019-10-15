@@ -2,9 +2,12 @@
 
 namespace hahaha;
 
+/*
+路由設定
+*/
 class hahaha_route extends hahaha_route_base
 {
-	use hahaha_instance_trait;
+	use \hahahalib\hahaha_instance_trait;
 	
 	function __construct()
 	{

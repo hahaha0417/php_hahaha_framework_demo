@@ -7,7 +7,7 @@ namespace hahaha;
 */
 class hahaha_option
 {
-	use hahaha_instance_trait;
+	use \hahahalib\hahaha_instance_trait;
 
 	function __construct()
 	{
@@ -21,14 +21,15 @@ class hahaha_option
 		{
 			$this->Initial_Ha($this);
 		}
-		if(hahaha_system_setting::Instance()->develop->default && method_exists(hahaha_option_default::Instance(), "Initial_Ha"))
+		if(hahaha_system_setting::Instance()->Develop->Default && method_exists(hahaha_option_default::Instance(), "Initial_Ha"))
 		{
 			hahaha_option_default::Instance()->Initial_Ha($this);
 		}
-		if(hahaha_system_setting::Instance()->develop->local && method_exists(hahaha_option_local::Instance(), "Initial_Ha"))
+		if(hahaha_system_setting::Instance()->Develop->Local && method_exists(hahaha_option_local::Instance(), "Initial_Ha"))
 		{
 			hahaha_option_local::Instance()->Initial_Ha($this);
 		}	
+		return $this;
 	}
 	
 	/*
@@ -36,6 +37,10 @@ class hahaha_option
 	*/
 	function Initial_Ha($option)
 	{
+		$option->Line = new \stdClass;
+		$option->Line->Channel_Access_Token = "";
+		$option->Line->Channel_Secret = "";
+
 	}
 }
 

@@ -614,10 +614,63 @@ class hahaha_route
 	{
 		$this->Add($url, $parameter, $callback, self::CONSTANT_METHOD);
 
-
+		// 必須紀錄Namespace狀態
 		// 因為不能用函式接reference，所以用變數接
-		$node_ = &$this->Method_Node_Temp_;
+		$node_ =  &$this->Method_Node_Temp_;
+		// 因為不能用函式接reference，所以用變數接
+		
+		if($this->Node_Now_)
+		{
+			if(
+				$this->Overwrite ||
+				(!$this->Overwrite && empty($node_[$this->Token_Node_]) )
+			)
+			{
+				// 非第一層
+				$node_now_data_ = &$this->Node_Now_[$this->Token_Node_]; 		
+				// 紀錄就好，不用串
+				$node_[$this->Token_Node_] = [
+					// 重要參數
+					'Type' => self::CONSTANT_METHOD,
+					'Parameter' => $parameter,
+					'Callback' => $callback,
+					//
+					'Prefix' => $node_now_data_['Prefix'],
+					'Middleware' => $node_now_data_['Middleware'],
+					'Namespace' => $node_now_data_['Namespace'],
+				];	
 
+				// callback重置
+				$node_[$this->Token_Parameter_]['Expand'] = false;
+			}					
+		}	 
+		else
+		{
+			if(
+				$this->Overwrite ||
+				(!$this->Overwrite && empty($node_[$this->Token_Node_]) )
+			)
+			{
+				// 第一層
+				// 紀錄就好，不用串
+				$node_[$this->Token_Node_] = [
+					// 重要參數
+					'Type' => self::CONSTANT_METHOD,
+					'Parameter' => $parameter,
+					'Callback' => $callback,
+					//
+					'Prefix' => '',
+					'Middleware' => '',
+					'Namespace' => '',
+				];
+
+				// callback重置
+				$node_[$this->Token_Parameter_]['Expand'] = false;
+			}	
+		}
+
+		// Request
+		
 		$method_ = $this->Parameter_Prefix_ . $method . $this->Parameter_Postfix_;
 		if(
 			$this->Overwrite ||
@@ -628,6 +681,8 @@ class hahaha_route
 			$node_[$method_] = [
 					
 			];	
+
+		
 		}		
 
 		$this->Method_Temp_ = &$node_[$method_];
@@ -864,7 +919,7 @@ class hahaha_route
 		{
 			throw new \Exception("沒有找到url");			
 		}
-
+		
 		$success_ = false;
 		$callback_reset_ = true;	
 		while(!$success_ && $callback_reset_ )
@@ -887,19 +942,19 @@ class hahaha_route
 				}		
 				else
 				{
-					// 沒有重置了
-					break;
+					// 沒有重置了，繼續處理
+					
 				}
 			}
 			
 			// 找到節點，執行		
 			$server = \hahahalib\external\lite\hahaha_external_variable_server_lite::Instance();
 			$method_ = $this->Parameter_Prefix_ . ucfirst(strtolower($server->Request_Method)) . $this->Parameter_Postfix_;
-
+			
 			if(!empty($node_[$method_]))
 			{
 				$find_ = &$node_[$method_];
-
+				
 				if(!empty($find_['Type']))
 				{
 					// 成功，處理
@@ -1003,7 +1058,17 @@ class hahaha_route
 		if(!empty($this->Uri_Token_))
 		{
 			// 移除掉第一個，url還是從key 1開始
-			unset($this->Uri_Token_[0]);
+			$n = count($this->Uri_Token_);
+			if($n > 1 && empty($this->Uri_Token_[0]))
+			{
+				// 正常
+				unset($this->Uri_Token_[0]);
+			}
+			if($n > 2 && empty($this->Uri_Token_[1]))
+			{
+				// 反向代理
+				unset($this->Uri_Token_[1]);
+			}			
 			// 必須從0開始
 			$this->Uri_Token_ = array_values($this->Uri_Token_);
 			

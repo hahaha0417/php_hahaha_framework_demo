@@ -47,6 +47,8 @@ user_ids用reference原因，因為你不可能預先知道user_id，所以你�
 */
 class linebot_multicast
 {
+    use hahaha_instance_trait;
+    
     function __construct()
     {
     }

@@ -2,12 +2,7 @@
 // https://github.com/line/line-bot-sdk-php
 // composer require linecorp/line-bot-sdk
 
-require_once HAHAHALIB . '\composite\line\bot\linebot.php';
-//
-require_once HAHAHALIB . '\composite\line\bot\function\linebot_reply_message.php';
-//require_once HAHAHALIB . '\composite\line\bot\function\linebot_push_message.php';
-//require_once HAHAHALIB . '\composite\line\bot\function\linebot_multicast.php';
-//require_once HAHAHALIB . '\composite\line\bot\function\linebot_broadcast.php';
+// 注意接收是Post
 
 $linebot_ = new \hahahalib\linebot(
 	'x/eb6xIldWmwn38EPY8y2lhQJKln2QIrCrikJfUvdxjVnlsGEuFkfSey7V+a0ucKL+lhNUm9YwUwyLmzOJ2RNY7qmPMu5XEp8/SXvG03peOJ69PTF7ZZu0D6Lor5Z+nsc7l2oQ/iGYafjEbVIvuHqAdB04t89/1O/w1cDnyilFU=',

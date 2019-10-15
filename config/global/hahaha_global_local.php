@@ -4,7 +4,7 @@ namespace hahaha;
 
 class hahaha_global_local 
 {
-	use hahaha_instance_trait;
+	use \hahahalib\hahaha_instance_trait;
 
 	function __construct()
 	{

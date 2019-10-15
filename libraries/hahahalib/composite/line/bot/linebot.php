@@ -42,20 +42,37 @@ namespace hahahalib;
 
 class linebot
 {
+    use \hahahalib\hahaha_instance_trait;
+
     /** \LINE\LINEBot
      * 
      */
     public $Linebot_ = NULL;
 
-    function __construct($channel_access_token, 
-        $channel_secret
+    function __construct($channel_access_token = NULL, 
+        $channel_secret = NULL
     )
     {
-        $this->Linebot_ = new \LINE\LINEBot( 
-            new \LINE\LINEBot\HTTPClient\CurlHTTPClient($channel_access_token), 
-            ['channelSecret' => $channel_secret]
-        );  
+        if(!$channel_access_token && !$channel_secret)
+        {
+            $this->Linebot_ = new \LINE\LINEBot( 
+                new \LINE\LINEBot\HTTPClient\CurlHTTPClient($channel_access_token), 
+                ['channelSecret' => $channel_secret]
+            );  
+        }        
     }
 
+    /*
+    沒呼叫就不會載入，因此不會出錯
+    */
+    public function Initial()
+    {
+        $option_ = \hahaha\hahaha_option::Instance();
+        $this->Linebot_ = new \LINE\LINEBot( 
+            new \LINE\LINEBot\HTTPClient\CurlHTTPClient($option_->Line->Channel_Access_Token), 
+            ['channelSecret' => $option_->Line->Channel_Secret]
+        );   
+        return $this;
+    }
 
 }

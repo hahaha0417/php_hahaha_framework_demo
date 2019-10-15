@@ -2,16 +2,24 @@
 
 namespace hahaha;
 
+/*
+啟動控制
+*/
 class hahaha_bootstrap extends hahaha_bootstrap_base
 {
 	use hahaha_instance_trait;
 	
 	function __construct()
 	{
+	}
+
+	public function Initial()
+	{
 		// 初始化清單
 		$this->Boot_List_ = [
 			hahaha_bootstrap_abc::Instance()
-		];		
+		];	
+		return $this;
 	}
 
 	/*
@@ -46,9 +54,6 @@ class hahaha_bootstrap extends hahaha_bootstrap_base
 	/*
 	有空再寫客製化初始化
 	*/
-	public function Initial()
-	{
-		return $this;
-	}
+
 
 }

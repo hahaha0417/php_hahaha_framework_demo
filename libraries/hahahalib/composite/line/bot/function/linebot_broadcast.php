@@ -45,6 +45,8 @@ broadcast 腳本
 */
 class linebot_broadcast
 {
+    use hahaha_instance_trait;
+    
     function __construct()
     {
     }

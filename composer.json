@@ -5,6 +5,9 @@
     "license": "MIT",
     "type": "project",
     "require": {
+        "botman/botman": "^2.5",
+        "botman/driver-facebook": "^1.10",
+        "linecorp/line-bot-sdk": "^3.14"
     },
     "require-dev": {
     },
@@ -15,7 +18,9 @@
 			"app",
             "bootstrap",
             "config",
-            "table"
+            "table",
+            "flow",
+            "languages"
 
         ]
     },
