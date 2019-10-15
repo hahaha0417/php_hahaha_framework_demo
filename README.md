@@ -53,11 +53,11 @@ Windows 10 64bit \
 本框架(lcalhost TTFB，chrome(Ctrl + R)) - 一般正常使用，例如簡單套版 \
 // ---------------------------------------------------- \
 正常流程(No Opcache)\
- - 沒有composer套件 - \
+ -- 沒有composer套件 -- \
 Console 10 ~ 15 + ms \
 API 15 ~ 20 + ms \
 Web 15 ~ 20 + ms \
- - 有composer套件 - \
+ -- 有composer套件 -- \
 Console 10 ~ 50 + ms \
 API 15 ~ 50 + ms \
 Web 15 ~ 50 + ms \
