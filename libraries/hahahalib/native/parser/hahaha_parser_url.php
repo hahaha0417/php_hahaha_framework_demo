@@ -2,6 +2,7 @@
 
 namespace hahahalib;
 
+// 目前還沒有用到，先放著
 class hahaha_parser_url
 {
 	use \hahahalib\hahaha_instance_trait;

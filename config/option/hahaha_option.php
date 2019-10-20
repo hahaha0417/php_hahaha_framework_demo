@@ -41,6 +41,14 @@ class hahaha_option
 		$option->Line->Channel_Access_Token = "";
 		$option->Line->Channel_Secret = "";
 
+		$option->Language = new \stdClass;
+		$option->Language->T = new \stdClass;
+		$option->Language->T->Locale = 'en';
+		$option->Language->T->Language = 'default';
+		// doctrine
+		$option->Doctrine = new \stdClass;
+		$option->Doctrine->Develop = false;
+
 	}
 }
 

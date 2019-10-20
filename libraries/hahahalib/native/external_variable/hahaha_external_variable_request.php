@@ -8,21 +8,12 @@ class hahaha_external_variable_request
 	
 	public static $Mapping_List_ = NULL;
 	
-	//public $host;
 	function __construct()
 	{
 
 		
 	}	
-	
-	/*
-	由於php 沒有const &，基於萬用接口，所以沒辦法reference
-	*/
-	public function Parse($url)
-	{
-		
-	}
-	
+
 	/*
 	沒找到才會呼叫這個，如果已經有變數，則不會再進來
 	有用到才設定

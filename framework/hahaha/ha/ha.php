@@ -63,4 +63,57 @@ class ha
 			}
 		}
 	}
+
+	// --------------------------------------------------------------------------
+	// 快捷函數
+	// --------------------------------------------------------------------------
+	// 語言可以找地方這樣用，就可以直接使用了
+	protected static $T_ = [];
+	// 由於設計上的問題(Initail的問題)，這裡不方便動態換Language，且容易搞混
+	// 無聊再自己設計管理模組，這裡簡易使用
+	// 有需要再用Instance方式，做成function
+	public static function t(
+		$item, 
+		$parameters = [], 
+		$node_names = [], 
+		$parameter_prefix = NULL,
+		$parameter_postfix = NULL		
+	)
+	{
+		if(is_array($item))
+		{
+			if(empty(self::$T_))
+			{
+				$option_ = \hahaha\hahaha_option::Instance();
+				\ha\Lang::Get()->Initial();
+				\ha\Lang::Locale($option_->Language->T->Locale);
+				self::$T_ = \ha\Lang::Language($option_->Language->T->Language)->Initial();
+			}
+
+			self::$T_->Target($item);	
+		}
+		else
+		{
+			if(empty(self::$T_))
+			{
+				$option_ = \hahaha\hahaha_option::Instance();
+				\ha\Lang::Get()->Initial();
+				\ha\Lang::Locale($option_->Language->T->Locale);
+				self::$T_ = \ha\Lang::Language($option_->Language->T->Language)->Initial();
+			}
+			
+			return self::$T_->translate($item, 
+				$parameters, 
+				$node_names, 
+				$parameter_prefix,
+				$parameter_postfix
+			);
+		}
+		
+	}
+	// --------------------------------------------------------------------------
+	// require
+	// --------------------------------------------------------------------------
+	// 如有需要， 在這邊使用require其他PHP做整理
+	// --------------------------------------------------------------------------
 }

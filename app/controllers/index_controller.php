@@ -14,6 +14,7 @@ class index_controller extends \hahaha\hahaha_controller_base
 
     public function Index()
     {
+        /* 
         echo '進入controller' . "</br>"; 
         echo "<div style='color:red;'>xxx</div>";
 
@@ -26,6 +27,25 @@ class index_controller extends \hahaha\hahaha_controller_base
             [\hahaha\view\index_view::Instance(), "Index3"],
             [\hahaha\view\index_view::Instance(), "Index4"],
         ]);
+        */
+        /*
+        \ha::t(['a','b']);
+        echo '無參數<br>';
+        var_dump(\ha::t('c'));
+        echo '<br>';
+        echo '無填入參數<br>';
+        var_dump(\ha::t('d'));
+        echo '<br>';
+        echo '有填入參數<br>';
+        var_dump(\ha::t('d', ['a','b']));
+        echo '<br>';
+        echo '<br>';
+        */
+   
+        // Doctrine
+        $doctrine_ = \hahahalib\hahaha_orm_doctrine::Instance();
+        $doctrine_->Initial_Base();
+      
     }
 
     public function Index1()
@@ -39,7 +59,8 @@ class index_controller extends \hahaha\hahaha_controller_base
         echo $a . ' | ' . $b . "</br>";         
         echo $c . "</br>"; ;
         echo "<div style='color:red;'>xxx</div>";
-
+        echo "<pre>";
+        
         
 
     }

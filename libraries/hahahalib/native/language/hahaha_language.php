@@ -9,7 +9,7 @@ class hahaha_language
 {
 	use \hahahalib\hahaha_instance_trait;
 
-	function __construct($initial = true)
+	function __construct()
 	{		
 	
 	}
