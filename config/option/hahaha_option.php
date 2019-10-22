@@ -37,6 +37,8 @@ class hahaha_option
 	*/
 	function Initial_Ha($option)
 	{
+		$app_ = \hahaha\hahaha_application::Instance();
+
 		$option->Line = new \stdClass;
 		$option->Line->Channel_Access_Token = "";
 		$option->Line->Channel_Secret = "";
@@ -45,9 +47,18 @@ class hahaha_option
 		$option->Language->T = new \stdClass;
 		$option->Language->T->Locale = 'en';
 		$option->Language->T->Language = 'default';
-		// doctrine
+		// Doctrine
 		$option->Doctrine = new \stdClass;
 		$option->Doctrine->Develop = false;
+		// Mysql
+		$option->Mysql = new \stdClass;
+		$option->Mysql->Driver = 'pdo_mysql';
+		$option->Mysql->Host = 'localhost';
+		$option->Mysql->User = '';
+		$option->Mysql->Password = '';
+		$option->Mysql->Db_Name = '';
+		$option->Mysql->Path = $app_->Root_ . '/app/models';
+		$option->Mysql->Charset = 'UTF8';
 
 	}
 }

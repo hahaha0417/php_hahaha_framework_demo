@@ -1,0 +1,74 @@
+<?php
+
+namespace oring;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * A_ClassItem
+ *
+ * @ORM\Table(name="class_item", indexes={@ORM\Index(name="id", columns={"id"})})
+ * @ORM\Entity
+ */
+class A_ClassItem extends \hahahalib\hahaha_orm_doctrine_base
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="no", type="smallint", nullable=false, options={"comment"="編號"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $no;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="order_", type="smallint", nullable=false, options={"comment"="排序"})
+     */
+    private $order = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=255, nullable=false, options={"comment"="識別項"})
+     */
+    private $id;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="item", type="string", length=255, nullable=true, options={"comment"="項目"})
+     */
+    private $item;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="content", type="text", length=65535, nullable=true, options={"comment"="內容"})
+     */
+    private $content;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="comment", type="text", length=65535, nullable=true, options={"comment"="備註"})
+     */
+    private $comment;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_time", type="datetime", nullable=false, options={"comment"="建立時間"})
+     */
+    private $createTime;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="update_time", type="datetime", nullable=false, options={"comment"="更新時間"})
+     */
+    private $updateTime;
+
+
+}

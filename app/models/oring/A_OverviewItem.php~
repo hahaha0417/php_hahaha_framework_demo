@@ -1,0 +1,102 @@
+<?php
+
+namespace oring;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * A_OverviewItem
+ *
+ * @ORM\Table(name="overview_item", indexes={@ORM\Index(name="id", columns={"id"})})
+ * @ORM\Entity
+ */
+class A_OverviewItem extends \hahahalib\hahaha_orm_doctrine_base
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="no", type="smallint", nullable=false, options={"comment"="編號"})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $no;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="order_", type="smallint", nullable=false, options={"comment"="排序"})
+     */
+    private $order = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=255, nullable=false, options={"comment"="識別項"})
+     */
+    private $id;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="item", type="string", length=255, nullable=true, options={"comment"="項目"})
+     */
+    private $item;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="content_show", type="smallint", nullable=false, options={"default"="1","comment"="內容 - 顯示"})
+     */
+    private $contentShow = '1';
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="type1", type="smallint", nullable=false, options={"comment"="類型1"})
+     */
+    private $type1 = '0';
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="content1", type="text", length=65535, nullable=true, options={"comment"="內容1 - HTML格式"})
+     */
+    private $content1;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="type2", type="smallint", nullable=false, options={"comment"="類型2"})
+     */
+    private $type2 = '0';
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="content2", type="text", length=65535, nullable=true, options={"comment"="內容2 - HTML格式"})
+     */
+    private $content2;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="comment", type="text", length=65535, nullable=true, options={"comment"="備註"})
+     */
+    private $comment;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_time", type="datetime", nullable=false, options={"comment"="建立時間"})
+     */
+    private $createTime;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="update_time", type="datetime", nullable=false, options={"comment"="更新時間"})
+     */
+    private $updateTime;
+
+
+}

@@ -41,11 +41,46 @@ class index_controller extends \hahaha\hahaha_controller_base
         echo '<br>';
         echo '<br>';
         */
-   
+  
         // Doctrine
+        $app_ = \hahaha\hahaha_application::Instance();
         $doctrine_ = \hahahalib\hahaha_orm_doctrine::Instance();
-        $doctrine_->Initial_Base();
-      
+        // 這可相對路徑，但是注意檔案在哪裡
+        $em_ = $doctrine_->Initial_Config('test_oring', $app_->Root_ . '/app/models/A');
+            /*
+        // 基本用法
+        $class_ = new \oring\A_Class();
+        $class_->setBlock(44);
+        $class_->setItem(44);
+        $class_->setId(44);
+        $class_->setName(44);
+        $class_->setTitle(44);
+        $class_->setTitleContent(44);
+        $class_->setUrl(44);
+        $class_->setComment(44);
+        $class_->setCommentDetail(44);
+        $class_->setCreateTime(new \DateTime('2017-05-17 18:00:00'));
+        $class_->setUpdateTime(new \DateTime('2017-05-17 18:00:00'));
+        $em_->persist($class_);
+        $em_->flush();
+        // 使用方法
+        $class_res_ = $em_->getRepository('\oring\A_Class');
+        $classes_ = $class_res_->findAll();
+
+        echo "<pre>";
+        var_dump($classes_);
+
+        // https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/query-builder.html
+        $query = $em_->createQueryBuilder();
+        $data_ = $query_->select('c')
+            ->from('\oring\A_Class', 'c')
+            ->where('c.no= :id')
+            ->setParameter('id', 1)
+            ->getQuery()
+            ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+        */
+        
+            
     }
 
     public function Index1()

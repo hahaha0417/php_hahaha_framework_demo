@@ -1,6 +1,16 @@
 <?php
 
 /*
+// --------------------------------------------------------------------------
+注意
+// --------------------------------------------------------------------------
+沒 Opcache 很慢，請不要為了省力，摻入主要架構
+使用多個資料庫需要建立連線，一次似乎要6ms(不確定)，請小心，不然會拖慢速度，
+似乎PDO可以不先設定db(query時才下)，這裡應該有可能也可以
+// --------------------------------------------------------------------------
+*/
+
+/*
 Copyright (c) Doctrine Project
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -98,6 +108,8 @@ class hahaha_orm_doctrine
     */
     public function Initial_Base()
     {
+        $option_ = \hahaha\hahaha_option::Instance();
+
         // https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/tutorials/getting-started.html#getting-started-with-doctrine
 
         // Create a simple "default" Doctrine ORM configuration for Annotations
@@ -105,19 +117,96 @@ class hahaha_orm_doctrine
         $proxy_dir_ = null;
         $cache_ = null;
         $use_simple_annotation_reader_ = false;
-        $config_ = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/src"), $is_dev_mode_, $proxy_dir_, $cache_, $use_simple_annotation_reader_);
+        
+        $config_ = Setup::createAnnotationMetadataConfiguration(
+            [
+                $option_->Mysql->Path
+            ], 
+            $is_dev_mode_, 
+            $proxy_dir_, 
+            $cache_, 
+            $use_simple_annotation_reader_
+        );
         // or if you prefer yaml or XML
         //$config = Setup::createXMLMetadataConfiguration(array(__DIR__."/config/xml"), $isDevMode);
         //$config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
 
         // database configuration parameters
-        // https://www.cnblogs.com/yjf512/p/3375614.html
-        $conn_ = array(
-            'driver' => 'pdo_sqlite',
-            'path' => __DIR__ . '/db.sqlite',
-        );
-
+        // https://www.doctrine-project.org/projects/doctrine-dbal/en/2.9/reference/configuration.html
+        // 查pdo_mysql
+        
+        $conn_ = [
+            'driver' => $option_->Mysql->Driver,
+            'host' => $option_->Mysql->Host,
+            'user' => $option_->Mysql->User,
+            'password' => $option_->Mysql->Password,
+            'dbname' => $option_->Mysql->Db_Name,
+            'charset' => $option_->Mysql->Charset,
+        ];
+       
         // obtaining the entity manager
-      //  $this->Entity_Manager_ = EntityManager::create($conn_, $config_);
+        $this->Entity_Manager_ = EntityManager::create($conn_, $config_);
+
+        return $this->Entity_Manager_;
     }
+
+    /*
+    設定資料庫，路徑
+    // Database沒辦法動態切，所以每連一個不一樣的要new一個，或者是我在config設定多組，根據關鍵字，建立不同的關鍵字連道不同資料庫
+    // 我這裡是用Initial_Config()的方式選擇資料庫
+    // https://ourcodeworld.com/articles/read/137/how-to-use-more-than-one-database-using-doctrine-orm-in-symfony-3
+
+    $app_ = \hahaha\hahaha_application::Instance();
+    $doctrine_ = \hahahalib\hahaha_orm_doctrine::Instance();
+    // 這可相對路徑，但是注意檔案在哪裡
+    $doctrine_->Initial_Config('test_oring', $app_->Root_ . '/app/models/A');
+    */
+    public function Initial_Config($db_name = NULL, $path = NULL)
+    {
+        $option_ = \hahaha\hahaha_option::Instance();
+
+        // https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/tutorials/getting-started.html#getting-started-with-doctrine
+
+        $db_name_ = isset($db_name) ? $db_name : $option_->Mysql->Db_Name;
+        $path_ = isset($path) ? $path : $option_->Mysql->Path;
+
+
+        // Create a simple "default" Doctrine ORM configuration for Annotations
+        $is_dev_mode_ = true;
+        $proxy_dir_ = null;
+        $cache_ = null;
+        $use_simple_annotation_reader_ = false;
+        
+        $config_ = Setup::createAnnotationMetadataConfiguration(
+            [
+                $path_
+            ], 
+            $is_dev_mode_, 
+            $proxy_dir_, 
+            $cache_, 
+            $use_simple_annotation_reader_
+        );
+        // or if you prefer yaml or XML
+        //$config = Setup::createXMLMetadataConfiguration(array(__DIR__."/config/xml"), $isDevMode);
+        //$config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
+
+        // database configuration parameters
+        // https://www.doctrine-project.org/projects/doctrine-dbal/en/2.9/reference/configuration.html
+        // 查pdo_mysql
+        
+        $conn_ = [
+            'driver' => $option_->Mysql->Driver,
+            'host' => $option_->Mysql->Host,
+            'user' => $option_->Mysql->User,
+            'password' => $option_->Mysql->Password,
+            'dbname' => $db_name_,
+            'charset' => $option_->Mysql->Charset,
+        ];
+       
+        // obtaining the entity manager
+        $this->Entity_Manager_ = EntityManager::create($conn_, $config_);
+
+        return $this->Entity_Manager_;
+    }
+
 }

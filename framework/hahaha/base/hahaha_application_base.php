@@ -189,7 +189,7 @@ class hahaha_application_base
 
 		//但請小心，避免載入錯誤
 		if($system_setting_->Autoload->Default)
-		{
+		{			
 			// composer autoloader
 			require __DIR__.'/../../../vendor/autoload.php';			
 		}

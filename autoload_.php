@@ -106,6 +106,27 @@ class hahaha_loader
 					"hahaha_parameter" => 'table/hahaha_parameter.php',
 				],
 			],
+			"oring" => [
+				"_Items" => [
+					"A_Class" => 'app/models/oring/A_Class.php',
+					"A_ClassItem" => 'app/models/oring/A_ClassItem.php',
+					"A_Download" => 'app/models/oring/A_Download.php',
+					"A_Feature" => 'app/models/oring/A_Feature.php',
+					"A_FeatureItem" => 'app/models/oring/A_FeatureItem.php',
+					"A_Future" => 'app/models/oring/A_Future.php',
+					"A_Hahaha" => 'app/models/oring/A_Hahaha.php',
+					"A_History" => 'app/models/oring/A_History.php',
+					"A_Index" => 'app/models/oring/A_Index.php',
+					"A_IndexItem" => 'app/models/oring/A_IndexItem.php',
+					"A_Model" => 'app/models/oring/A_Model.php',
+					"A_ModelItem" => 'app/models/oring/A_ModelItem.php',
+					"A_New" => 'app/models/oring/A_New.php',
+					"A_Other" => 'app/models/oring/A_Other.php',
+					"A_Overview" => 'app/models/oring/A_Overview.php',
+					"A_OverviewItem" => 'app/models/oring/A_OverviewItem.php',
+					"A_Product" => 'app/models/oring/A_Product.php',
+				],
+			],
 			"ha" => [
 				"_Items" => [
 					"Application" => 'framework/hahaha/ha/Appication.php',
@@ -157,6 +178,7 @@ class hahaha_loader
 					"hahaha_lock_mutex" => 'libraries/hahahalib/composite/lock/mutex/hahaha_lock_mutex.php',
 					"hahaha_lock_redis" => 'libraries/hahahalib/composite/lock/redis/hahaha_lock_redis.php',
 					"hahaha_log" => 'libraries/hahahalib/composite/log/hahaha_log.php',
+					"hahaha_orm_doctrine_base" => 'libraries/hahahalib/composite/orm/doctrine/base/hahaha_orm_doctrine_base.php',
 					"hahaha_orm_doctrine" => 'libraries/hahahalib/composite/orm/doctrine/hahaha_orm_doctrine.php',
 					"hahaha_cli_function" => 'libraries/hahahalib/native/function/hahaha_function_cli.php',
 					"hahaha_language" => 'libraries/hahahalib/native/language/hahaha_language.php',
@@ -1554,6 +1576,7 @@ class hahaha_loader
 						"AbstractQuery" => 'vendor/doctrine/orm/lib/Doctrine/ORM/AbstractQuery.php',
 						"Cache" => 'vendor/doctrine/orm/lib/Doctrine/ORM/Cache.php',
 						"Configuration" => 'vendor/doctrine/orm/lib/Doctrine/ORM/Configuration.php',
+						"EntityManager" => 'vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php',
 						"EntityManagerInterface" => 'vendor/doctrine/orm/lib/Doctrine/ORM/EntityManagerInterface.php',
 						"EntityNotFoundException" => 'vendor/doctrine/orm/lib/Doctrine/ORM/EntityNotFoundException.php',
 						"EntityRepository" => 'vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php',
@@ -2866,11 +2889,12 @@ class hahaha_loader
 		}
 
 		//load autoload files
+		// 避免跟其他套件重複引用，這裡用require_once
 		foreach (self::$autoload_files as $key => &$file)
 		{
 			if (empty($GLOBALS['__composer_autoload_files'][$key]))
 			{
-				require self::$hahaha_dir . $file;
+				require_once self::$hahaha_dir . $file;
 				
 				$GLOBALS['__composer_autoload_files'][$key] = true;
 			}
