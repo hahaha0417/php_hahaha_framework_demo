@@ -24,7 +24,7 @@ class hahaha_loader
 					"facebook" => [
 						"bot" => [
 							"_Items" => [
-								"hahaha_controller" => 'app/api/v1.0/facebook/bot/hahaha/hahaha_controller.php',
+								"hahaha_controller" => 'app/http/api/v1.0/facebook/bot/hahaha/hahaha_controller.php',
 							],
 						],
 						"_Items" => [
@@ -33,7 +33,7 @@ class hahaha_loader
 					"line" => [
 						"bot" => [
 							"_Items" => [
-								"hahaha_controller" => 'app/api/v1.0/line/bot/hahaha/hahaha_controller.php',
+								"hahaha_controller" => 'app/http/api/v1.0/line/bot/hahaha/hahaha_controller.php',
 							],
 						],
 						"_Items" => [
@@ -43,13 +43,86 @@ class hahaha_loader
 					],
 				],
 				"controller" => [
+					"backend" => [
+						"_Items" => [
+							"base_controller" => 'app/http/controllers/base/base_controller_backend.php',
+						],
+					],
+					"front" => [
+						"_Items" => [
+							"base_controller" => 'app/http/controllers/base/base_controller_front.php',
+							"index_controller" => 'app/http/controllers/front/index_controller.php',
+						],
+					],
 					"_Items" => [
-						"index_controller" => 'app/controllers/index_controller.php',
+					],
+				],
+				"middleware" => [
+					"_Items" => [
+						"hahaha_middleware_api" => 'app/http/middleware/middleware/hahaha_middleware_api.php',
+						"hahaha_middleware_web" => 'app/http/middleware/middleware/hahaha_middleware_web.php',
+						"hahaha_middleware_web_backend" => 'app/http/middleware/middleware/web/hahaha_middleware_web_backend.php',
+						"hahaha_middleware_web_front" => 'app/http/middleware/middleware/web/hahaha_middleware_web_front.php',
+						"hahaha_middleware_base" => 'framework/hahaha/base/middleware/hahaha_middleware_base.php',
 					],
 				],
 				"view" => [
+					"front" => [
+						"_Items" => [
+							"index_view_sample" => 'app/http/views/index_view_sample.php',
+						],
+					],
+					"module" => [
+						"front" => [
+							"_Items" => [
+								"common_home_main_home_view" => 'app/http/views/module/front/common/home/main_home/main_home.php',
+								"common_nav_main_nav_view" => 'app/http/views/module/front/common/nav/main_nav.php',
+								"common_tail_main_tail_view" => 'app/http/views/module/front/common/tail/main_tail.php',
+								"index_index_control" => 'app/http/views/module/front/index/index_control.php',
+							],
+						],
+						"integrate" => [
+							"_Items" => [
+								"control_main_control" => 'app/http/views/module/integrate/control/main_control/main_control.php',
+							],
+						],
+						"_Items" => [
+						],
+					],
+					"web" => [
+						"common" => [
+							"_Items" => [
+								"main_view" => 'app/http/views/web/common/main_view.php',
+								"sub_view" => 'app/http/views/web/common/sub_view.php',
+							],
+						],
+						"front" => [
+							"_Items" => [
+								"main_home_feature_view" => 'app/http/views/web/front/common/home/main_home/main_home_feature.php',
+								"main_home_overview_view" => 'app/http/views/web/front/common/home/main_home/main_home_overview.php',
+								"index_view" => 'app/http/views/web/front/index_view.php',
+							],
+						],
+						"_Items" => [
+						],
+					],
 					"_Items" => [
-						"index_view" => 'app/views/index_view.php',
+					],
+				],
+				"asset" => [
+					"normal" => [
+						"set" => [
+							"_Items" => [
+								"hahaha_asset_class" => 'resources/assets/normal/hahaha_asset/hahaha_asset_class.php',
+								"hahaha_asset_class2" => 'resources/assets/normal/hahaha_asset/hahaha_asset_class2.php',
+							],
+						],
+						"_Items" => [
+							"hahaha_asset" => 'resources/assets/normal/hahaha_asset.php',
+						],
+					],
+					"_Items" => [
+						"hahaha_asset_base" => 'framework/hahaha/base/asset/hahaha_asset_base.php',
 					],
 				],
 				"language" => [
@@ -70,15 +143,16 @@ class hahaha_loader
 						],
 					],
 					"_Items" => [
-						"hahaha_language" => 'config/languages/hahaha_language.php',
 						"hahaha_language_base" => 'framework/hahaha/base/language/hahaha_language_base.php',
 					],
 				],
 				"_Items" => [
 					"hahaha_application" => 'app/hahaha_application.php',
 					"hahaha_monitor" => 'app/hahaha_monitor.php',
-					"hahaha_language" => 'app/languages/hahaha_language.php',
-					"hahaha_route" => 'app/routes/hahaha_route.php',
+					"hahaha_middleware" => 'app/http/middleware/hahaha_middleware.php',
+					"hahaha_route" => 'app/http/routes/hahaha_route.php',
+					"hahaha_asset" => 'app/resources/assets/hahaha_asset.php',
+					"hahaha_language" => 'app/resources/languages/hahaha_language.php',
 					"hahaha_loader" => 'autoload_.php',
 					"hahaha_bootstrap" => 'bootstrap/hahaha_bootstrap.php',
 					"hahaha_bootstrap_abc" => 'bootstrap/hahaha_bootstrap_abc.php',
@@ -94,10 +168,12 @@ class hahaha_loader
 					"hahaha_flow" => 'flow/hahaha_flow.php',
 					"hahaha_flow_time" => 'flow/hahaha_flow_time.php',
 					"hahaha_application_base" => 'framework/hahaha/base/hahaha_application_base.php',
+					"hahaha_asset_base" => 'framework/hahaha/base/hahaha_asset_base.php',
 					"hahaha_bootstrap_base" => 'framework/hahaha/base/hahaha_bootstrap_base.php',
 					"hahaha_controller_base" => 'framework/hahaha/base/hahaha_controller_base.php',
 					"hahaha_flow_base" => 'framework/hahaha/base/hahaha_flow_base.php',
 					"hahaha_language_base" => 'framework/hahaha/base/hahaha_language_base.php',
+					"hahaha_middleware_base" => 'framework/hahaha/base/hahaha_middleware_base.php',
 					"hahaha_model_base" => 'framework/hahaha/base/hahaha_model_base.php',
 					"hahaha_route_base" => 'framework/hahaha/base/hahaha_route_base.php',
 					"hahaha_view_base" => 'framework/hahaha/base/hahaha_view_base.php',
@@ -106,40 +182,33 @@ class hahaha_loader
 					"hahaha_parameter" => 'table/hahaha_parameter.php',
 				],
 			],
-			"oring" => [
+			"front" => [
+				"index" => [
+					"_Items" => [
+						"A_Index" => 'app/http/models/front/index/A_Index.php',
+						"A_Item" => 'app/http/models/front/index/A_Item.php',
+						"A_Temp" => 'app/http/models/front/index/A_Temp.php',
+					],
+				],
 				"_Items" => [
-					"A_Class" => 'app/models/oring/A_Class.php',
-					"A_ClassItem" => 'app/models/oring/A_ClassItem.php',
-					"A_Download" => 'app/models/oring/A_Download.php',
-					"A_Feature" => 'app/models/oring/A_Feature.php',
-					"A_FeatureItem" => 'app/models/oring/A_FeatureItem.php',
-					"A_Future" => 'app/models/oring/A_Future.php',
-					"A_Hahaha" => 'app/models/oring/A_Hahaha.php',
-					"A_History" => 'app/models/oring/A_History.php',
-					"A_Index" => 'app/models/oring/A_Index.php',
-					"A_IndexItem" => 'app/models/oring/A_IndexItem.php',
-					"A_Model" => 'app/models/oring/A_Model.php',
-					"A_ModelItem" => 'app/models/oring/A_ModelItem.php',
-					"A_New" => 'app/models/oring/A_New.php',
-					"A_Other" => 'app/models/oring/A_Other.php',
-					"A_Overview" => 'app/models/oring/A_Overview.php',
-					"A_OverviewItem" => 'app/models/oring/A_OverviewItem.php',
-					"A_Product" => 'app/models/oring/A_Product.php',
 				],
 			],
 			"ha" => [
 				"_Items" => [
 					"Application" => 'framework/hahaha/ha/Appication.php',
+					"Asset" => 'framework/hahaha/ha/Asset.php',
 					"Bootstrap" => 'framework/hahaha/ha/Bootstrap.php',
 					"_Global" => 'framework/hahaha/ha/config/Global.php',
 					"Option" => 'framework/hahaha/ha/config/Option.php',
 					"System_Setting" => 'framework/hahaha/ha/config/System_Setting.php',
 					"Arg" => 'framework/hahaha/ha/external/Arg.php',
+					"Cookie" => 'framework/hahaha/ha/external/Cookie.php',
 					"Files" => 'framework/hahaha/ha/external/Files.php',
 					"Get" => 'framework/hahaha/ha/external/Get.php',
 					"Globals" => 'framework/hahaha/ha/external/Globals.php',
 					"Post" => 'framework/hahaha/ha/external/Post.php',
 					"Server" => 'framework/hahaha/ha/external/Server.php',
+					"Session" => 'framework/hahaha/ha/external/Session.php',
 					"Lang" => 'framework/hahaha/ha/Lang.php',
 					"Log" => 'framework/hahaha/ha/Log.php',
 					"Route" => 'framework/hahaha/ha/Route.php',
@@ -180,11 +249,14 @@ class hahaha_loader
 					"hahaha_log" => 'libraries/hahahalib/composite/log/hahaha_log.php',
 					"hahaha_orm_doctrine_base" => 'libraries/hahahalib/composite/orm/doctrine/base/hahaha_orm_doctrine_base.php',
 					"hahaha_orm_doctrine" => 'libraries/hahahalib/composite/orm/doctrine/hahaha_orm_doctrine.php',
-					"hahaha_cli_function" => 'libraries/hahahalib/native/function/hahaha_function_cli.php',
+					"hahaha_asset" => 'libraries/hahahalib/native/asset/hahaha_asset.php',
+					"hahaha_function_cli" => 'libraries/hahahalib/native/function/hahaha_function_cli.php',
+					"hahaha_function_session" => 'libraries/hahahalib/native/function/hahaha_function_session.php',
 					"hahaha_language" => 'libraries/hahahalib/native/language/hahaha_language.php',
 					"hahaha_parser_url" => 'libraries/hahahalib/native/parser/hahaha_parser_url.php',
 					"hahaha_route" => 'libraries/hahahalib/native/route/hahaha_route.php',
 					"hahaha_class_instance_handle_trait" => 'libraries/hahahalib/native/trait/hahaha_class_instance_handle_trait.php',
+					"hahaha_class_instance_handle_trait_http" => 'libraries/hahahalib/native/trait/hahaha_class_instance_handle_trait_http.php',
 					"hahaha_class_instance_handle_trait_lite" => 'libraries/hahahalib/native/trait/hahaha_class_instance_handle_trait_lite.php',
 					"hahaha_instance_trait" => 'libraries/hahahalib/native/trait/hahaha_instance_trait.php',
 					"hahaha_view" => 'libraries/hahahalib/native/view/hahaha_view.php',
@@ -458,7 +530,7 @@ class hahaha_loader
 			"Composer" => [
 				"Autoload" => [
 					"_Items" => [
-						"ComposerStaticInitc7b9e45c7c46f431606bb64338aef086" => 'vendor/composer/autoload_static.php',
+						"ComposerStaticInited52258c47506bb06cd8d32fdf88156a" => 'vendor/composer/autoload_static.php',
 						"ClassLoader" => 'vendor/composer/ClassLoader.php',
 					],
 				],
@@ -2804,7 +2876,7 @@ class hahaha_loader
 			],
 			"_Items" => [
 				"ha" => 'framework/hahaha/ha/ha.php',
-				"ComposerAutoloaderInitc7b9e45c7c46f431606bb64338aef086" => 'vendor/composer/autoload_real.php',
+				"ComposerAutoloaderInited52258c47506bb06cd8d32fdf88156a" => 'vendor/composer/autoload_real.php',
 				"LINEBotTiny" => 'vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php',
 				"JsonException" => 'vendor/symfony/polyfill-php73/Resources/stubs/JsonException.php',
 			],

@@ -22,17 +22,23 @@ class hahaha_route
 	// Url 前綴	
 	public $Prefix = NULL;
 	// 中間層
-	public $Middleware = [];
+	public $Middleware = [];	
 	// Class的Namesapce前綴
 	public $Namespace = NULL;
-	// 路由覆蓋
-	public $Overwrite = false;
+	// 路由覆蓋，不覆蓋要小心寫錯
+	public $Overwrite = true;
+	// 節點，標記是否為Root，例如api or backend，如是，middleware從Root開始算
+	public $Node = self::CONSTANT_ROOT;
+
+	public $Middleware_Callback = NULL;
 	// --------------------------------------------------------------------------
 	// 定義 
 	// --------------------------------------------------------------------------
 	// Release將其換成數字加速
 	const CONSTANT_METHOD = 'Method';
 	const CONSTANT_GROUP = 'Group';
+	const CONSTANT_ROOT = 'Root';
+	const CONSTANT_NODE = 'Node';
 
 	const CONSTANT_Method_Controller = 'Controller';
 	const CONSTANT_Method_Function = 'Function';
@@ -164,17 +170,23 @@ class hahaha_route
 	*/
 	public function Add(&$url, &$parameter, &$callback, $type)
 	{
-		if(!is_null($parameter["prefix"]))
+		if(isset($parameter["prefix"]) && !is_null($parameter["prefix"]))
 		{
 			$this->Prefix = $parameter["prefix"];	
 		}
-		if(!is_null($parameter["middleware"]))
+		if(isset($parameter["middleware"]) && !is_null($parameter["middleware"]))
 		{
 			$this->Middleware = $parameter["middleware"];	
 		}
-		if(!is_null($parameter["namespace"]))
+		if(isset($parameter["namespace"]) && !is_null($parameter["namespace"]))
 		{
 			$this->Namespace = $parameter["namespace"];	
+		}
+		// 有才設，沒有則為
+		$this->Node = self::CONSTANT_NODE;
+		if(isset($parameter["node"]) && !is_null($parameter["node"]))
+		{
+			$this->Node = $parameter["node"];	
 		}
 
 		if($this->Node_Now_)
@@ -381,6 +393,31 @@ class hahaha_route
 	/*
 	Group 群組
 	$callback function($route){}
+
+	// namespace '\\'請統一這樣接
+	$route_->Group(
+		"/",
+		[
+			'prefix' => '',
+			'middleware' => ['web'],				
+			'namespace' => '\\hahaha\\controller'
+		],
+		function($route){
+			require hahaha_application::Instance()->Root_ . '/app/http/routes/web.php';
+		}							
+	);
+	// '\\'出現在後面容易混亂，出錯
+	$route_->Group(
+		"/",
+		[
+			'prefix' => '',
+			'middleware' => ['web'],				
+			'namespace' => '\\'
+		],
+		function($route){
+			require hahaha_application::Instance()->Root_ . '/app/http/routes/web.php';
+		}							
+	);
 	*/
 	public function Group($url, $parameter, $callback)
 	{				
@@ -397,7 +434,35 @@ class hahaha_route
 			)
 			{
 				// 非第一層
-				$node_now_data_ = &$this->Node_Now_[$this->Token_Node_]; 		
+				$node_now_data_ = &$this->Node_Now_[$this->Token_Node_]; 	
+				
+				if($this->Node_Now_ === $node_)
+				{
+					// 蓋掉自己
+					$middleware_ = $this->Middleware;
+				}
+				else
+				{
+					if(!empty($node_now_data_['Parameter']['node']) && $node_now_data_['Parameter']['node'] == self::CONSTANT_ROOT)
+					{
+						// 根節點，從自己開始算
+						$middleware_ = $this->Middleware;
+					}
+					else
+					{
+						$middleware_ = array_unique(array_merge($node_now_data_['Middleware'], $this->Middleware));
+					}					
+				}
+
+				if(!empty($this->Node) && $this->Node == self::CONSTANT_ROOT)
+				{
+					// 自己是根節點，從自己開始算
+					$namespace_ = $this->Namespace;
+				}
+				else
+				{
+					$namespace_ = $node_now_data_['Namespace'] . $this->Namespace;
+				}	
 			
 				$node_[$this->Token_Node_] = [
 					// 重要參數
@@ -406,8 +471,8 @@ class hahaha_route
 					'Callback' => $callback,
 					//
 					'Prefix' => $node_now_data_['Prefix'] . $this->Prefix,
-					'Middleware' => array_unique(array_merge($node_now_data_['Middleware'], $this->Middleware)),
-					'Namespace' => $node_now_data_['Namespace'] . $this->Namespace,
+					'Middleware' => $middleware_,
+					'Namespace' => $namespace_,
 				];	
 
 				// callback重置
@@ -422,16 +487,55 @@ class hahaha_route
 			)
 			{
 				// 第一層
+				$node_now_data_ = &$this->Nodes_[$this->Token_Node_]; 
+
+				if(empty($node_now_data_['Middleware']))
+				{
+					// 第一次
+					$middleware_ = $this->Middleware;
+				}
+				else
+				{
+					if($this->Nodes_ === $node_)
+					{
+						// 蓋掉自己
+						$middleware_ = $this->Middleware;
+					}
+					else
+					{
+						if(!empty($node_now_data_['Parameter']['node']) && $node_now_data_['Parameter']['node'] == self::CONSTANT_ROOT)
+						{
+							// 根節點，從自己開始算
+							$middleware_ = $this->Middleware;
+						}
+						else
+						{
+							$middleware_ = array_unique(array_merge($node_now_data_['Middleware'], $this->Middleware));
+						}	
+					}					
+				}
+
+				if(!empty($this->Node) && $this->Node == self::CONSTANT_ROOT)
+				{
+					// 自己是根節點，從自己開始算
+					$namespace_ = $this->Namespace;
+				}
+				else
+				{
+					$namespace_ = $node_now_data_['Namespace'] . $this->Namespace;
+				}	
+		
 				$node_[$this->Token_Node_] = [
 					// 重要參數
 					'Type' => self::CONSTANT_GROUP,
 					'Parameter' => $parameter,
 					'Callback' => $callback,
 					//
-					'Prefix' => $this->Prefix,
-					'Middleware' => $this->Middleware,
-					'Namespace' => $this->Namespace,
-				];
+					'Prefix' => $node_now_data_['Prefix'] . $this->Prefix,
+					
+					'Middleware' => $middleware_,
+					'Namespace' => $namespace_,
+				];	
 
 				// callback重置
 				$node_[$this->Token_Parameter_]['Expand'] = false;
@@ -442,11 +546,29 @@ class hahaha_route
 	}	
 	
 	/*
+	設定Middleware，看要附加還是蓋過
+	$middleware array
+	必須在Method(Get)以後下，覆蓋設定
+	*/
+	public function Middleware($middleware, $overwrite = false)
+	{
+		if(is_array($this->Method_Temp_))
+		{
+			$this->Method_Temp_['Middleware'] = [
+				'Overwrite' => $overwrite,
+				'Middleware' => $middleware
+			];
+
+		}
+		
+		return $this;
+	}	
+	
+	/*
 	設定Controller，末端，不return
 	*/
 	public function Controller($controller, $action)
-	{
-	
+	{	
 		if(is_array($this->Method_Temp_))
 		{
 			$this->Method_Temp_['Type'] = self::CONSTANT_Method_Controller;
@@ -457,6 +579,7 @@ class hahaha_route
 			$this->Method_Temp_ = NULL;			
 		}
 	}	
+
 	
 	/*
 	設定Function，末端，不return
@@ -692,7 +815,6 @@ class hahaha_route
 		return $this;
 	}
 
-
 	// --------------------------------------------------------------------------
 	// 執行
 	// --------------------------------------------------------------------------
@@ -737,11 +859,10 @@ class hahaha_route
 			if(!empty($node_data_['Callback']))
 			{
 				$node_data_callback_ = &$node_data_['Callback'];
-									
-				$node_data_callback_($this);
-				// 可能有新節點重找
-				$node_parameter = &$node_[$this->Token_Parameter_];
-				$node_parameter['Expand'] = true;											
+				// 可能有新節點重找，所以callback內可能會重置Expand，所以先設	
+				$node_parameter_ = &$node_[$this->Token_Parameter_];
+				$node_parameter_['Expand'] = true;						
+				$node_data_callback_($this);											
 			}		
 		}
 		
@@ -749,17 +870,17 @@ class hahaha_route
 		if($n == 1 && $this->Uri_Token_[0] == '')
 		{
 			// Root
-			$find_node_ = true;
+			$find_node_ = true;		
 		}
 		else
 		{
 			for($i = 0; $i < $n; $i++)
 			{	
 				$token = &$this->Uri_Token_[$i];
-				$node_parameter = &$node_[$this->Token_Parameter_];
-
+				$node_parameter_ = &$node_[$this->Token_Parameter_];
+				
 				$index_ = -1;
-
+				
 				$find_parameter_ = false;
 				// 先找自己node，所有可能			
 				while(1)
@@ -769,7 +890,7 @@ class hahaha_route
 					do
 					{
 						$deal_node_ = false;
-						if(!$node_parameter['Node_Find'])
+						if(!$node_parameter_['Node_Find'])
 						{
 							if(!empty($node_[$token]))
 							{
@@ -778,9 +899,9 @@ class hahaha_route
 								$find_node_ = true;
 							}
 							$deal_node_ = true;
-							$node_parameter['Node_Find'] = true;					
+							$node_parameter_['Node_Find'] = true;					
 						}
-						else if(!$node_parameter['All_Node_Find'])
+						else if(!$node_parameter_['All_Node_Find'])
 						{				
 							if(!empty($node_[$this->Token_All_Node_]))
 							{
@@ -790,9 +911,9 @@ class hahaha_route
 								$find_parameter_ = true;
 							}
 							$deal_node_ = true;						
-							$node_parameter['All_Node_Find'] = true;
+							$node_parameter_['All_Node_Find'] = true;
 						}
-						else if(!$node_parameter['Multiple_All_Node_Find'])
+						else if(!$node_parameter_['Multiple_All_Node_Find'])
 						{
 							if(!empty($node_[$this->Token_Multiple_All_Node_]))
 							{
@@ -802,17 +923,17 @@ class hahaha_route
 								$find_parameter_ = true;
 							}
 							$deal_node_ = true;
-							$node_parameter['Multiple_All_Node_Find'] = true;
+							$node_parameter_['Multiple_All_Node_Find'] = true;
 						}				
 					}				
 					while(!$find_node_ && $deal_node_);
 					
-					// 如果找不到node
+					// 如果有沒處理項目，並且找不到node
 					if(!$find_node_)
-					{		
+					{	
 						// 倒著觸發callback，找出路
 						$index_ = count($nodes_) - 1;	
-							
+						
 						$repeat_ = false;	
 						while($index_ >= 0)				
 						{										
@@ -821,7 +942,9 @@ class hahaha_route
 							$target_node_parameter = &$target_node_[$this->Token_Parameter_];
 							
 							if(!$target_node_parameter['Expand'])
-							{								
+							{		
+								// 標記已展開Group
+								$target_node_parameter['Expand'] = true;														
 								if(!empty($target_node_[$this->Token_Node_]))
 								{
 									$target_node_data_ = &$target_node_[$this->Token_Node_];
@@ -832,14 +955,13 @@ class hahaha_route
 										$target_node_data_callback_($this);
 																				
 										// 可能有新節點重找
-										$node_parameter['Node_Find'] = false;
-										$node_parameter['All_Node_Find'] = false;
-										$node_parameter['Multiple_All_Node_Find'] = false;
+										$node_parameter_['Node_Find'] = false;
+										$node_parameter_['All_Node_Find'] = false;
+										$node_parameter_['Multiple_All_Node_Find'] = false;
 										$repeat_ = true;								
 									}								
 								}
-								// 標記已展開Group
-								$target_node_parameter['Expand'] = true;
+								
 								if($repeat_)
 								{
 									break;
@@ -855,13 +977,46 @@ class hahaha_route
 						{
 							continue;
 						}
-						
-					}	
 
+						// 如果nodes_都沒了
+						if($i == 0)
+						{
+							// 看看root是否可以展開
+							$target_node_data_ = &$this->Nodes_[$this->Token_Node_];
+
+							$target_node_parameter = &$this->Nodes_[$this->Token_Parameter_];
+							
+							if(!$target_node_parameter['Expand'])
+							{	
+								// 標記已展開Group
+								$target_node_parameter['Expand'] = true;	
+								if(!empty($target_node_data_['Callback']))
+								{
+									$this->Node_Now_ = &$this->Nodes_;
+									$target_node_data_callback_ = &$target_node_data_['Callback'];														
+									$target_node_data_callback_($this);
+																			
+									// 可能有新節點重找
+									$node_parameter_['Node_Find'] = false;
+									$node_parameter_['All_Node_Find'] = false;
+									$node_parameter_['Multiple_All_Node_Find'] = false;
+									$repeat_ = true;								
+								}	
+							}
+							
+							
+						}
+
+						if($repeat_)
+						{
+							continue;
+						}						
+					}	
+					
 					// 繼續處理
 					break;	
 				}
-
+				
 				if(!$find_node_)
 				{
 					$last_ = $nodes_index_ - 1;
@@ -886,14 +1041,14 @@ class hahaha_route
 					$parameters_index_--;
 					unset($parameters_[$parameters_index_]);
 					
-					if($i < -1)
+					if($i < -1)	
 					{
 						// 沒了，跳出
 						break;
 					}
 
 					// 這要順便設定
-					$node_parameter = &$node_[$this->Token_Parameter_];
+					$node_parameter_ = &$node_[$this->Token_Parameter_];
 					continue;			
 				}
 				
@@ -913,8 +1068,10 @@ class hahaha_route
 					$parameters_[$parameters_index_] = $this->Token_Blank_;
 					$parameters_index_++;
 				}
-
+				// 如果最順利找到，要設這個，因為不會進去 if(!$find_node_)
+				$node_parameter_ = &$node_[$this->Token_Parameter_];
 			}
+			
 		}
 		
 		if(!$find_node_)
@@ -925,8 +1082,8 @@ class hahaha_route
 		$success_ = false;
 		$callback_reset_ = true;	
 		while(!$success_ && $callback_reset_ )
-		{
-			$callback_reset_ = false;			
+		{			
+			$callback_reset_ = false;					
 			$this->Node_Now_ = &$node_;
 			
 			// 因為可能找到的是Group，由於寫法問題Group內可能會覆蓋自己，因此重複呼叫callback直到callback皆展開
@@ -934,13 +1091,16 @@ class hahaha_route
 			if(!empty($node_[$this->Token_Node_]))
 			{
 				$node_data_ = &$node_[$this->Token_Node_];
-				if(!empty($node_data_['Callback']))
+				
+				if(!$node_parameter_['Expand'] && !empty($node_data_['Callback']))
 				{
 					$node_data_callback_ = &$node_data_['Callback'];
-					// 可能有新節點重找，所以callback內可能會重置Expand，所以先設
-					$node_parameter['Expand'] = true;						
-					$node_data_callback_($this);
-					$callback_reset_ = true;											
+					// 可能有新節點重找，所以callback內可能會重置Expand，所以先設					
+					{						
+						$node_parameter_['Expand'] = true;						
+						$node_data_callback_($this);
+						$callback_reset_ = true;	
+					}										
 				}		
 				else
 				{
@@ -974,12 +1134,46 @@ class hahaha_route
 								$use_parameters_[] = &$parameter;
 							}
 						}
-						
+
 						$controller_class_ = $node_data_['Namespace'] . '\\' . $find_['Controller']; 
-						$controller_ = new $controller_class_;
+												
+						// 這裡用new也可，但未來可能用php-fpm，所以先用Instance
+						// $controller_ = new $controller_class_;
+						$controller_ = $controller_class_::Instance();
+						
 						$action = &$find_['Action'];
 						if(method_exists($controller_, $action))
 						{						
+							// 確定有，先跑middleware，因為這是library，如果直接呼叫應用程式的Code會綁在一起，
+							// 所以虛化呼叫
+							if($this->Middleware_Callback)
+							{	
+								// \hahaha\hahaha_route_base設定							
+								$object_ = $this->Middleware_Callback['Object'];
+								$action_ = $this->Middleware_Callback['Action'];					
+								if(empty($find_['Middleware']))
+								{
+									$object_->$action_($node_data_['Middleware']);
+								}
+								else
+								{
+									// 有附加或覆蓋
+									$overwrite_ = &$find_['Middleware']['Overwrite'];
+									$middleware_ = &$find_['Middleware']['Middleware'];
+									if($overwrite_)
+									{
+										// 覆蓋
+										$object_->$action_($middleware_);
+									}
+									else
+									{
+										$object_->$action_(array_unique(array_merge($node_now_data_['Middleware'], $middleware)));
+									}
+								}
+
+							}
+
+							// 進入controoler
 							call_user_func_array(array($controller_, $action), $use_parameters_);
 							$success_ = true;
 						}
@@ -998,8 +1192,9 @@ class hahaha_route
 					}
 				}
 			}
-		}
 
+		}
+		
 		if(!$success_)
 		{
 			if(!empty($find_['Type']))
@@ -1034,9 +1229,14 @@ class hahaha_route
 	
 	/*
 	執行Redirect，設定好，在run結束時，跳轉
+	// 會全部跑完才跳轉
+
+	// 不確定要不要exit，目前先在外面retrun，走完流程
+	// https://stackoverflow.com/questions/768431/how-do-i-make-a-redirect-in-php
 	*/
 	public function Redirect($url)
 	{		
+		header('Location: ' . $url);
 		return $this;
 	}	
 

@@ -120,6 +120,9 @@ class hahaha_external_variable_server
 			"Php_Self" => "PHP_SELF",
 			"Request_Time_Float" => "REQUEST_TIME_FLOAT",
 			"Request_Time" => "REQUEST_TIME",
+			//
+			"https" => "HTTPS",
+			"http_x_forwarded_proto" => "HTTP_X_FORWARDED_PROTO"
 		];	
 	}
 	
@@ -135,12 +138,30 @@ class hahaha_external_variable_server
 	
 	public function Is_Http()
 	{
-		return $this->Request_Scheme == 'http';
+		if ( (! empty($_SERVER['REQUEST_SCHEME']) && $_SERVER['REQUEST_SCHEME'] == 'https') || 
+			(! empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || 
+			(! empty($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == '443') 
+		) 
+		{
+			return false;
+		} else 
+		{
+			return true;
+		}
 	}
 	
 	public function Is_Https()
 	{
-		return $this->Request_Scheme == 'https';
+		if ( (! empty($_SERVER['REQUEST_SCHEME']) && $_SERVER['REQUEST_SCHEME'] == 'https') || 
+			(! empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || 
+			(! empty($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == '443') 
+		) 
+		{
+			return true;
+		} else 
+		{
+			return false;
+		}
 	}
 	
 }

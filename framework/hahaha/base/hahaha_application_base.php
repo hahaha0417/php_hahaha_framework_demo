@@ -108,7 +108,7 @@ class hahaha_application_base
 			}
 			// 由於設計上，採用單例模式，因此需要時再用單例(Instance())初始化，所以流程上不須預先載入太多東西
 			//
-			if(\hahahalib\hahaha_cli_function::Is_Cli())
+			if(\hahahalib\hahaha_function_cli::Is_Cli())
 			{
 				// Console
 				if($system_setting_->Cli->Enabled)
@@ -147,7 +147,7 @@ class hahaha_application_base
 			{
 				echo "<pre>";
 			}
-			if(\hahahalib\hahaha_cli_function::Is_Cli())
+			if(\hahahalib\hahaha_function_cli::Is_Cli())
 			{
 				echo "Exception : " . $e->getMessage() . PHP_EOL;	
 			}

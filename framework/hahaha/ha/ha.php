@@ -13,7 +13,15 @@ class ha
 	// 為求快，當找到時，reference instance存成變數，這樣下次可以直接使用，但是會有物件釋放問題，會指向null
 	// 因此Instance Release後，請下Update();，將指向NULL的變數，移除
 	// 如果到處Release Instance，管理怕亂則規定統一在一個地方Release Instance，全部Release後下Update
-		
+	
+	// --------------------------------------------------------------------------
+	// Property
+	// --------------------------------------------------------------------------
+	// url用
+	public static $Http_Port = 8081;
+	public static $Https_Port = 8443;
+	//
+
 	function __construct()
 	{
 		
@@ -102,7 +110,7 @@ class ha
 				self::$T_ = \ha\Lang::Language($option_->Language->T->Language)->Initial();
 			}
 			
-			return self::$T_->translate($item, 
+			return self::$T_->Translate($item, 
 				$parameters, 
 				$node_names, 
 				$parameter_prefix,
@@ -110,6 +118,43 @@ class ha
 			);
 		}
 		
+	}
+
+	/*
+	切換url位址
+	有空再改，先簡單處理，只能吃Root
+	"/xxx"
+	*/
+	public static function url($url)
+	{
+		$server_ = \ha\Server::Get();
+
+		if($server_->Is_Https() )
+		{
+			// https
+			if($url[0] == '/')
+			{
+				return 'https://' . $server_->Server_Name . ':' . self::$Https_Port . $url;
+			}
+			else
+			{
+				return $url;
+			}			
+		}
+		else
+		{
+			// http
+			if($url[0] == '/')
+			{
+				return 'http://' . $server_->Server_Name . ':' . self::$Http_Port . $url;
+			}
+			else
+			{
+				return $url;
+			}	
+		}
+
+
 	}
 	// --------------------------------------------------------------------------
 	// require

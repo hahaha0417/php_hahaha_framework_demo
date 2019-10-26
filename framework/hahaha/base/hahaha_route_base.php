@@ -57,34 +57,75 @@ class hahaha_route_base
 	
 	public function Route()
 	{
-		$route = \hahahalib\hahaha_route::Instance();
-		$route->Overwrite = true;
+		$route_ = \hahahalib\hahaha_route::Instance();
+
+		// 註冊middleware，避免用到Middleware時不會跑
+		$route_->Middleware_Callback = [
+			'Object' => $this,
+			'Action' => 'Middleware',
+		];
+
+		// --------------------------------------------------------------------------
+		// 覆蓋
+		// --------------------------------------------------------------------------
+		// 注意，這裡採覆蓋，不覆蓋時如果有相同Node則會用第一次的
+		$route_->Overwrite = true;
+		// 如果Overwrite設為false，要是後面有Group('/')重設callback，則不會覆蓋callback執行
+		// 所以這裡可能要改成直接require，避免影響到後面Group('/') or Group('/api')
+		// require hahaha_application::Instance()->Root_ . '/app/http/routes/web.php';
+		// require hahaha_application::Instance()->Root_ . '/app/http/routes/api.php';
+		// ----
 		// web		
-		$route->Group(
+		$route_->Group(
 			"/",
 			[
 				'prefix' => '',
-				'middleware' => ['web'],
-				'namespace' => '\\'
+				'middleware' => ['web'],				
+				'namespace' => '\\hahaha\\controller',
+				'node' => \hahahalib\hahaha_route::CONSTANT_ROOT,
 			],
-			function($route){
-				require hahaha_application::Instance()->Root_ . '/app/routes/web.php';
+			function($route){		
+				require hahaha_application::Instance()->Root_ . '/app/http/routes/web.php';
 			}							
 		);
-		
+
 		// api
-		$route->Group(
+		$route_->Group(
 			"/api",
 			[
 				'prefix' => '',
 				'middleware' => ['api'],
-				'namespace' => '\\'
+				'namespace' => '',
+				'node' => \hahahalib\hahaha_route::CONSTANT_ROOT,
 			],
 			function($route){
-				require hahaha_application::Instance()->Root_ . '/app/routes/api.php';
+				require hahaha_application::Instance()->Root_ . '/app/http/routes/api.php';				
 			}				
 		);
+		
+		// --------------------------------------------------------------------------
+		// 不覆蓋
+		// --------------------------------------------------------------------------
+		/*
+		$route_->Overwrite = false;
+		require hahaha_application::Instance()->Root_ . '/app/http/routes/web.php';
+		require hahaha_application::Instance()->Root_ . '/app/http/routes/api.php';
+		*/
 	
+	}
+
+	/*
+	Callback \hahahalib\hahaha_route Run要呼叫
+	*/
+	public function Middleware(&$middlewares)
+	{
+		$middleware_ = \hahaha\hahaha_middleware::Instance()->Initial();
+
+		foreach($middlewares as &$middleware)
+		{
+			$m_ = $middleware_->Middleware($middleware)->Instance()->Initial();
+			$m_->Handle();
+		}
 	}
 	
 }

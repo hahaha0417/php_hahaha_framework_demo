@@ -5,58 +5,50 @@ namespace hahahalib\external;
 class hahaha_external_variable_session
 {
 	use \hahahalib\hahaha_instance_trait;
-	
-	public static $Mapping_List_ = NULL;
-	
-	//public $host;
+
 	function __construct()
 	{
-
+		// 確保只啟動一次
+		\hahahalib\hahaha_function_session::Start();
 		
 	}	
-	
-	/*
-	由於php 沒有const &，基於萬用接口，所以沒辦法reference
-	*/
-	public function Parse($url)
-	{
-		
-	}
 	
 	/*
 	沒找到才會呼叫這個，如果已經有變數，則不會再進來
 	有用到才設定
 	*/
 	public function __get($name)
-	{
-		// 有用到才初始對應表
-		if(!self::$Mapping_List_)
-		{
-			$this->Get_Mapping();
-		}
-	
+	{		
 		// 存referencer就好，避免複製記憶體
-		if(empty($this->$name))
+		if(!empty($_SESSION[$name]))
 		{
-			if(!empty(self::$Mapping_List_[$name]))
-			{
-				$this->$name = &$_SERVER[self::$Mapping_List_[$name]];
-			}
-			else
-			{
-				throw new \Exception("沒有hahaha_web_server變數$" . $name);
-			}
+			$this->$name = &$_SESSION[$name];
+		}
+		else
+		{
+			return NULL;
 		}
 		
 		return $this->$name;
 	}
-	
-	public function Get_Mapping()
-	{
-		// Mapping $_SERVER
-		self::$Mapping_List_ = [
-			'host' => "REQUEST_URI"
-		];	
+
+	/*
+	寫入Sesssion
+	*/
+	public function __set($name, $value)
+	{		
+		if(!$value)
+		{
+			unset($_SESSION[$name]);	
+		}
+		else
+		{
+			$_SESSION[$name] = $value;	
+		}
+			
 	}
+
+
+
 	
 }

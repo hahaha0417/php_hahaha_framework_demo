@@ -2,7 +2,7 @@
 
 namespace hahahalib;
 
-class hahaha_cli_function
+class hahaha_function_cli
 {
 	/*
 	https://www.binarytides.com/php-check-running-cli/
@@ -22,3 +22,4 @@ class hahaha_cli_function
 		return false;
 	}
 } 
+

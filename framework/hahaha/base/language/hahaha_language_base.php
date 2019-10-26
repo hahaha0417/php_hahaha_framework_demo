@@ -20,9 +20,9 @@ class hahaha_language_base
 	public $Parameter_Postfix_ = "]}";
 	// --------------------------------------------------------------------------
 	// 參數前半
-	public $Parameter_Prefix_Length_ = 3;
+	public $Parameter_Prefix_Length_ = 4;
 	// 參數後半
-	public $Parameter_Postfix_Length_ = 1;
+	public $Parameter_Postfix_Length_ = 2;
 	// --------------------------------------------------------------------------
 	// 
 	// --------------------------------------------------------------------------
@@ -41,7 +41,7 @@ class hahaha_language_base
 	public function Initial()
 	{		
 		/*
-		// 不能用這個hahaha_system_setting::Instance()，會無限迴圈
+		// 不能用這個hahaha_language::Instance()，會無限迴圈
 		if(method_exists($this, "Initial_Ha"))
 		{
 			$this->Initial_Ha($this);
@@ -197,21 +197,21 @@ class hahaha_language_base
 	但由於在controller以後，其實不一定要最簡引入，因此可以使用instance的方式順便引入require，使用前instance一下
 	https://www.php.net/manual/zh/language.namespaces.importing.php
 	ex : 
-	echo $lang_->translate('d', ['1', '成功'], ['a', 'b']);
-	echo $lang_->translate('e', ['a', 'b']);
+	echo $lang_->Translate('d', ['1', '成功'], ['a', 'b']);
+	echo $lang_->Translate('e', ['a', 'b']);
 	$lang_->Target(['a', 'b']);
-	echo $lang_->translate('d', ['1', '成功']);
+	echo $lang_->Translate('d', ['1', '成功']);
 	$lang_->Parameter_Style('{', '}');
-	echo $lang_->translate('e', ['1', '成功']);
-	echo $lang_->translate('e', ['1', '成功'], [], '{', '}');
-	echo $lang_->translate('c');
+	echo $lang_->Translate('e', ['1', '成功']);
+	echo $lang_->Translate('e', ['1', '成功'], [], '{', '}');
+	echo $lang_->Translate('c');
 	// 快捷用法
 	\ha::t(['a','b']);
     var_dump(\ha::t('d', ['a','b']));
 	//
 	如有其他種翻譯處理方式，請用trait附加 or 繼承修改，一般對應接口的情況，應該是用繼承修改
 	*/
-	public function translate($item, 
+	public function Translate($item, 
 		$parameters = [], 
 		$node_names = [], 
 		$parameter_prefix = NULL,

@@ -82,6 +82,21 @@ use Doctrine\ORM\EntityManager;
 /*
 doctrine 3 comming
 有需要再切過去，目前先用2.6
+
+效能問題 : 
+他太肥，
+5 query要10ms
+其中撈資料PDO部分是用PDO，連線資料庫和撈資料其實都很快
+getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+慢應該是慢在他到連線前跑一堆代碼
+所以Opcache下
+到連線前可能花了6 ~ 8ms
+撈資料差不多慢PDO一點
+
+因此推估假設我直接用MySQLi or PDO撈，可能只要2 ms(當然就不會有orm的格式，而是傳統row)
+
+因此假設我用原生PHP套版，可能可以壓在3 ~ 5 + 3 = 6 ~ 8(應該沒問題)
+應該還是老問題，我架構是reference為主，composer應該8成都是用copy的，應該主要是差在這部分
 */
 class hahaha_orm_doctrine
 {

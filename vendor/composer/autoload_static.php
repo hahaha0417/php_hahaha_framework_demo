@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc7b9e45c7c46f431606bb64338aef086
+class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -1793,10 +1793,15 @@ class ComposerStaticInitc7b9e45c7c46f431606bb64338aef086
         'Tightenco\\Collect\\Support\\HigherOrderCollectionProxy' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/HigherOrderCollectionProxy.php',
         'Tightenco\\Collect\\Support\\HtmlString' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/HtmlString.php',
         'Tightenco\\Collect\\Support\\Traits\\Macroable' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/Traits/Macroable.php',
+        'front\\index\\A_Index' => __DIR__ . '/../..' . '/app/http/models/front/index/A_Index.php',
+        'front\\index\\A_Item' => __DIR__ . '/../..' . '/app/http/models/front/index/A_Item.php',
+        'front\\index\\A_Temp' => __DIR__ . '/../..' . '/app/http/models/front/index/A_Temp.php',
         'ha' => __DIR__ . '/../..' . '/framework/hahaha/ha/ha.php',
         'ha\\Application' => __DIR__ . '/../..' . '/framework/hahaha/ha/Appication.php',
         'ha\\Arg' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Arg.php',
+        'ha\\Asset' => __DIR__ . '/../..' . '/framework/hahaha/ha/Asset.php',
         'ha\\Bootstrap' => __DIR__ . '/../..' . '/framework/hahaha/ha/Bootstrap.php',
+        'ha\\Cookie' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Cookie.php',
         'ha\\Files' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Files.php',
         'ha\\Get' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Get.php',
         'ha\\Globals' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Globals.php',
@@ -1808,13 +1813,22 @@ class ComposerStaticInitc7b9e45c7c46f431606bb64338aef086
         'ha\\Post' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Post.php',
         'ha\\Route' => __DIR__ . '/../..' . '/framework/hahaha/ha/Route.php',
         'ha\\Server' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Server.php',
+        'ha\\Session' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Session.php',
         'ha\\System_Setting' => __DIR__ . '/../..' . '/framework/hahaha/ha/config/System_Setting.php',
         'ha\\_Global' => __DIR__ . '/../..' . '/framework/hahaha/ha/config/Global.php',
-        'hahaha\\api\\facebook\\bot\\hahaha_controller' => __DIR__ . '/../..' . '/app/api/v1.0/facebook/bot/hahaha/hahaha_controller.php',
-        'hahaha\\api\\line\\bot\\hahaha_controller' => __DIR__ . '/../..' . '/app/api/v1.0/line/bot/hahaha/hahaha_controller.php',
-        'hahaha\\controller\\index_controller' => __DIR__ . '/../..' . '/app/controllers/index_controller.php',
+        'hahaha\\api\\facebook\\bot\\hahaha_controller' => __DIR__ . '/../..' . '/app/http/api/v1.0/facebook/bot/hahaha/hahaha_controller.php',
+        'hahaha\\api\\line\\bot\\hahaha_controller' => __DIR__ . '/../..' . '/app/http/api/v1.0/line/bot/hahaha/hahaha_controller.php',
+        'hahaha\\asset\\hahaha_asset_base' => __DIR__ . '/../..' . '/framework/hahaha/base/asset/hahaha_asset_base.php',
+        'hahaha\\asset\\normal\\hahaha_asset' => __DIR__ . '/../..' . '/resources/assets/normal/hahaha_asset.php',
+        'hahaha\\asset\\normal\\set\\hahaha_asset_class' => __DIR__ . '/../..' . '/resources/assets/normal/hahaha_asset/hahaha_asset_class.php',
+        'hahaha\\asset\\normal\\set\\hahaha_asset_class2' => __DIR__ . '/../..' . '/resources/assets/normal/hahaha_asset/hahaha_asset_class2.php',
+        'hahaha\\controller\\backend\\base_controller' => __DIR__ . '/../..' . '/app/http/controllers/base/base_controller_backend.php',
+        'hahaha\\controller\\front\\base_controller' => __DIR__ . '/../..' . '/app/http/controllers/base/base_controller_front.php',
+        'hahaha\\controller\\front\\index_controller' => __DIR__ . '/../..' . '/app/http/controllers/front/index_controller.php',
         'hahaha\\hahaha_application' => __DIR__ . '/../..' . '/app/hahaha_application.php',
         'hahaha\\hahaha_application_base' => __DIR__ . '/../..' . '/framework/hahaha/base/hahaha_application_base.php',
+        'hahaha\\hahaha_asset' => __DIR__ . '/../..' . '/app/resources/assets/hahaha_asset.php',
+        'hahaha\\hahaha_asset_base' => __DIR__ . '/../..' . '/framework/hahaha/base/hahaha_asset_base.php',
         'hahaha\\hahaha_bootstrap' => __DIR__ . '/../..' . '/bootstrap/hahaha_bootstrap.php',
         'hahaha\\hahaha_bootstrap_abc' => __DIR__ . '/../..' . '/bootstrap/hahaha_bootstrap_abc.php',
         'hahaha\\hahaha_bootstrap_base' => __DIR__ . '/../..' . '/framework/hahaha/base/hahaha_bootstrap_base.php',
@@ -1826,28 +1840,44 @@ class ComposerStaticInitc7b9e45c7c46f431606bb64338aef086
         'hahaha\\hahaha_global_default' => __DIR__ . '/../..' . '/config/global/hahaha_global_default.php',
         'hahaha\\hahaha_global_local' => __DIR__ . '/../..' . '/config/global/hahaha_global_local.php',
         'hahaha\\hahaha_instance_trait' => __DIR__ . '/../..' . '/framework/hahaha/trait/hahaha_instance_trait.php',
-        'hahaha\\hahaha_language' => __DIR__ . '/../..' . '/app/languages/hahaha_language.php',
+        'hahaha\\hahaha_language' => __DIR__ . '/../..' . '/app/resources/languages/hahaha_language.php',
         'hahaha\\hahaha_language_base' => __DIR__ . '/../..' . '/framework/hahaha/base/hahaha_language_base.php',
         'hahaha\\hahaha_menu' => __DIR__ . '/../..' . '/table/hahaha_menu.php',
+        'hahaha\\hahaha_middleware' => __DIR__ . '/../..' . '/app/http/middleware/hahaha_middleware.php',
+        'hahaha\\hahaha_middleware_base' => __DIR__ . '/../..' . '/framework/hahaha/base/hahaha_middleware_base.php',
         'hahaha\\hahaha_model_base' => __DIR__ . '/../..' . '/framework/hahaha/base/hahaha_model_base.php',
         'hahaha\\hahaha_monitor' => __DIR__ . '/../..' . '/app/hahaha_monitor.php',
         'hahaha\\hahaha_option' => __DIR__ . '/../..' . '/config/option/hahaha_option.php',
         'hahaha\\hahaha_option_default' => __DIR__ . '/../..' . '/config/option/hahaha_option_default.php',
         'hahaha\\hahaha_option_local' => __DIR__ . '/../..' . '/config/option/hahaha_option_local.php',
         'hahaha\\hahaha_parameter' => __DIR__ . '/../..' . '/table/hahaha_parameter.php',
-        'hahaha\\hahaha_route' => __DIR__ . '/../..' . '/app/routes/hahaha_route.php',
+        'hahaha\\hahaha_route' => __DIR__ . '/../..' . '/app/http/routes/hahaha_route.php',
         'hahaha\\hahaha_route_base' => __DIR__ . '/../..' . '/framework/hahaha/base/hahaha_route_base.php',
         'hahaha\\hahaha_system_setting' => __DIR__ . '/../..' . '/config/system_setting/hahaha_system_setting.php',
         'hahaha\\hahaha_system_setting_default' => __DIR__ . '/../..' . '/config/system_setting/hahaha_system_setting_default.php',
         'hahaha\\hahaha_system_setting_local' => __DIR__ . '/../..' . '/config/system_setting/hahaha_system_setting_local.php',
         'hahaha\\hahaha_view_base' => __DIR__ . '/../..' . '/framework/hahaha/base/hahaha_view_base.php',
         'hahaha\\language\\en\\hahaha_language' => __DIR__ . '/../..' . '/resources/languages/en/hahaha_language.php',
-        'hahaha\\language\\hahaha_language' => __DIR__ . '/../..' . '/config/languages/hahaha_language.php',
         'hahaha\\language\\hahaha_language_base' => __DIR__ . '/../..' . '/framework/hahaha/base/language/hahaha_language_base.php',
         'hahaha\\language\\tw\\hahaha_language' => __DIR__ . '/../..' . '/resources/languages/tw/hahaha_language.php',
         'hahaha\\language\\tw\\set\\hahaha_language_class' => __DIR__ . '/../..' . '/resources/languages/tw/hahaha_language/hahaha_language_class.php',
         'hahaha\\language\\tw\\set\\hahaha_language_class2' => __DIR__ . '/../..' . '/resources/languages/tw/hahaha_language/hahaha_language_class2.php',
-        'hahaha\\view\\index_view' => __DIR__ . '/../..' . '/app/views/index_view.php',
+        'hahaha\\middleware\\hahaha_middleware_api' => __DIR__ . '/../..' . '/app/http/middleware/middleware/hahaha_middleware_api.php',
+        'hahaha\\middleware\\hahaha_middleware_base' => __DIR__ . '/../..' . '/framework/hahaha/base/middleware/hahaha_middleware_base.php',
+        'hahaha\\middleware\\hahaha_middleware_web' => __DIR__ . '/../..' . '/app/http/middleware/middleware/hahaha_middleware_web.php',
+        'hahaha\\middleware\\hahaha_middleware_web_backend' => __DIR__ . '/../..' . '/app/http/middleware/middleware/web/hahaha_middleware_web_backend.php',
+        'hahaha\\middleware\\hahaha_middleware_web_front' => __DIR__ . '/../..' . '/app/http/middleware/middleware/web/hahaha_middleware_web_front.php',
+        'hahaha\\view\\front\\index_view_sample' => __DIR__ . '/../..' . '/app/http/views/index_view_sample.php',
+        'hahaha\\view\\module\\front\\common_home_main_home_view' => __DIR__ . '/../..' . '/app/http/views/module/front/common/home/main_home/main_home.php',
+        'hahaha\\view\\module\\front\\common_nav_main_nav_view' => __DIR__ . '/../..' . '/app/http/views/module/front/common/nav/main_nav.php',
+        'hahaha\\view\\module\\front\\common_tail_main_tail_view' => __DIR__ . '/../..' . '/app/http/views/module/front/common/tail/main_tail.php',
+        'hahaha\\view\\module\\front\\index_index_control' => __DIR__ . '/../..' . '/app/http/views/module/front/index/index_control.php',
+        'hahaha\\view\\module\\integrate\\control_main_control' => __DIR__ . '/../..' . '/app/http/views/module/integrate/control/main_control/main_control.php',
+        'hahaha\\view\\web\\common\\main_view' => __DIR__ . '/../..' . '/app/http/views/web/common/main_view.php',
+        'hahaha\\view\\web\\common\\sub_view' => __DIR__ . '/../..' . '/app/http/views/web/common/sub_view.php',
+        'hahaha\\view\\web\\front\\index_view' => __DIR__ . '/../..' . '/app/http/views/web/front/index_view.php',
+        'hahaha\\view\\web\\front\\main_home_feature_view' => __DIR__ . '/../..' . '/app/http/views/web/front/common/home/main_home/main_home_feature.php',
+        'hahaha\\view\\web\\front\\main_home_overview_view' => __DIR__ . '/../..' . '/app/http/views/web/front/common/home/main_home/main_home_overview.php',
         'hahahalib\\external\\hahaha_external_variable_arg' => __DIR__ . '/../..' . '/libraries/hahahalib/native/external_variable/hahaha_external_variable_arg.php',
         'hahahalib\\external\\hahaha_external_variable_cookie' => __DIR__ . '/../..' . '/libraries/hahahalib/native/external_variable/hahaha_external_variable_cookie.php',
         'hahahalib\\external\\hahaha_external_variable_env' => __DIR__ . '/../..' . '/libraries/hahahalib/native/external_variable/hahaha_external_variable_env.php',
@@ -1861,15 +1891,19 @@ class ComposerStaticInitc7b9e45c7c46f431606bb64338aef086
         'hahahalib\\external\\lite\\hahaha_external_variable_server_lite' => __DIR__ . '/../..' . '/libraries/hahahalib/native/external_variable/lite/hahaha_external_variable_server_lite.php',
         'hahahalib\\facebook' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/facebook/facebook.php',
         'hahahalib\\facebook_messenger' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/facebook/messenger/facebook_messenger.php',
+        'hahahalib\\hahaha_asset' => __DIR__ . '/../..' . '/libraries/hahahalib/native/asset/hahaha_asset.php',
         'hahahalib\\hahaha_class_instance_handle_trait' => __DIR__ . '/../..' . '/libraries/hahahalib/native/trait/hahaha_class_instance_handle_trait.php',
+        'hahahalib\\hahaha_class_instance_handle_trait_http' => __DIR__ . '/../..' . '/libraries/hahahalib/native/trait/hahaha_class_instance_handle_trait_http.php',
         'hahahalib\\hahaha_class_instance_handle_trait_lite' => __DIR__ . '/../..' . '/libraries/hahahalib/native/trait/hahaha_class_instance_handle_trait_lite.php',
-        'hahahalib\\hahaha_cli_function' => __DIR__ . '/../..' . '/libraries/hahahalib/native/function/hahaha_function_cli.php',
+        'hahahalib\\hahaha_function_cli' => __DIR__ . '/../..' . '/libraries/hahahalib/native/function/hahaha_function_cli.php',
+        'hahahalib\\hahaha_function_session' => __DIR__ . '/../..' . '/libraries/hahahalib/native/function/hahaha_function_session.php',
         'hahahalib\\hahaha_instance_trait' => __DIR__ . '/../..' . '/libraries/hahahalib/native/trait/hahaha_instance_trait.php',
         'hahahalib\\hahaha_language' => __DIR__ . '/../..' . '/libraries/hahahalib/native/language/hahaha_language.php',
         'hahahalib\\hahaha_lock_mutex' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/lock/mutex/hahaha_lock_mutex.php',
         'hahahalib\\hahaha_lock_redis' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/lock/redis/hahaha_lock_redis.php',
         'hahahalib\\hahaha_log' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/log/hahaha_log.php',
         'hahahalib\\hahaha_orm_doctrine' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/orm/doctrine/hahaha_orm_doctrine.php',
+        'hahahalib\\hahaha_orm_doctrine_base' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/orm/doctrine/base/hahaha_orm_doctrine_base.php',
         'hahahalib\\hahaha_parser_url' => __DIR__ . '/../..' . '/libraries/hahahalib/native/parser/hahaha_parser_url.php',
         'hahahalib\\hahaha_route' => __DIR__ . '/../..' . '/libraries/hahahalib/native/route/hahaha_route.php',
         'hahahalib\\hahaha_view' => __DIR__ . '/../..' . '/libraries/hahahalib/native/view/hahaha_view.php',
@@ -1906,11 +1940,11 @@ class ComposerStaticInitc7b9e45c7c46f431606bb64338aef086
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc7b9e45c7c46f431606bb64338aef086::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc7b9e45c7c46f431606bb64338aef086::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc7b9e45c7c46f431606bb64338aef086::$prefixesPsr0;
-            $loader->fallbackDirsPsr0 = ComposerStaticInitc7b9e45c7c46f431606bb64338aef086::$fallbackDirsPsr0;
-            $loader->classMap = ComposerStaticInitc7b9e45c7c46f431606bb64338aef086::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInited52258c47506bb06cd8d32fdf88156a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInited52258c47506bb06cd8d32fdf88156a::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInited52258c47506bb06cd8d32fdf88156a::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInited52258c47506bb06cd8d32fdf88156a::$fallbackDirsPsr0;
+            $loader->classMap = ComposerStaticInited52258c47506bb06cd8d32fdf88156a::$classMap;
 
         }, null, ClassLoader::class);
     }

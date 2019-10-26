@@ -19,7 +19,7 @@ class hahaha_system_setting_local
 	*/
 	public function Initial_Ha($system_setting)
 	{
-
+		$system_setting->Asset->Version = '?v=' .time();
 	}
 	
 }

@@ -73,7 +73,9 @@ class hahaha_system_setting
 		$system_setting->Cli = new \stdClass;
 		$system_setting->Cli->Enabled = true;
 		$system_setting->Cli->Initial = true;
-		
+		// Asset
+		$system_setting->Asset = new \stdClass;
+		$system_setting->Asset->Version = '';
 		
 	}	
 	

@@ -19,8 +19,8 @@ class Lang
 	$t_->Target(['a','b']);
 	$t1_ = \ha\Lang::Locale('en')->Language('default')->Initial();
 	$t1_->Target(['a','b']);
-	var_dump($t_->translate('d', ['a','b']));
-	var_dump($t1_->translate('d', ['a','b']));
+	var_dump($t_->Translate('d', ['a','b']));
+	var_dump($t1_->Translate('d', ['a','b']));
 	*/
 	public static function Locale($locale)
 	{
@@ -36,7 +36,7 @@ class Lang
 	\ha\Lang::Get()->Initial();
 	$t_ = \ha\Lang::Language('default')->Initial();
 	$t_->Target(['a','b']);
-	var_dump($t_->translate('d', ['a','b']));
+	var_dump($t_->Translate('d', ['a','b']));
 	*/
 	public static function Language($language)
 	{
