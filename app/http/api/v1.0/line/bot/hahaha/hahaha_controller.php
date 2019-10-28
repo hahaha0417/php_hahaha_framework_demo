@@ -25,7 +25,7 @@
 // http://marcoyan0814.blogspot.com/2016/11/line-line-messaging-api-for-php-line-bot.html
 // http://hiroasake.blogspot.com/2018/10/line-botphp-bot.html
 
-namespace hahaha\api\line\bot;
+namespace hahaha\api\line\bot\hahaha;
 
 class hahaha_controller extends \hahaha\hahaha_controller_base
 {    

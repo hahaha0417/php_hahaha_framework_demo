@@ -42,7 +42,13 @@ class hahaha_option
 		$option->Line = new \stdClass;
 		$option->Line->Channel_Access_Token = "";
 		$option->Line->Channel_Secret = "";
-
+		// 暫時建這裡，應該要存在storage
+		$option->Line->Bot = new \stdClass;
+		$option->Line->Bot->Users = [
+			// 使用者 密碼
+			'hahaha' => 'hahaha', // 以後改MD5
+		];
+		
 		$option->Language = new \stdClass;
 		$option->Language->T = new \stdClass;
 		$option->Language->T->Locale = 'en';
@@ -59,6 +65,14 @@ class hahaha_option
 		$option->Mysql->Db_Name = '';
 		$option->Mysql->Path = $app_->Root_ . '/app/models';
 		$option->Mysql->Charset = 'UTF8';
+		// Ftp
+		$option->FTP = new \stdClass;
+		// $option->FTP->Ip = "http://220.134.227.222";
+		// $option->FTP->Port = 21;
+		// $option->FTP->User = "hahaha_bot";
+		// $option->FTP->Password = "hahaha";
+		$option->FTP->Path = "D:/FTP/bot";
+		$option->FTP->Setting = "setting.php";
 
 	}
 }

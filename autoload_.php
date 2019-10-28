@@ -32,8 +32,17 @@ class hahaha_loader
 					],
 					"line" => [
 						"bot" => [
+							"common" => [
+								"_Items" => [
+									"hahaha_controller" => 'app/http/api/v1.0/line/bot/common/hahaha_controller.php',
+								],
+							],
+							"hahaha" => [
+								"_Items" => [
+									"hahaha_controller" => 'app/http/api/v1.0/line/bot/hahaha/hahaha_controller.php',
+								],
+							],
 							"_Items" => [
-								"hahaha_controller" => 'app/http/api/v1.0/line/bot/hahaha/hahaha_controller.php',
 							],
 						],
 						"_Items" => [
@@ -193,8 +202,14 @@ class hahaha_loader
 				"_Items" => [
 				],
 			],
+			"framework" => [
+				"_Items" => [
+					"framework_loader" => 'framework/autoload_.php',
+				],
+			],
 			"ha" => [
 				"_Items" => [
+					"App" => 'framework/hahaha/ha/App.php',
 					"Application" => 'framework/hahaha/ha/Appication.php',
 					"Asset" => 'framework/hahaha/ha/Asset.php',
 					"Bootstrap" => 'framework/hahaha/ha/Bootstrap.php',
@@ -237,6 +252,7 @@ class hahaha_loader
 					],
 				],
 				"_Items" => [
+					"hahahalib_loader" => 'libraries/autoload_.php',
 					"facebook" => 'libraries/hahahalib/composite/facebook/facebook.php',
 					"facebook_messenger" => 'libraries/hahahalib/composite/facebook/messenger/facebook_messenger.php',
 					"linebot_broadcast" => 'libraries/hahahalib/composite/line/bot/function/linebot_broadcast.php',
@@ -260,6 +276,11 @@ class hahaha_loader
 					"hahaha_class_instance_handle_trait_lite" => 'libraries/hahahalib/native/trait/hahaha_class_instance_handle_trait_lite.php',
 					"hahaha_instance_trait" => 'libraries/hahahalib/native/trait/hahaha_instance_trait.php',
 					"hahaha_view" => 'libraries/hahahalib/native/view/hahaha_view.php',
+				],
+			],
+			"vendor" => [
+				"_Items" => [
+					"vendor_loader" => 'vendor/autoload_.php',
 				],
 			],
 			"BotMan" => [

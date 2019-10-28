@@ -145,7 +145,7 @@ class linebot_reply_message
     {
         $reply_token_ = $event->getReplyToken();
         $message_location_ = new \LINE\LINEBot\MessageBuilder\LocationMessageBuilder($title, $address, $latitude, $longitude);
-        return $this->Linebot_->Linebot_->replyMessage($reply_token_, $message_location);
+        return $this->Linebot_->Linebot_->replyMessage($reply_token_, $message_location_);
     }	
 
     /*

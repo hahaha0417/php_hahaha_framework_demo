@@ -14,10 +14,16 @@ $route->Group(
         'namespace' => 'hahaha\\api\\line\\bot'
     ],
     function($route){
-         $route->Get("/bot/hahaha/callback")->Controller("hahaha_controller", "Callback");	
-        $route->Post("/bot/hahaha/callback")->Controller("hahaha_controller", "Callback");	
+        // hahaha line bot
+        // $route->Get("/bot/hahaha/callback")->Controller("hahaha\\hahaha_controller", "Callback");	
+        $route->Post("/bot/hahaha/callback")->Controller("hahaha\\hahaha_controller", "Callback");	
+        // 通用line bot
+        $route->Get("/bot/common/callback/ha[user]/ha[callback]/ha[setting]")->Controller("common\\hahaha_controller", "Callback");	
+        $route->Post("/bot/common/callback/ha[user]/ha[callback]/ha[setting]")->Controller("common\\hahaha_controller", "Callback");
+        
     }							
 );
+
 
 // Facebook
 $route->Group(
