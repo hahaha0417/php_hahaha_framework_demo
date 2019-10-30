@@ -43,4 +43,8 @@ class hahaha_lock_mutex
     {
      
     }
+
+    /*
+    這只是用來初始化
+    */
 }

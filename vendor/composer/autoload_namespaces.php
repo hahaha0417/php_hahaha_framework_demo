@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'stringEncode' => array($vendorDir . '/paquettg/string-encode/src'),
     'Evenement' => array($vendorDir . '/evenement/evenement/src'),
+    'Christiaan\\StreamProcess' => array($vendorDir . '/christiaan/stream-process/src'),
     '' => array($baseDir . '/src'),
 );

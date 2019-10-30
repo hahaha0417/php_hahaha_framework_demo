@@ -45,12 +45,12 @@ class hahaha_controller extends \hahaha\hahaha_controller_base
 	
 	public function Broadcast($type)
     {
-		// $linebot_ = new \hahahalib\linebot(
+		// $linebot_ = new \hahahalib\line\hahaha_linebot(
 		// 	'x/eb6xIldWmwn38EPY8y2lhQJKln2QIrCrikJfUvdxjVnlsGEuFkfSey7V+a0ucKL+lhNUm9YwUwyLmzOJ2RNY7qmPMu5XEp8/SXvG03peOJ69PTF7ZZu0D6Lor5Z+nsc7l2oQ/iGYafjEbVIvuHqAdB04t89/1O/w1cDnyilFU=',
 		// 	'742e69bbc26d797d8cfdbe7be93a1862'
 		// );
 		
-		// $linebot_broadcast_ = new \hahahalib\linebot_broadcast;
+		// $linebot_broadcast_ = new \hahahalib\line\hahaha_linebot_broadcast;
 		
 		// switch($type)
 		// {
@@ -266,7 +266,7 @@ class hahaha_controller extends \hahaha\hahaha_controller_base
 	)
 	{
 		
-		$linebot_reply_message_ = \hahahalib\linebot_reply_message::Instance();
+		$linebot_reply_message_ = \hahahalib\line\hahaha_linebot_reply_message::Instance();
 		$n_command = count($command_token);		
 		
 		// 有用到$command_parameter才處理$command_parameter，加快速度，不是每個指令都要參數
@@ -388,7 +388,7 @@ class hahaha_controller extends \hahaha\hahaha_controller_base
 		&$setting
 	)
 	{
-		$linebot_reply_message_ = \hahahalib\linebot_reply_message::Instance();
+		$linebot_reply_message_ = \hahahalib\line\hahaha_linebot_reply_message::Instance();
 		
 		$id_ = &$event->getUserId();
 		if($this->Global_['users'][$id_]['state'] == 'login')
@@ -501,7 +501,7 @@ class hahaha_controller extends \hahaha\hahaha_controller_base
 	*/
 	public function Reply(&$event, &$command)
 	{
-		$linebot_reply_message_ = \hahahalib\linebot_reply_message::Instance();
+		$linebot_reply_message_ = \hahahalib\line\hahaha_linebot_reply_message::Instance();
 		
 		// 有用到$command_parameter才處理$command_parameter，加快速度，不是每個指令都要參數
 		switch($command['command'])
@@ -760,11 +760,11 @@ class hahaha_controller extends \hahaha\hahaha_controller_base
 		// --------------------------------------------------------------------------
 		// 訊息處理
 		// --------------------------------------------------------------------------
-		$linebot_ = \hahahalib\linebot::Instance()->Initial_Config(
+		$linebot_ = \hahahalib\line\hahaha_linebot::Instance()->Initial_Config(
 			$ftp_setting_->Line->Bot->Hahaha->Channel_Access_Token,
 			$ftp_setting_->Line->Bot->Hahaha->Channel_Secret
 		);
-		$linebot_reply_message_ = \hahahalib\linebot_reply_message::Instance();
+		$linebot_reply_message_ = \hahahalib\line\hahaha_linebot_reply_message::Instance();
 		
 		$linebot_reply_message_->Handle($linebot_, function(&$linebot_reply_message, &$event) use (&$commands_, &$user, &$callback, &$setting){
 			// 陣列裡面是物件

@@ -18,6 +18,7 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'fe62ba7e10580d903cc46d808b5961a4' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/helpers.php',
         'caf31cc6ec7cf2241cb6f12c226c3846' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/alias.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -27,6 +28,9 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         ),
         'T' => 
         array (
+            'Tivie\\OS\\' => 9,
+            'Tivie\\Command\\' => 14,
+            'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tightenco\\Collect\\' => 18,
         ),
         'S' => 
@@ -41,6 +45,7 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Mime\\' => 23,
             'Symfony\\Component\\HttpFoundation\\' => 33,
+            'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Spatie\\Macroable\\' => 17,
         ),
@@ -59,6 +64,8 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
+            'PHPMailer\\PHPMailer\\' => 20,
+            'PHPHtmlParser\\' => 14,
         ),
         'O' => 
         array (
@@ -72,6 +79,11 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'L' => 
         array (
             'LINE\\' => 5,
+        ),
+        'E' => 
+        array (
+            'ExecParallel\\' => 13,
+            'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
         array (
@@ -96,6 +108,18 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'malkusch\\lock\\' => 
         array (
             0 => __DIR__ . '/..' . '/malkusch/lock/classes',
+        ),
+        'Tivie\\OS\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tivie/php-os-detector/src',
+        ),
+        'Tivie\\Command\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tivie/command/src',
+        ),
+        'TijsVerkoyen\\CssToInlineStyles\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
         ),
         'Tightenco\\Collect\\' => 
         array (
@@ -140,6 +164,10 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'Symfony\\Component\\HttpFoundation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/http-foundation',
+        ),
+        'Symfony\\Component\\CssSelector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/css-selector',
         ),
         'Symfony\\Component\\Console\\' => 
         array (
@@ -189,6 +217,14 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'PHPHtmlParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser',
+        ),
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
@@ -204,6 +240,14 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'LINE\\' => 
         array (
             0 => __DIR__ . '/..' . '/linecorp/line-bot-sdk/src',
+        ),
+        'ExecParallel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ravisorg/exec-parallel/src',
+        ),
+        'Egulias\\EmailValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
         ),
         'Doctrine\\ORM\\' => 
         array (
@@ -255,11 +299,25 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
     );
 
     public static $prefixesPsr0 = array (
+        's' => 
+        array (
+            'stringEncode' => 
+            array (
+                0 => __DIR__ . '/..' . '/paquettg/string-encode/src',
+            ),
+        ),
         'E' => 
         array (
             'Evenement' => 
             array (
                 0 => __DIR__ . '/..' . '/evenement/evenement/src',
+            ),
+        ),
+        'C' => 
+        array (
+            'Christiaan\\StreamProcess' => 
+            array (
+                0 => __DIR__ . '/..' . '/christiaan/stream-process/src',
             ),
         ),
     );
@@ -273,6 +331,7 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'App\\Api\\Controllers\\Front\\v1_0\\Facebook\\Bot\\Hahaha\\HahahaController' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/facebook/messenger/example/Facebook/Bot/Hahaha/HahahaController.php',
         'App\\Api\\Controllers\\Front\\v1_0\\Line\\Bot\\Hahaha\\CommonController' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/line/bot/example/Line/Bot/Hahaha/CommonController.php',
         'App\\Api\\Controllers\\Front\\v1_0\\Line\\Bot\\Hahaha\\HahahaController' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/line/bot/example/Line/Bot/Hahaha/HahahaController.php',
+        'App\\Library\\GetStars' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/parser/php_html_parser/example/Library/GetStars.php',
         'BotMan\\BotMan\\BotMan' => __DIR__ . '/..' . '/botman/botman/src/BotMan.php',
         'BotMan\\BotMan\\BotManFactory' => __DIR__ . '/..' . '/botman/botman/src/BotManFactory.php',
         'BotMan\\BotMan\\BotManServiceProvider' => __DIR__ . '/..' . '/botman/botman/src/BotManServiceProvider.php',
@@ -396,6 +455,8 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'BotMan\\Drivers\\Facebook\\FacebookVideoDriver' => __DIR__ . '/..' . '/botman/driver-facebook/src/FacebookVideoDriver.php',
         'BotMan\\Drivers\\Facebook\\Interfaces\\Airline' => __DIR__ . '/..' . '/botman/driver-facebook/src/Interfaces/Airline.php',
         'BotMan\\Drivers\\Facebook\\Providers\\FacebookServiceProvider' => __DIR__ . '/..' . '/botman/driver-facebook/src/Providers/FacebookServiceProvider.php',
+        'Christiaan\\StreamProcess\\Exception' => __DIR__ . '/..' . '/christiaan/stream-process/src/Christiaan/StreamProcess/Exception.php',
+        'Christiaan\\StreamProcess\\StreamProcess' => __DIR__ . '/..' . '/christiaan/stream-process/src/Christiaan/StreamProcess/StreamProcess.php',
         'Doctrine\\Common\\Annotations\\Annotation' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation.php',
         'Doctrine\\Common\\Annotations\\AnnotationException' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php',
         'Doctrine\\Common\\Annotations\\AnnotationReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationReader.php',
@@ -1148,9 +1209,74 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'Doctrine\\ORM\\Utility\\IdentifierFlattener' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Utility/IdentifierFlattener.php',
         'Doctrine\\ORM\\Utility\\PersisterHelper' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Utility/PersisterHelper.php',
         'Doctrine\\ORM\\Version' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Version.php',
+        'Egulias\\EmailValidator\\EmailLexer' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/EmailLexer.php',
+        'Egulias\\EmailValidator\\EmailParser' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/EmailParser.php',
+        'Egulias\\EmailValidator\\EmailValidator' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/EmailValidator.php',
+        'Egulias\\EmailValidator\\Exception\\AtextAfterCFWS' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/AtextAfterCFWS.php',
+        'Egulias\\EmailValidator\\Exception\\CRLFAtTheEnd' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/CRLFAtTheEnd.php',
+        'Egulias\\EmailValidator\\Exception\\CRLFX2' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/CRLFX2.php',
+        'Egulias\\EmailValidator\\Exception\\CRNoLF' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/CRNoLF.php',
+        'Egulias\\EmailValidator\\Exception\\CharNotAllowed' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/CharNotAllowed.php',
+        'Egulias\\EmailValidator\\Exception\\CommaInDomain' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/CommaInDomain.php',
+        'Egulias\\EmailValidator\\Exception\\ConsecutiveAt' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/ConsecutiveAt.php',
+        'Egulias\\EmailValidator\\Exception\\ConsecutiveDot' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/ConsecutiveDot.php',
+        'Egulias\\EmailValidator\\Exception\\DomainHyphened' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/DomainHyphened.php',
+        'Egulias\\EmailValidator\\Exception\\DotAtEnd' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/DotAtEnd.php',
+        'Egulias\\EmailValidator\\Exception\\DotAtStart' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/DotAtStart.php',
+        'Egulias\\EmailValidator\\Exception\\ExpectingAT' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/ExpectingAT.php',
+        'Egulias\\EmailValidator\\Exception\\ExpectingATEXT' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/ExpectingATEXT.php',
+        'Egulias\\EmailValidator\\Exception\\ExpectingCTEXT' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/ExpectingCTEXT.php',
+        'Egulias\\EmailValidator\\Exception\\ExpectingDTEXT' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/ExpectingDTEXT.php',
+        'Egulias\\EmailValidator\\Exception\\ExpectingDomainLiteralClose' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/ExpectingDomainLiteralClose.php',
+        'Egulias\\EmailValidator\\Exception\\ExpectingQPair' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/ExpectingQPair.php',
+        'Egulias\\EmailValidator\\Exception\\InvalidEmail' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/InvalidEmail.php',
+        'Egulias\\EmailValidator\\Exception\\NoDNSRecord' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/NoDNSRecord.php',
+        'Egulias\\EmailValidator\\Exception\\NoDomainPart' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/NoDomainPart.php',
+        'Egulias\\EmailValidator\\Exception\\NoLocalPart' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/NoLocalPart.php',
+        'Egulias\\EmailValidator\\Exception\\UnclosedComment' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/UnclosedComment.php',
+        'Egulias\\EmailValidator\\Exception\\UnclosedQuotedString' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/UnclosedQuotedString.php',
+        'Egulias\\EmailValidator\\Exception\\UnopenedComment' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Exception/UnopenedComment.php',
+        'Egulias\\EmailValidator\\Parser\\DomainPart' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Parser/DomainPart.php',
+        'Egulias\\EmailValidator\\Parser\\LocalPart' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Parser/LocalPart.php',
+        'Egulias\\EmailValidator\\Parser\\Parser' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Parser/Parser.php',
+        'Egulias\\EmailValidator\\Validation\\DNSCheckValidation' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Validation/DNSCheckValidation.php',
+        'Egulias\\EmailValidator\\Validation\\EmailValidation' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Validation/EmailValidation.php',
+        'Egulias\\EmailValidator\\Validation\\Error\\RFCWarnings' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Validation/Error/RFCWarnings.php',
+        'Egulias\\EmailValidator\\Validation\\Error\\SpoofEmail' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Validation/Error/SpoofEmail.php',
+        'Egulias\\EmailValidator\\Validation\\Exception\\EmptyValidationList' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Validation/Exception/EmptyValidationList.php',
+        'Egulias\\EmailValidator\\Validation\\MultipleErrors' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Validation/MultipleErrors.php',
+        'Egulias\\EmailValidator\\Validation\\MultipleValidationWithAnd' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Validation/MultipleValidationWithAnd.php',
+        'Egulias\\EmailValidator\\Validation\\NoRFCWarningsValidation' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Validation/NoRFCWarningsValidation.php',
+        'Egulias\\EmailValidator\\Validation\\RFCValidation' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Validation/RFCValidation.php',
+        'Egulias\\EmailValidator\\Validation\\SpoofCheckValidation' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Validation/SpoofCheckValidation.php',
+        'Egulias\\EmailValidator\\Warning\\AddressLiteral' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/AddressLiteral.php',
+        'Egulias\\EmailValidator\\Warning\\CFWSNearAt' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/CFWSNearAt.php',
+        'Egulias\\EmailValidator\\Warning\\CFWSWithFWS' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/CFWSWithFWS.php',
+        'Egulias\\EmailValidator\\Warning\\Comment' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/Comment.php',
+        'Egulias\\EmailValidator\\Warning\\DeprecatedComment' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/DeprecatedComment.php',
+        'Egulias\\EmailValidator\\Warning\\DomainLiteral' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/DomainLiteral.php',
+        'Egulias\\EmailValidator\\Warning\\DomainTooLong' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/DomainTooLong.php',
+        'Egulias\\EmailValidator\\Warning\\EmailTooLong' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/EmailTooLong.php',
+        'Egulias\\EmailValidator\\Warning\\IPV6BadChar' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/IPV6BadChar.php',
+        'Egulias\\EmailValidator\\Warning\\IPV6ColonEnd' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/IPV6ColonEnd.php',
+        'Egulias\\EmailValidator\\Warning\\IPV6ColonStart' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/IPV6ColonStart.php',
+        'Egulias\\EmailValidator\\Warning\\IPV6Deprecated' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/IPV6Deprecated.php',
+        'Egulias\\EmailValidator\\Warning\\IPV6DoubleColon' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/IPV6DoubleColon.php',
+        'Egulias\\EmailValidator\\Warning\\IPV6GroupCount' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/IPV6GroupCount.php',
+        'Egulias\\EmailValidator\\Warning\\IPV6MaxGroups' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/IPV6MaxGroups.php',
+        'Egulias\\EmailValidator\\Warning\\LabelTooLong' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/LabelTooLong.php',
+        'Egulias\\EmailValidator\\Warning\\LocalTooLong' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/LocalTooLong.php',
+        'Egulias\\EmailValidator\\Warning\\NoDNSMXRecord' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/NoDNSMXRecord.php',
+        'Egulias\\EmailValidator\\Warning\\ObsoleteDTEXT' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/ObsoleteDTEXT.php',
+        'Egulias\\EmailValidator\\Warning\\QuotedPart' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/QuotedPart.php',
+        'Egulias\\EmailValidator\\Warning\\QuotedString' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/QuotedString.php',
+        'Egulias\\EmailValidator\\Warning\\TLD' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/TLD.php',
+        'Egulias\\EmailValidator\\Warning\\Warning' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/Warning.php',
         'Evenement\\EventEmitter' => __DIR__ . '/..' . '/evenement/evenement/src/Evenement/EventEmitter.php',
         'Evenement\\EventEmitterInterface' => __DIR__ . '/..' . '/evenement/evenement/src/Evenement/EventEmitterInterface.php',
         'Evenement\\EventEmitterTrait' => __DIR__ . '/..' . '/evenement/evenement/src/Evenement/EventEmitterTrait.php',
+        'ExecParallel\\Controller' => __DIR__ . '/..' . '/ravisorg/exec-parallel/src/Controller.php',
+        'ExecParallel\\Job' => __DIR__ . '/..' . '/ravisorg/exec-parallel/src/Job.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'LINE\\LINEBot' => __DIR__ . '/..' . '/linecorp/line-bot-sdk/src/LINEBot.php',
         'LINE\\LINEBot\\Constant\\ActionType' => __DIR__ . '/..' . '/linecorp/line-bot-sdk/src/LINEBot/Constant/ActionType.php',
@@ -1397,6 +1523,37 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'Opis\\Closure\\SecurityProvider' => __DIR__ . '/..' . '/opis/closure/src/SecurityProvider.php',
         'Opis\\Closure\\SelfReference' => __DIR__ . '/..' . '/opis/closure/src/SelfReference.php',
         'Opis\\Closure\\SerializableClosure' => __DIR__ . '/..' . '/opis/closure/src/SerializableClosure.php',
+        'PHPHtmlParser\\Content' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Content.php',
+        'PHPHtmlParser\\Curl' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Curl.php',
+        'PHPHtmlParser\\CurlInterface' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/CurlInterface.php',
+        'PHPHtmlParser\\Dom' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Dom.php',
+        'PHPHtmlParser\\Dom\\AbstractNode' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Dom/AbstractNode.php',
+        'PHPHtmlParser\\Dom\\ArrayNode' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Dom/ArrayNode.php',
+        'PHPHtmlParser\\Dom\\Collection' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Dom/Collection.php',
+        'PHPHtmlParser\\Dom\\HtmlNode' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Dom/HtmlNode.php',
+        'PHPHtmlParser\\Dom\\InnerNode' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Dom/InnerNode.php',
+        'PHPHtmlParser\\Dom\\LeafNode' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Dom/LeafNode.php',
+        'PHPHtmlParser\\Dom\\Tag' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Dom/Tag.php',
+        'PHPHtmlParser\\Dom\\TextNode' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Dom/TextNode.php',
+        'PHPHtmlParser\\Exceptions\\ChildNotFoundException' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/ChildNotFoundException.php',
+        'PHPHtmlParser\\Exceptions\\CircularException' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/CircularException.php',
+        'PHPHtmlParser\\Exceptions\\CurlException' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/CurlException.php',
+        'PHPHtmlParser\\Exceptions\\EmptyCollectionException' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/EmptyCollectionException.php',
+        'PHPHtmlParser\\Exceptions\\NotLoadedException' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/NotLoadedException.php',
+        'PHPHtmlParser\\Exceptions\\ParentNotFoundException' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/ParentNotFoundException.php',
+        'PHPHtmlParser\\Exceptions\\StrictException' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/StrictException.php',
+        'PHPHtmlParser\\Exceptions\\UnknownChildTypeException' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/UnknownChildTypeException.php',
+        'PHPHtmlParser\\Finder' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Finder.php',
+        'PHPHtmlParser\\Options' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Options.php',
+        'PHPHtmlParser\\Selector\\Parser' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Selector/Parser.php',
+        'PHPHtmlParser\\Selector\\ParserInterface' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Selector/ParserInterface.php',
+        'PHPHtmlParser\\Selector\\Selector' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/Selector/Selector.php',
+        'PHPHtmlParser\\StaticDom' => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser/StaticDom.php',
+        'PHPMailer\\PHPMailer\\Exception' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/Exception.php',
+        'PHPMailer\\PHPMailer\\OAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/OAuth.php',
+        'PHPMailer\\PHPMailer\\PHPMailer' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/PHPMailer.php',
+        'PHPMailer\\PHPMailer\\POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/POP3.php',
+        'PHPMailer\\PHPMailer\\SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/SMTP.php',
         'Psr\\Container\\ContainerExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerExceptionInterface.php',
         'Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',
         'Psr\\Container\\NotFoundExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/NotFoundExceptionInterface.php',
@@ -1572,6 +1729,54 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'Symfony\\Component\\Console\\Tester\\ApplicationTester' => __DIR__ . '/..' . '/symfony/console/Tester/ApplicationTester.php',
         'Symfony\\Component\\Console\\Tester\\CommandTester' => __DIR__ . '/..' . '/symfony/console/Tester/CommandTester.php',
         'Symfony\\Component\\Console\\Tester\\TesterTrait' => __DIR__ . '/..' . '/symfony/console/Tester/TesterTrait.php',
+        'Symfony\\Component\\CssSelector\\CssSelectorConverter' => __DIR__ . '/..' . '/symfony/css-selector/CssSelectorConverter.php',
+        'Symfony\\Component\\CssSelector\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/css-selector/Exception/ExceptionInterface.php',
+        'Symfony\\Component\\CssSelector\\Exception\\ExpressionErrorException' => __DIR__ . '/..' . '/symfony/css-selector/Exception/ExpressionErrorException.php',
+        'Symfony\\Component\\CssSelector\\Exception\\InternalErrorException' => __DIR__ . '/..' . '/symfony/css-selector/Exception/InternalErrorException.php',
+        'Symfony\\Component\\CssSelector\\Exception\\ParseException' => __DIR__ . '/..' . '/symfony/css-selector/Exception/ParseException.php',
+        'Symfony\\Component\\CssSelector\\Exception\\SyntaxErrorException' => __DIR__ . '/..' . '/symfony/css-selector/Exception/SyntaxErrorException.php',
+        'Symfony\\Component\\CssSelector\\Node\\AbstractNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/AbstractNode.php',
+        'Symfony\\Component\\CssSelector\\Node\\AttributeNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/AttributeNode.php',
+        'Symfony\\Component\\CssSelector\\Node\\ClassNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/ClassNode.php',
+        'Symfony\\Component\\CssSelector\\Node\\CombinedSelectorNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/CombinedSelectorNode.php',
+        'Symfony\\Component\\CssSelector\\Node\\ElementNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/ElementNode.php',
+        'Symfony\\Component\\CssSelector\\Node\\FunctionNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/FunctionNode.php',
+        'Symfony\\Component\\CssSelector\\Node\\HashNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/HashNode.php',
+        'Symfony\\Component\\CssSelector\\Node\\NegationNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/NegationNode.php',
+        'Symfony\\Component\\CssSelector\\Node\\NodeInterface' => __DIR__ . '/..' . '/symfony/css-selector/Node/NodeInterface.php',
+        'Symfony\\Component\\CssSelector\\Node\\PseudoNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/PseudoNode.php',
+        'Symfony\\Component\\CssSelector\\Node\\SelectorNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/SelectorNode.php',
+        'Symfony\\Component\\CssSelector\\Node\\Specificity' => __DIR__ . '/..' . '/symfony/css-selector/Node/Specificity.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Handler\\CommentHandler' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/CommentHandler.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Handler\\HandlerInterface' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/HandlerInterface.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Handler\\HashHandler' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/HashHandler.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Handler\\IdentifierHandler' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/IdentifierHandler.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Handler\\NumberHandler' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/NumberHandler.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Handler\\StringHandler' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/StringHandler.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Handler\\WhitespaceHandler' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/WhitespaceHandler.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Parser' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Parser.php',
+        'Symfony\\Component\\CssSelector\\Parser\\ParserInterface' => __DIR__ . '/..' . '/symfony/css-selector/Parser/ParserInterface.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Reader' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Reader.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Shortcut\\ClassParser' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Shortcut/ClassParser.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Shortcut\\ElementParser' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Shortcut/ElementParser.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Shortcut\\EmptyStringParser' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Shortcut/EmptyStringParser.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Shortcut\\HashParser' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Shortcut/HashParser.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Token' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Token.php',
+        'Symfony\\Component\\CssSelector\\Parser\\TokenStream' => __DIR__ . '/..' . '/symfony/css-selector/Parser/TokenStream.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Tokenizer/Tokenizer.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Tokenizer\\TokenizerEscaping' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Tokenizer/TokenizerEscaping.php',
+        'Symfony\\Component\\CssSelector\\Parser\\Tokenizer\\TokenizerPatterns' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Tokenizer/TokenizerPatterns.php',
+        'Symfony\\Component\\CssSelector\\XPath\\Extension\\AbstractExtension' => __DIR__ . '/..' . '/symfony/css-selector/XPath/Extension/AbstractExtension.php',
+        'Symfony\\Component\\CssSelector\\XPath\\Extension\\AttributeMatchingExtension' => __DIR__ . '/..' . '/symfony/css-selector/XPath/Extension/AttributeMatchingExtension.php',
+        'Symfony\\Component\\CssSelector\\XPath\\Extension\\CombinationExtension' => __DIR__ . '/..' . '/symfony/css-selector/XPath/Extension/CombinationExtension.php',
+        'Symfony\\Component\\CssSelector\\XPath\\Extension\\ExtensionInterface' => __DIR__ . '/..' . '/symfony/css-selector/XPath/Extension/ExtensionInterface.php',
+        'Symfony\\Component\\CssSelector\\XPath\\Extension\\FunctionExtension' => __DIR__ . '/..' . '/symfony/css-selector/XPath/Extension/FunctionExtension.php',
+        'Symfony\\Component\\CssSelector\\XPath\\Extension\\HtmlExtension' => __DIR__ . '/..' . '/symfony/css-selector/XPath/Extension/HtmlExtension.php',
+        'Symfony\\Component\\CssSelector\\XPath\\Extension\\NodeExtension' => __DIR__ . '/..' . '/symfony/css-selector/XPath/Extension/NodeExtension.php',
+        'Symfony\\Component\\CssSelector\\XPath\\Extension\\PseudoClassExtension' => __DIR__ . '/..' . '/symfony/css-selector/XPath/Extension/PseudoClassExtension.php',
+        'Symfony\\Component\\CssSelector\\XPath\\Translator' => __DIR__ . '/..' . '/symfony/css-selector/XPath/Translator.php',
+        'Symfony\\Component\\CssSelector\\XPath\\TranslatorInterface' => __DIR__ . '/..' . '/symfony/css-selector/XPath/TranslatorInterface.php',
+        'Symfony\\Component\\CssSelector\\XPath\\XPathExpr' => __DIR__ . '/..' . '/symfony/css-selector/XPath/XPathExpr.php',
         'Symfony\\Component\\HttpFoundation\\AcceptHeader' => __DIR__ . '/..' . '/symfony/http-foundation/AcceptHeader.php',
         'Symfony\\Component\\HttpFoundation\\AcceptHeaderItem' => __DIR__ . '/..' . '/symfony/http-foundation/AcceptHeaderItem.php',
         'Symfony\\Component\\HttpFoundation\\ApacheRequest' => __DIR__ . '/..' . '/symfony/http-foundation/ApacheRequest.php',
@@ -1793,6 +1998,21 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'Tightenco\\Collect\\Support\\HigherOrderCollectionProxy' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/HigherOrderCollectionProxy.php',
         'Tightenco\\Collect\\Support\\HtmlString' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/HtmlString.php',
         'Tightenco\\Collect\\Support\\Traits\\Macroable' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/Traits/Macroable.php',
+        'TijsVerkoyen\\CssToInlineStyles\\CssToInlineStyles' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/CssToInlineStyles.php',
+        'TijsVerkoyen\\CssToInlineStyles\\Css\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Processor.php',
+        'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Processor.php',
+        'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
+        'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
+        'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'Tivie\\Command\\Argument' => __DIR__ . '/..' . '/tivie/command/src/Argument.php',
+        'Tivie\\Command\\Chain' => __DIR__ . '/..' . '/tivie/command/src/Chain.php',
+        'Tivie\\Command\\Command' => __DIR__ . '/..' . '/tivie/command/src/Command.php',
+        'Tivie\\Command\\Exception\\DomainException' => __DIR__ . '/..' . '/tivie/command/src/Exception/DomainException.php',
+        'Tivie\\Command\\Exception\\Exception' => __DIR__ . '/..' . '/tivie/command/src/Exception/Exception.php',
+        'Tivie\\Command\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/tivie/command/src/Exception/InvalidArgumentException.php',
+        'Tivie\\Command\\Result' => __DIR__ . '/..' . '/tivie/command/src/Result.php',
+        'Tivie\\OS\\Detector' => __DIR__ . '/..' . '/tivie/php-os-detector/src/Detector.php',
+        'Tivie\\OS\\DetectorInterface' => __DIR__ . '/..' . '/tivie/php-os-detector/src/DetectorInterface.php',
         'framework\\framework_loader' => __DIR__ . '/../..' . '/framework/autoload_.php',
         'front\\index\\A_Index' => __DIR__ . '/../..' . '/app/http/models/front/index/A_Index.php',
         'front\\index\\A_Item' => __DIR__ . '/../..' . '/app/http/models/front/index/A_Item.php',
@@ -1803,7 +2023,9 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'ha\\Arg' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Arg.php',
         'ha\\Asset' => __DIR__ . '/../..' . '/framework/hahaha/ha/Asset.php',
         'ha\\Bootstrap' => __DIR__ . '/../..' . '/framework/hahaha/ha/Bootstrap.php',
+        'ha\\Cache' => __DIR__ . '/../..' . '/framework/hahaha/ha/Cache.php',
         'ha\\Cookie' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Cookie.php',
+        'ha\\Email' => __DIR__ . '/../..' . '/framework/hahaha/ha/Email.php',
         'ha\\Files' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Files.php',
         'ha\\Get' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Get.php',
         'ha\\Globals' => __DIR__ . '/../..' . '/framework/hahaha/ha/external/Globals.php',
@@ -1881,6 +2103,15 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'hahaha\\view\\web\\front\\index_view' => __DIR__ . '/../..' . '/app/http/views/web/front/index_view.php',
         'hahaha\\view\\web\\front\\main_home_feature_view' => __DIR__ . '/../..' . '/app/http/views/web/front/common/home/main_home/main_home_feature.php',
         'hahaha\\view\\web\\front\\main_home_overview_view' => __DIR__ . '/../..' . '/app/http/views/web/front/common/home/main_home/main_home_overview.php',
+        'hahahalib\\Extend\\ExecParallel\\Job' => __DIR__ . '/../..' . '/libraries/hahahalib/extend/command/ravisorg/Job.php',
+        'hahahalib\\cache\\hahaha_cache_doctrine' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/cache/doctrine/hahaha_cache_doctrine.php',
+        'hahahalib\\command\\hahaha_command_christiaan' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/command/christiaan/hahaha_command_christiaan.php',
+        'hahahalib\\command\\hahaha_command_ravisorg' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/command/ravisorg/hahaha_command_ravisorg.php',
+        'hahahalib\\command\\hahaha_command_tivie' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/command/tivie/hahaha_command_tivie.php',
+        'hahahalib\\css\\hahaha_css_css_to_inline_styles' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/css/css_to_illine_styles/hahaha_css_css_to_inline_styles.php',
+        'hahahalib\\email\\hahaha_email_php_mailler' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/email/php_mailler/hahaha_email_php_mailler.php',
+        'hahahalib\\email\\hahaha_email_swift_mailler' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/email/swift_maller/hahaha_email_swift_mailler.php',
+        'hahahalib\\email\\hahaha_email_validator' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/email/validator/hahaha_email_validator.php',
         'hahahalib\\external\\hahaha_external_variable_arg' => __DIR__ . '/../..' . '/libraries/hahahalib/native/external_variable/hahaha_external_variable_arg.php',
         'hahahalib\\external\\hahaha_external_variable_cookie' => __DIR__ . '/../..' . '/libraries/hahahalib/native/external_variable/hahaha_external_variable_cookie.php',
         'hahahalib\\external\\hahaha_external_variable_env' => __DIR__ . '/../..' . '/libraries/hahahalib/native/external_variable/hahaha_external_variable_env.php',
@@ -1892,8 +2123,8 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'hahahalib\\external\\hahaha_external_variable_server' => __DIR__ . '/../..' . '/libraries/hahahalib/native/external_variable/hahaha_external_variable_server.php',
         'hahahalib\\external\\hahaha_external_variable_session' => __DIR__ . '/../..' . '/libraries/hahahalib/native/external_variable/hahaha_external_variable_session.php',
         'hahahalib\\external\\lite\\hahaha_external_variable_server_lite' => __DIR__ . '/../..' . '/libraries/hahahalib/native/external_variable/lite/hahaha_external_variable_server_lite.php',
-        'hahahalib\\facebook' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/facebook/facebook.php',
-        'hahahalib\\facebook_messenger' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/facebook/messenger/facebook_messenger.php',
+        'hahahalib\\facebook\\hahaha_facebook' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/facebook/hahaha_facebook.php',
+        'hahahalib\\facebook\\hahaha_facebook_messenger' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/facebook/messenger/hahaha_facebook_messenger.php',
         'hahahalib\\hahaha_asset' => __DIR__ . '/../..' . '/libraries/hahahalib/native/asset/hahaha_asset.php',
         'hahahalib\\hahaha_class_instance_handle_trait' => __DIR__ . '/../..' . '/libraries/hahahalib/native/trait/hahaha_class_instance_handle_trait.php',
         'hahahalib\\hahaha_class_instance_handle_trait_http' => __DIR__ . '/../..' . '/libraries/hahahalib/native/trait/hahaha_class_instance_handle_trait_http.php',
@@ -1911,11 +2142,11 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'hahahalib\\hahaha_route' => __DIR__ . '/../..' . '/libraries/hahahalib/native/route/hahaha_route.php',
         'hahahalib\\hahaha_view' => __DIR__ . '/../..' . '/libraries/hahahalib/native/view/hahaha_view.php',
         'hahahalib\\hahahalib_loader' => __DIR__ . '/../..' . '/libraries/autoload_.php',
-        'hahahalib\\linebot' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/line/bot/linebot.php',
-        'hahahalib\\linebot_broadcast' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/line/bot/function/linebot_broadcast.php',
-        'hahahalib\\linebot_multicast' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/line/bot/function/linebot_multicast.php',
-        'hahahalib\\linebot_push_message' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/line/bot/function/linebot_push_message.php',
-        'hahahalib\\linebot_reply_message' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/line/bot/function/linebot_reply_message.php',
+        'hahahalib\\line\\hahaha_linebot' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/line/bot/hahaha_linebot.php',
+        'hahahalib\\line\\hahaha_linebot_broadcast' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/line/bot/function/hahaha_linebot_broadcast.php',
+        'hahahalib\\line\\hahaha_linebot_multicast' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/line/bot/function/hahaha_linebot_multicast.php',
+        'hahahalib\\line\\hahaha_linebot_push_message' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/line/bot/function/hahaha_linebot_push_message.php',
+        'hahahalib\\line\\hahaha_linebot_reply_message' => __DIR__ . '/../..' . '/libraries/hahahalib/composite/line/bot/function/hahaha_linebot_reply_message.php',
         'malkusch\\lock\\exception\\DeadlineException' => __DIR__ . '/..' . '/malkusch/lock/classes/exception/DeadlineException.php',
         'malkusch\\lock\\exception\\ExecutionOutsideLockException' => __DIR__ . '/..' . '/malkusch/lock/classes/exception/ExecutionOutsideLockException.php',
         'malkusch\\lock\\exception\\LockAcquireException' => __DIR__ . '/..' . '/malkusch/lock/classes/exception/LockAcquireException.php',
@@ -1939,6 +2170,8 @@ class ComposerStaticInited52258c47506bb06cd8d32fdf88156a
         'malkusch\\lock\\util\\DoubleCheckedLocking' => __DIR__ . '/..' . '/malkusch/lock/classes/util/DoubleCheckedLocking.php',
         'malkusch\\lock\\util\\Loop' => __DIR__ . '/..' . '/malkusch/lock/classes/util/Loop.php',
         'malkusch\\lock\\util\\PcntlTimeout' => __DIR__ . '/..' . '/malkusch/lock/classes/util/PcntlTimeout.php',
+        'stringEncode\\Encode' => __DIR__ . '/..' . '/paquettg/string-encode/src/stringEncode/Encode.php',
+        'stringEncode\\Exception' => __DIR__ . '/..' . '/paquettg/string-encode/src/stringEncode/Exception.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

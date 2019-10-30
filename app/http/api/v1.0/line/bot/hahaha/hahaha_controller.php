@@ -39,12 +39,11 @@ class hahaha_controller extends \hahaha\hahaha_controller_base
 	
 	public function Broadcast($type)
     {
-		$linebot_ = new \hahahalib\linebot(
+		$linebot_ = new \hahahalib\line\hahaha_linebot(
 			'x/eb6xIldWmwn38EPY8y2lhQJKln2QIrCrikJfUvdxjVnlsGEuFkfSey7V+a0ucKL+lhNUm9YwUwyLmzOJ2RNY7qmPMu5XEp8/SXvG03peOJ69PTF7ZZu0D6Lor5Z+nsc7l2oQ/iGYafjEbVIvuHqAdB04t89/1O/w1cDnyilFU=',
 			'742e69bbc26d797d8cfdbe7be93a1862'
 		);
 		
-		$linebot_broadcast_ = new \hahahalib\linebot_broadcast;
 		
 		switch($type)
 		{
@@ -169,12 +168,12 @@ class hahaha_controller extends \hahaha\hahaha_controller_base
 
     public function Callback()
     {  
-		$linebot_ = \hahahalib\linebot::Instance()->Initial();
+		$linebot_ = \hahahalib\line\hahaha_linebot::Instance()->Initial();
 		
-		$linebot_reply_message_ = \hahahalib\linebot_reply_message::Instance();
-		$linebot_push_message_ = \hahahalib\linebot_push_message::Instance();
-		$linebot_multicast_ = \hahahalib\linebot_multicast::Instance();
-		$linebot_broadcast_ = \hahahalib\linebot_broadcast::Instance();
+		$linebot_reply_message_ = \hahahalib\line\hahaha_linebot_reply_message::Instance();
+		$linebot_push_message_ = \hahahalib\line\hahaha_linebot_push_message::Instance();
+		$linebot_multicast_ = \hahahalib\line\hahaha_linebot_multicast::Instance();
+		$linebot_broadcast_ = \hahahalib\line\hahaha_linebot_broadcast::Instance();
 		
 		$linebot_reply_message_->Handle($linebot_, function(&$linebot_reply_message, &$event){
 			// 陣列裡面是物件

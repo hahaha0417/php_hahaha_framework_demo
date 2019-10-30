@@ -58,4 +58,12 @@ class hahaha_lock_redis
     {
      
     }
+
+    /*
+    這只是用來初始化
+    */
+    public function Initial()
+    {
+
+    }
 }

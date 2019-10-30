@@ -43,7 +43,7 @@ class hahaha_controller extends \hahaha\hahaha_controller_base
 
     public function Callback()
     {  
-		$facebook_messenger_ = new \hahahalib\facebook_messenger(
+		$facebook_messenger_ = \hahahalib\facebook\hahaha_facebook_messenger::Instance()->Initial(
 			'17c1813d6225957e7c18646a4362ae8b',			
 			'EAADjHqxJo3wBABpHjvTQfZCrfLaWtQwcifnMxljqEv64ipgnZBhxWrj25dtwEtORYCoupeplzqcbeKufLZCeAfi364WEdoSsoAlK9Sl2vL9oH9V9hSzcZCEDDldVUkCDejAGR8f244P5h7NJXkd16tNrRDgSNsCJRvLmJepXSQZDZD',
 			'hahaha'

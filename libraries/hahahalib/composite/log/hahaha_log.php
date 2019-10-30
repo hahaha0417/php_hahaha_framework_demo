@@ -9,6 +9,15 @@
 */
 
 /*
+// --------------------------------------------------------------------------
+composer require monolog/monolog
+https://github.com/Seldaek/monolog
+Licene MIT
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+*/
+
+/*
 Copyright (c) 2011-2019 Jordi Boggiano
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,14 +58,7 @@ THE SOFTWARE.
 
 namespace hahahalib;
 
-/*
-// --------------------------------------------------------------------------
-composer require monolog/monolog
-https://github.com/Seldaek/monolog
-Licene MIT
-// --------------------------------------------------------------------------
-// --------------------------------------------------------------------------
-*/
+
 use \Monolog\Logger;
 use \Monolog\Handler\StreamHandler;
 
