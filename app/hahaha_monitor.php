@@ -39,8 +39,8 @@ class hahaha_monitor
 		// echo "流程大概時間 : " . ($this->End_ - $this->Start_) * 1000 . "ms";
 		if($this->Run_)
 		{
-			\hahahalib\linebot_reply_message::Instance()->Linebot_ = \hahahalib\linebot::Instance();
-			\hahahalib\linebot_reply_message::Instance()->Text($this->Event_, "流程大概時間 : " . ($this->End_ - $this->Start_) * 1000 . "ms");
+			\hahahalib\line\hahaha_linebot_reply_message::Instance()->Linebot_ = \hahahalib\line\hahaha_linebot::Instance();
+			\hahahalib\line\hahaha_linebot_reply_message::Instance()->Text($this->Event_, "流程大概時間 : " . ($this->End_ - $this->Start_) * 1000 . "ms");
 		}
 	}
 
