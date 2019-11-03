@@ -596,7 +596,6 @@ class hahaha_loader
 					"_Items" => [
 						"Exception" => 'vendor/christiaan/stream-process/src/Christiaan/StreamProcess/Exception.php',
 						"StreamProcess" => 'vendor/christiaan/stream-process/src/Christiaan/StreamProcess/StreamProcess.php',
-						"StreamProcessTest" => 'vendor/christiaan/stream-process/test/Christiaan/StreamProcess/StreamProcessTest.php',
 					],
 				],
 				"_Items" => [
@@ -3235,21 +3234,12 @@ class hahaha_loader
 						"Chain" => 'vendor/tivie/command/src/Chain.php',
 						"Command" => 'vendor/tivie/command/src/Command.php',
 						"Result" => 'vendor/tivie/command/src/Result.php',
-						"ArgumentTest" => 'vendor/tivie/command/test/classes/ArgumentTest.php',
-						"ChainTest" => 'vendor/tivie/command/test/classes/ChainTest.php',
-						"CommandTest" => 'vendor/tivie/command/test/classes/CommandTest.php',
-						"RealTest" => 'vendor/tivie/command/test/real/RealTest.php',
 					],
 				],
 				"OS" => [
 					"_Items" => [
 						"Detector" => 'vendor/tivie/php-os-detector/src/Detector.php',
 						"DetectorInterface" => 'vendor/tivie/php-os-detector/src/DetectorInterface.php',
-						"DetectorBase" => 'vendor/tivie/php-os-detector/test/DetectorBase.php',
-						"DetectorLinuxTest" => 'vendor/tivie/php-os-detector/test/DetectorLinuxTest.php',
-						"DetectorUnixOnWindowsTest" => 'vendor/tivie/php-os-detector/test/DetectorUnixOnWindowsTest.php',
-						"DetectorUnixTest" => 'vendor/tivie/php-os-detector/test/DetectorUnixTest.php',
-						"DetectorWindowsTest" => 'vendor/tivie/php-os-detector/test/DetectorWindowsTest.php',
 					],
 				],
 				"_Items" => [
@@ -3410,7 +3400,6 @@ class hahaha_loader
 				"Swift_TransportException" => 'vendor/swiftmailer/swiftmailer/lib/classes/Swift/TransportException.php',
 				"Swift" => 'vendor/swiftmailer/swiftmailer/lib/classes/Swift.php',
 				"JsonException" => 'vendor/symfony/polyfill-php73/Resources/stubs/JsonException.php',
-				"BaseTestCase" => 'vendor/tivie/command/test/BaseTestCase.php',
 			],
 		];
 	}
