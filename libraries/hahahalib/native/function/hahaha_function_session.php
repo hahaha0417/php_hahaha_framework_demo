@@ -12,7 +12,7 @@ class hahaha_function_session
 	/*
 	啟動Session
 	*/
-	public function Start()
+	public static function Start()
 	{
 		if(!self::$Session_)
 		{
@@ -24,7 +24,7 @@ class hahaha_function_session
 	/*
 	清空Session
 	*/
-	public function Destroy()
+	public static function Destroy()
 	{
 		if(self::$Session_)
 		{
