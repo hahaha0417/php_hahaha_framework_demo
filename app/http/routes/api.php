@@ -31,7 +31,7 @@ $route->Group(
     [
         'prefix' => '',
         'middleware' => ['web'],
-        'namespace' => 'hahaha\\api\\facebook\\bot' 
+        'namespace' => 'hahaha\api\facebook\bot' 
     ],
     function($route){
         $route->Get("/bot/hahaha/callback")->Controller("hahaha_controller", "Callback");	

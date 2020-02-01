@@ -1363,20 +1363,57 @@ class index_controller extends \hahaha\controller\front\base_controller
     }
 
     public function Index_Test()
-    {        
-        
-        echo '進入controller' . "</br>"; 
-        echo "<div style='color:red;'>xxx</div>";
+    {       
+        $app_ = \hahaha\hahaha_application::Instance();
+        $doctrine_ = \hahahalib\hahaha_orm_doctrine::Instance();
+        $em_ = $doctrine_->Initial_Config('hahaha_front_index', $app_->Root_ . '/app/http/models/front/index');
 
-        $view = \hahahalib\hahaha_view::Instance();
-        $menu_ = \ha\Menu::Get();
-        $menu_->aaa = 'aaa';
-        $view->View([
-            [\hahaha\view\index_view::Instance(), "Index"],
-            [\hahaha\view\index_view::Instance(), "Index2"],
-            [\hahaha\view\index_view::Instance(), "Index3"],
-            [\hahaha\view\index_view::Instance(), "Index4"],
-        ]);
+        // $query_pic_board_ = $em_->createQueryBuilder();
+        // $pic_board_ = $query_pic_board_->select('i')
+        //     ->from('\front\index2\A_Index', 'i')
+        //     ->where('i.page = :page AND i.item = :item')
+        //     ->setParameters([
+        //         'page' => 'index', 
+        //         'item' => 'pic_board'
+        //         ]
+        //     )
+        //     ->orderBy('i.order', 'ASC')
+        //     ->getQuery()
+        //     ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+
+
+        //    var_dump($pic_board_);
+
+        // getResult有誤，似乎沒有相同key
+        $rsm_ = new \Doctrine\ORM\Query\ResultSetMappingBuilder(
+            $em_, 
+            \Doctrine\ORM\Query\ResultSetMappingBuilder::COLUMN_RENAMING_INCREMENT
+        );
+        $rsm_->addRootEntityFromClassMetadata(\front\index2\A_Index::class, 'idx');
+        // 沒有設定@OneToMany要補這個
+        $rsm_->addJoinedEntityFromClassMetadata('\front\index2\A_Item', 'it', 'idx', 'item1');
+        $q_ = "SELECT ".$rsm_->generateSelectClause()." FROM index_ idx JOIN item it ";
+        $query = $em_->createNativeQuery($q_, $rsm_);
+        $result = $query->getResult();
+
+        // $rsm_->addEntityResult('\front\index2\A_Index', 'idx');
+        // $rsm_->addFieldResult('idx', 'no', 'no'); // ($alias, $columnName, $fieldName)
+        // $rsm_->addEntityResult('\front\index2\A_Item', 'it');
+
+        var_dump($result[0]['item1'][0]);
+        
+        // echo '進入controller' . "</br>"; 
+        // echo "<div style='color:red;'>xxx</div>";
+
+        // $view = \hahahalib\hahaha_view::Instance();
+        // $menu_ = \ha\Menu::Get();
+        // $menu_->aaa = 'aaa';
+        // $view->View([
+        //     [\hahaha\view\index_view::Instance(), "Index"],
+        //     [\hahaha\view\index_view::Instance(), "Index2"],
+        //     [\hahaha\view\index_view::Instance(), "Index3"],
+        //     [\hahaha\view\index_view::Instance(), "Index4"],
+        // ]);
         
         /*
         \ha::t(['a','b']);
@@ -1453,7 +1490,7 @@ class index_controller extends \hahaha\controller\front\base_controller
 
     public function Index1()
     {
-        echo "OGC";
+        echo "OGC"; 
     }
 
     public function Index2($a, $b, $c = 1)
