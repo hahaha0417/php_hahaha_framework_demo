@@ -2,8 +2,8 @@
  \
 <img src='https://github.com/hahaha0417/php_hahaha_framework/blob/master/php%20hahaha%20framework.png' width=50%><img src='https://github.com/hahaha0417/php_hahaha_framework/blob/master/iTW.png' width=50%> 
  
- 
----------------------------------------
+
+
 
 ## 版權請看license
 
@@ -19,5 +19,4 @@
 我同意才可加進來 \
 而且不會有人沒事幫我維護這個，除非有利益關係 \
 我只維護最後一版 
- \
-// ---------------------------------------------------- 
+ 
