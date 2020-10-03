@@ -41,7 +41,7 @@ class hahaha_system_setting
 	public function Initial_Ha($system_setting)
 	{
 		$system_setting->Debug = new \stdClass;
-		$system_setting->Debug->Enabled = true;
+		$system_setting->Debug->Enabled = false;
 		// --------------------------------------------------------------------------
 		// 不可覆蓋
 		// --------------------------------------------------------------------------

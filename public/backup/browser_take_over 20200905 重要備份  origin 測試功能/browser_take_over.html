@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	
+    <title>瀏覽器接管器</title>
+	<script>
+		// https://stackoverflow.com/questions/9975810/make-iframe-automatically-adjust-height-according-to-the-contents-without-using
+		function resize_iframe(obj) {
+			obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 5 + 'px';
+		}
+	</script>
+  </head>
+  <body>
+    <style>
+	iframe {
+		width: 100%;
+		border: unset;
+	}
+	</style>
+	
+	<iframe id="browser_take_over_box" src="browser_take_over_gui.html">
+		你的瀏覽器不支援 iframe
+	</iframe>
+	<div id="node">
+		
+	</div>
+	
+	<script>
+		
+		$(window).ready(function()
+		{
+			var remote_window = null;
+			var index = 1;
+			function receive_message(event) {
+				// if (event.origin !== "http://example.org:8080") {
+				//	return;
+				//}
+				
+				var data = JSON.parse(event.data);
+				// ...
+				// alert(data.message);
+				
+				// 核心處理
+				if(data.message == "new_page") {
+					// https://www.w3schools.com/jsref/met_win_open.asp
+					remote_window = window.open('browser_take_over.html',"_blank", "resizable=yes") 
+				} 
+				else if(data.message == "run_script") {
+					// 載入腳本後，依序執行
+					index++;
+					var str = "";
+					// -- 執行js
+					// str = str + "\<script\>alert('hahaha');\ < /script\>";
+					// 附加字串
+					// str = index;
+					// $(remote_window.document).find('#node').append(str);	
+					// 覆蓋
+					// $(remote_window.document).find('#node').html(str);						
+					// remote_window.focus();
+					// 更改視窗大小
+					// remote_window.resizeTo(300, 300); 
+					// remote_window.focus(); 
+					// 點擊子視窗按鈕
+					// $(remote_window.document).find('#node').click();					
+				}
+				
+			}
+			
+			// https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+			window.addEventListener("message", receive_message, false);
+
+			
+		
+			$("#browser_take_over_box").on("load", function() {
+				// 開啟瀏覽器接管器
+				resize_iframe(this);
+			});
+			$(window).resize(function() {
+				// 開啟瀏覽器接管器
+				resize_iframe(this);
+			});
+		});
+		
+		
+	</script>
+	
+	
+	
+	
+	
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
