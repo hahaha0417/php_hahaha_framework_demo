@@ -1,10 +1,23 @@
 # php_hahaha_framework_demo
- \
-<img src='https://github.com/hahaha0417/php_hahaha_framework/blob/master/php%20hahaha%20framework.png' width=50%><img src='https://github.com/hahaha0417/php_hahaha_framework/blob/master/iTW.png' width=50%> 
 
-// ---------------------------------------------------- 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<img src='https://github.com/hahaha0417/php_hahaha_framework/blob/master/php%20hahaha%20framework.png' width=50%><img src='https://github.com/hahaha0417/php_hahaha_framework/blob/master/iTW.png' width=50%> 
+ 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 ## 版權請看license
-// ---------------------------------------------------- 
+
 ## 規劃
 這是php hahaha framework demo用的 \
 意思是你可以參考我怎麼使用php hahaha framework
@@ -17,5 +30,4 @@
 我同意才可加進來 \
 而且不會有人沒事幫我維護這個，除非有利益關係 \
 我只維護最後一版 
- \
-// ---------------------------------------------------- 
+ 
