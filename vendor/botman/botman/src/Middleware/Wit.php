@@ -4,10 +4,10 @@ namespace BotMan\BotMan\Middleware;
 
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Http\Curl;
-use Illuminate\Support\Collection;
 use BotMan\BotMan\Interfaces\HttpInterface;
 use BotMan\BotMan\Interfaces\MiddlewareInterface;
 use BotMan\BotMan\Messages\Incoming\IncomingMessage;
+use Illuminate\Support\Collection;
 
 class Wit implements MiddlewareInterface
 {
@@ -51,7 +51,7 @@ class Wit implements MiddlewareInterface
     {
         $endpoint = 'https://api.wit.ai/message?q='.urlencode($message->getText());
 
-        $this->response = $this->http->post($endpoint, [], [], [
+        $this->response = $this->http->get($endpoint, [], [
             'Authorization: Bearer '.$this->token,
         ]);
 

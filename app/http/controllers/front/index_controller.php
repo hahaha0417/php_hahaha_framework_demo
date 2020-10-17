@@ -1363,7 +1363,10 @@ class index_controller extends \hahaha\controller\front\base_controller
     }
 
     public function Index_Test()
-    {       
+    {   
+		echo "OGC";
+		return;
+		
         $app_ = \hahaha\hahaha_application::Instance();
         $doctrine_ = \hahahalib\hahaha_orm_doctrine::Instance();
         $em_ = $doctrine_->Initial_Config('hahaha_front_index', $app_->Root_ . '/app/http/models/front/index');
