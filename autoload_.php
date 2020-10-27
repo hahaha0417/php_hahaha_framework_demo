@@ -302,6 +302,7 @@ class hahaha_loader
 					],
 				],
 				"_Items" => [
+					"hahahalib_loader" => self::$hahaha_dir . '/libraries/autoload_.php',
 					"hahaha_lock_mutex" => self::$hahaha_dir . '/libraries/hahahalib/composite/lock/mutex/hahaha_lock_mutex.php',
 					"hahaha_lock_redis" => self::$hahaha_dir . '/libraries/hahahalib/composite/lock/redis/hahaha_lock_redis.php',
 					"hahaha_log" => self::$hahaha_dir . '/libraries/hahahalib/composite/log/hahaha_log.php',
@@ -316,11 +317,6 @@ class hahaha_loader
 					"hahaha_language" => self::$hahaha_dir . '/libraries/hahahalib/native/language/hahaha_language.php',
 					"hahaha_parser_url" => self::$hahaha_dir . '/libraries/hahahalib/native/parser/hahaha_parser_url.php',
 					"hahaha_route" => self::$hahaha_dir . '/libraries/hahahalib/native/route/hahaha_route.php',
-					"hahaha_socket_tool" => self::$hahaha_dir . '/libraries/hahahalib/native/socket/hahaha_socket_tool.php',
-					"hahaha_socket_tcp_client" => self::$hahaha_dir . '/libraries/hahahalib/native/socket/tcp/hahaha_socket_tcp_client.php',
-					"hahaha_socket_tcp_server" => self::$hahaha_dir . '/libraries/hahahalib/native/socket/tcp/hahaha_socket_tcp_server.php',
-					"hahaha_socket_udp_client" => self::$hahaha_dir . '/libraries/hahahalib/native/socket/udp/hahaha_socket_udp_client.php',
-					"hahaha_socket_udp_server" => self::$hahaha_dir . '/libraries/hahahalib/native/socket/udp/hahaha_socket_udp_server.php',
 					"hahaha_computer" => self::$hahaha_dir . '/libraries/hahahalib/native/thread/hahaha_computer.php',
 					"hahha_time" => self::$hahaha_dir . '/libraries/hahahalib/native/time/hahaha_time.php',
 					"hahaha_bind_trait" => self::$hahaha_dir . '/libraries/hahahalib/native/trait/hahaha_bind_trait.php',
@@ -328,7 +324,6 @@ class hahaha_loader
 					"hahaha_class_instance_handle_trait_http" => self::$hahaha_dir . '/libraries/hahahalib/native/trait/hahaha_class_instance_handle_trait_http.php',
 					"hahaha_class_instance_handle_trait_lite" => self::$hahaha_dir . '/libraries/hahahalib/native/trait/hahaha_class_instance_handle_trait_lite.php',
 					"hahaha_instance_trait" => self::$hahaha_dir . '/libraries/hahahalib/native/trait/hahaha_instance_trait.php',
-					"hahaha_socket_trait" => self::$hahaha_dir . '/libraries/hahahalib/native/trait/socket/hahaha_socket_trait.php',
 					"hahaha_view" => self::$hahaha_dir . '/libraries/hahahalib/native/view/hahaha_view.php',
 				],
 			],
@@ -463,7 +458,6 @@ class hahaha_loader
 							"Actions" => [
 								"_Items" => [
 									"Button" => self::$hahaha_dir . '/vendor/botman/botman/src/Messages/Outgoing/Actions/Button.php',
-									"Select" => self::$hahaha_dir . '/vendor/botman/botman/src/Messages/Outgoing/Actions/Select.php',
 								],
 							],
 							"_Items" => [
@@ -623,13 +617,6 @@ class hahaha_loader
 				"_Items" => [
 				],
 			],
-			"PackageVersions" => [
-				"_Items" => [
-					"FallbackVersions" => self::$hahaha_dir . '/vendor/composer/package-versions-deprecated/src/PackageVersions/FallbackVersions.php',
-					"Installer" => self::$hahaha_dir . '/vendor/composer/package-versions-deprecated/src/PackageVersions/Installer.php',
-					"Versions" => self::$hahaha_dir . '/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php',
-				],
-			],
 			"Doctrine" => [
 				"Common" => [
 					"Annotations" => [
@@ -674,7 +661,6 @@ class hahaha_loader
 							"FileCache" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php',
 							"FilesystemCache" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php',
 							"FlushableCache" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FlushableCache.php',
-							"InvalidCacheId" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/InvalidCacheId.php',
 							"LegacyMongoDBCache" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/LegacyMongoDBCache.php',
 							"MemcacheCache" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/MemcacheCache.php',
 							"MemcachedCache" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/MemcachedCache.php',
@@ -686,6 +672,7 @@ class hahaha_loader
 							"PhpFileCache" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/PhpFileCache.php',
 							"PredisCache" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/PredisCache.php',
 							"RedisCache" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/RedisCache.php',
+							"RiakCache" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/RiakCache.php',
 							"SQLite3Cache" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/SQLite3Cache.php',
 							"Version" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/Version.php',
 							"VoidCache" => self::$hahaha_dir . '/vendor/doctrine/cache/lib/Doctrine/Common/Cache/VoidCache.php',
@@ -735,6 +722,7 @@ class hahaha_loader
 						"_Items" => [
 							"ClassUtils" => self::$hahaha_dir . '/vendor/doctrine/common/lib/Doctrine/Common/Util/ClassUtils.php',
 							"Debug" => self::$hahaha_dir . '/vendor/doctrine/common/lib/Doctrine/Common/Util/Debug.php',
+							"Inflector" => self::$hahaha_dir . '/vendor/doctrine/common/lib/Doctrine/Common/Util/Inflector.php',
 						],
 					],
 					"Inflector" => [
@@ -748,8 +736,49 @@ class hahaha_loader
 						],
 					],
 					"Persistence" => [
+						"Event" => [
+							"_Items" => [
+								"LifecycleEventArgs" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Event/LifecycleEventArgs.php',
+								"LoadClassMetadataEventArgs" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Event/LoadClassMetadataEventArgs.php',
+								"ManagerEventArgs" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Event/ManagerEventArgs.php',
+								"OnClearEventArgs" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Event/OnClearEventArgs.php',
+								"PreUpdateEventArgs" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Event/PreUpdateEventArgs.php',
+							],
+						],
+						"Mapping" => [
+							"Driver" => [
+								"_Items" => [
+									"AnnotationDriver" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/AnnotationDriver.php',
+									"DefaultFileLocator" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/DefaultFileLocator.php',
+									"FileDriver" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/FileDriver.php',
+									"FileLocator" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/FileLocator.php',
+									"MappingDriver" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/MappingDriver.php',
+									"MappingDriverChain" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/MappingDriverChain.php',
+									"PHPDriver" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/PHPDriver.php',
+									"StaticPHPDriver" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/StaticPHPDriver.php',
+									"SymfonyFileLocator" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/Driver/SymfonyFileLocator.php',
+								],
+							],
+							"_Items" => [
+								"AbstractClassMetadataFactory" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php',
+								"ClassMetadata" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/ClassMetadata.php',
+								"ClassMetadataFactory" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/ClassMetadataFactory.php',
+								"MappingException" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/MappingException.php',
+								"ReflectionService" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/ReflectionService.php',
+								"RuntimeReflectionService" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php',
+								"StaticReflectionService" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Mapping/StaticReflectionService.php',
+							],
+						],
 						"_Items" => [
+							"AbstractManagerRegistry" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/AbstractManagerRegistry.php',
+							"ConnectionRegistry" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/ConnectionRegistry.php',
+							"ManagerRegistry" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/ManagerRegistry.php',
+							"ObjectManager" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/ObjectManager.php',
+							"ObjectManagerAware" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/ObjectManagerAware.php',
+							"ObjectManagerDecorator" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/ObjectManagerDecorator.php',
+							"ObjectRepository" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/ObjectRepository.php',
 							"PersistentObject" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/PersistentObject.php',
+							"Proxy" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/Persistence/Proxy.php',
 						],
 					],
 					"Reflection" => [
@@ -762,24 +791,22 @@ class hahaha_loader
 							"StaticReflectionMethod" => self::$hahaha_dir . '/vendor/doctrine/reflection/lib/Doctrine/Common/Reflection/StaticReflectionMethod.php',
 							"StaticReflectionParser" => self::$hahaha_dir . '/vendor/doctrine/reflection/lib/Doctrine/Common/Reflection/StaticReflectionParser.php',
 							"StaticReflectionProperty" => self::$hahaha_dir . '/vendor/doctrine/reflection/lib/Doctrine/Common/Reflection/StaticReflectionProperty.php',
-							"TypedNoDefaultReflectionProperty" => self::$hahaha_dir . '/vendor/doctrine/reflection/lib/Doctrine/Common/Reflection/TypedNoDefaultReflectionProperty.php',
 						],
 					],
 					"_Items" => [
 						"ClassLoader" => self::$hahaha_dir . '/vendor/doctrine/common/lib/Doctrine/Common/ClassLoader.php',
 						"CommonException" => self::$hahaha_dir . '/vendor/doctrine/common/lib/Doctrine/Common/CommonException.php',
 						"Comparable" => self::$hahaha_dir . '/vendor/doctrine/common/lib/Doctrine/Common/Comparable.php',
+						"Lexer" => self::$hahaha_dir . '/vendor/doctrine/common/lib/Doctrine/Common/Lexer.php',
+						"Version" => self::$hahaha_dir . '/vendor/doctrine/common/lib/Doctrine/Common/Version.php',
 						"EventArgs" => self::$hahaha_dir . '/vendor/doctrine/event-manager/lib/Doctrine/Common/EventArgs.php',
 						"EventManager" => self::$hahaha_dir . '/vendor/doctrine/event-manager/lib/Doctrine/Common/EventManager.php',
 						"EventSubscriber" => self::$hahaha_dir . '/vendor/doctrine/event-manager/lib/Doctrine/Common/EventSubscriber.php',
+						"NotifyPropertyChanged" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/NotifyPropertyChanged.php',
+						"PropertyChangedListener" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Common/PropertyChangedListener.php',
 					],
 				],
 				"DBAL" => [
-					"Abstraction" => [
-						"_Items" => [
-							"Result" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Abstraction/Result.php',
-						],
-					],
 					"Cache" => [
 						"_Items" => [
 							"ArrayStatement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Cache/ArrayStatement.php',
@@ -791,22 +818,12 @@ class hahaha_loader
 					"Connections" => [
 						"_Items" => [
 							"MasterSlaveConnection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connections/MasterSlaveConnection.php',
-							"PrimaryReadReplicaConnection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connections/PrimaryReadReplicaConnection.php',
 						],
 					],
 					"Driver" => [
 						"AbstractOracleDriver" => [
 							"_Items" => [
 								"EasyConnectString" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractOracleDriver/EasyConnectString.php',
-							],
-						],
-						"AbstractSQLServerDriver" => [
-							"Exception" => [
-								"_Items" => [
-									"PortWithoutHost" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLServerDriver/Exception/PortWithoutHost.php',
-								],
-							],
-							"_Items" => [
 							],
 						],
 						"DrizzlePDOMySql" => [
@@ -816,97 +833,27 @@ class hahaha_loader
 							],
 						],
 						"IBMDB2" => [
-							"Exception" => [
-								"_Items" => [
-									"CannotCopyStreamToStream" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/Exception/CannotCopyStreamToStream.php',
-									"CannotCreateTemporaryFile" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/Exception/CannotCreateTemporaryFile.php',
-									"CannotWriteToTemporaryFile" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/Exception/CannotWriteToTemporaryFile.php',
-									"ConnectionError" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/Exception/ConnectionError.php',
-									"ConnectionFailed" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/Exception/ConnectionFailed.php',
-									"PrepareFailed" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/Exception/PrepareFailed.php',
-									"StatementError" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/Exception/StatementError.php',
-								],
-							],
 							"_Items" => [
-								"Connection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/Connection.php',
-								"DataSourceName" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DataSourceName.php',
 								"DB2Connection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Connection.php',
 								"DB2Driver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Driver.php',
 								"DB2Exception" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Exception.php',
 								"DB2Statement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Statement.php',
-								"Driver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/Driver.php',
-								"Statement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/Statement.php',
 							],
 						],
 						"Mysqli" => [
-							"Exception" => [
-								"_Items" => [
-									"ConnectionError" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/Exception/ConnectionError.php',
-									"ConnectionFailed" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/Exception/ConnectionFailed.php',
-									"FailedReadingStreamOffset" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/Exception/FailedReadingStreamOffset.php',
-									"InvalidOption" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/Exception/InvalidOption.php',
-									"StatementError" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/Exception/StatementError.php',
-									"UnknownType" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/Exception/UnknownType.php',
-								],
-							],
 							"_Items" => [
-								"Connection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/Connection.php',
 								"Driver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/Driver.php',
 								"MysqliConnection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/MysqliConnection.php',
 								"MysqliException" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/MysqliException.php',
 								"MysqliStatement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/MysqliStatement.php',
-								"Statement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/Statement.php',
 							],
 						],
 						"OCI8" => [
-							"Exception" => [
-								"_Items" => [
-									"NonTerminatedStringLiteral" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/Exception/NonTerminatedStringLiteral.php',
-									"SequenceDoesNotExist" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/Exception/SequenceDoesNotExist.php',
-									"UnknownParameterIndex" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/Exception/UnknownParameterIndex.php',
-								],
-							],
 							"_Items" => [
-								"Connection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/Connection.php',
 								"Driver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/Driver.php',
 								"OCI8Connection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/OCI8Connection.php',
 								"OCI8Exception" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/OCI8Exception.php',
 								"OCI8Statement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/OCI8Statement.php',
-								"Statement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/Statement.php',
-							],
-						],
-						"PDO" => [
-							"MySQL" => [
-								"_Items" => [
-									"Driver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/MySQL/Driver.php',
-								],
-							],
-							"OCI" => [
-								"_Items" => [
-									"Driver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/OCI/Driver.php',
-								],
-							],
-							"PgSQL" => [
-								"_Items" => [
-									"Driver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/PgSQL/Driver.php',
-								],
-							],
-							"SQLite" => [
-								"_Items" => [
-									"Driver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/SQLite/Driver.php',
-								],
-							],
-							"SQLSrv" => [
-								"_Items" => [
-									"Connection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/SQLSrv/Connection.php',
-									"Driver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/SQLSrv/Driver.php',
-									"Statement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/SQLSrv/Statement.php',
-								],
-							],
-							"_Items" => [
-								"Connection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Connection.php',
-								"Exception" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Exception.php',
-								"Statement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Statement.php',
 							],
 						],
 						"PDOIbm" => [
@@ -950,25 +897,17 @@ class hahaha_loader
 							],
 						],
 						"SQLSrv" => [
-							"Exception" => [
-								"_Items" => [
-									"Error" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/Exception/Error.php',
-								],
-							],
 							"_Items" => [
-								"Connection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/Connection.php',
 								"Driver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/Driver.php',
 								"LastInsertId" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/LastInsertId.php',
 								"SQLSrvConnection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/SQLSrvConnection.php',
 								"SQLSrvException" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/SQLSrvException.php',
 								"SQLSrvStatement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/SQLSrvStatement.php',
-								"Statement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/Statement.php',
 							],
 						],
 						"_Items" => [
 							"AbstractDB2Driver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractDB2Driver.php',
 							"AbstractDriverException" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractDriverException.php',
-							"AbstractException" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractException.php',
 							"AbstractMySQLDriver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php',
 							"AbstractOracleDriver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractOracleDriver.php',
 							"AbstractPostgreSQLDriver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractPostgreSQLDriver.php',
@@ -977,14 +916,11 @@ class hahaha_loader
 							"AbstractSQLServerDriver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLServerDriver.php',
 							"Connection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Connection.php',
 							"DriverException" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/DriverException.php',
-							"Exception" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Exception.php',
 							"ExceptionConverterDriver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/ExceptionConverterDriver.php',
-							"FetchUtils" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/FetchUtils.php',
 							"PDOConnection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php',
 							"PDOException" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOException.php',
 							"PDOStatement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php',
 							"PingableConnection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PingableConnection.php',
-							"Result" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Result.php',
 							"ResultStatement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/ResultStatement.php',
 							"ServerInfoAwareConnection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/ServerInfoAwareConnection.php',
 							"Statement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Statement.php',
@@ -1017,7 +953,6 @@ class hahaha_loader
 					"Exception" => [
 						"_Items" => [
 							"ConnectionException" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Exception/ConnectionException.php',
-							"ConnectionLost" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Exception/ConnectionLost.php',
 							"ConstraintViolationException" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Exception/ConstraintViolationException.php',
 							"DatabaseObjectExistsException" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Exception/DatabaseObjectExistsException.php',
 							"DatabaseObjectNotFoundException" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Exception/DatabaseObjectNotFoundException.php',
@@ -1112,7 +1047,6 @@ class hahaha_loader
 					"Portability" => [
 						"_Items" => [
 							"Connection" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Portability/Connection.php',
-							"OptimizeFlags" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Portability/OptimizeFlags.php',
 							"Statement" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Portability/Statement.php',
 						],
 					],
@@ -1210,19 +1144,12 @@ class hahaha_loader
 									"RunSqlCommand" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/Command/RunSqlCommand.php',
 								],
 							],
-							"ConnectionProvider" => [
-								"_Items" => [
-									"SingleConnectionProvider" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/ConnectionProvider/SingleConnectionProvider.php',
-								],
-							],
 							"Helper" => [
 								"_Items" => [
 									"ConnectionHelper" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/Helper/ConnectionHelper.php',
 								],
 							],
 							"_Items" => [
-								"ConnectionNotFound" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/ConnectionNotFound.php',
-								"ConnectionProvider" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/ConnectionProvider.php',
 								"ConsoleRunner" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Tools/Console/ConsoleRunner.php',
 							],
 						],
@@ -1233,7 +1160,6 @@ class hahaha_loader
 					"Types" => [
 						"_Items" => [
 							"ArrayType" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/ArrayType.php',
-							"AsciiStringType" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/AsciiStringType.php',
 							"BigIntType" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/BigIntType.php',
 							"BinaryType" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/BinaryType.php',
 							"BlobType" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/BlobType.php',
@@ -1262,8 +1188,6 @@ class hahaha_loader
 							"TimeImmutableType" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/TimeImmutableType.php',
 							"TimeType" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/TimeType.php',
 							"Type" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/Type.php',
-							"TypeRegistry" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/TypeRegistry.php',
-							"Types" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/Types.php',
 							"VarDateTimeImmutableType" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/VarDateTimeImmutableType.php',
 							"VarDateTimeType" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/VarDateTimeType.php',
 						],
@@ -1277,7 +1201,6 @@ class hahaha_loader
 						"Driver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver.php',
 						"DriverManager" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php',
 						"Events" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Events.php',
-						"Exception" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Exception.php',
 						"FetchMode" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/FetchMode.php',
 						"LockMode" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/LockMode.php',
 						"ParameterType" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/ParameterType.php',
@@ -1287,79 +1210,6 @@ class hahaha_loader
 						"TransactionIsolationLevel" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/TransactionIsolationLevel.php',
 						"Version" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/Version.php',
 						"VersionAwarePlatformDriver" => self::$hahaha_dir . '/vendor/doctrine/dbal/lib/Doctrine/DBAL/VersionAwarePlatformDriver.php',
-					],
-				],
-				"Inflector" => [
-					"Rules" => [
-						"English" => [
-							"_Items" => [
-								"Inflectible" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Inflectible.php',
-								"InflectorFactory" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/InflectorFactory.php',
-								"Rules" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Rules.php',
-								"Uninflected" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Uninflected.php',
-							],
-						],
-						"French" => [
-							"_Items" => [
-								"Inflectible" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Inflectible.php',
-								"InflectorFactory" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/InflectorFactory.php',
-								"Rules" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Rules.php',
-								"Uninflected" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Uninflected.php',
-							],
-						],
-						"NorwegianBokmal" => [
-							"_Items" => [
-								"Inflectible" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/Inflectible.php',
-								"InflectorFactory" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/InflectorFactory.php',
-								"Rules" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/Rules.php',
-								"Uninflected" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/Uninflected.php',
-							],
-						],
-						"Portuguese" => [
-							"_Items" => [
-								"Inflectible" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/Inflectible.php',
-								"InflectorFactory" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/InflectorFactory.php',
-								"Rules" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/Rules.php',
-								"Uninflected" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/Uninflected.php',
-							],
-						],
-						"Spanish" => [
-							"_Items" => [
-								"Inflectible" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/Inflectible.php',
-								"InflectorFactory" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/InflectorFactory.php',
-								"Rules" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/Rules.php',
-								"Uninflected" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/Uninflected.php',
-							],
-						],
-						"Turkish" => [
-							"_Items" => [
-								"Inflectible" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/Inflectible.php',
-								"InflectorFactory" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/InflectorFactory.php',
-								"Rules" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/Rules.php',
-								"Uninflected" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/Uninflected.php',
-							],
-						],
-						"_Items" => [
-							"Pattern" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Pattern.php',
-							"Patterns" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Patterns.php',
-							"Ruleset" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Ruleset.php',
-							"Substitution" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Substitution.php',
-							"Substitutions" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Substitutions.php',
-							"Transformation" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Transformation.php',
-							"Transformations" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Transformations.php',
-							"Word" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/Word.php',
-						],
-					],
-					"_Items" => [
-						"CachedWordInflector" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/CachedWordInflector.php',
-						"GenericLanguageInflectorFactory" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/GenericLanguageInflectorFactory.php',
-						"Inflector" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Inflector.php',
-						"InflectorFactory" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/InflectorFactory.php',
-						"Language" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/Language.php',
-						"LanguageInflectorFactory" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/LanguageInflectorFactory.php',
-						"NoopWordInflector" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/NoopWordInflector.php',
-						"RulesetInflector" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/RulesetInflector.php',
-						"WordInflector" => self::$hahaha_dir . '/vendor/doctrine/inflector/lib/Doctrine/Inflector/WordInflector.php',
 					],
 				],
 				"Instantiator" => [
@@ -1900,53 +1750,6 @@ class hahaha_loader
 						"Version" => self::$hahaha_dir . '/vendor/doctrine/orm/lib/Doctrine/ORM/Version.php',
 					],
 				],
-				"Persistence" => [
-					"Event" => [
-						"_Items" => [
-							"LifecycleEventArgs" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Event/LifecycleEventArgs.php',
-							"LoadClassMetadataEventArgs" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Event/LoadClassMetadataEventArgs.php',
-							"ManagerEventArgs" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Event/ManagerEventArgs.php',
-							"OnClearEventArgs" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Event/OnClearEventArgs.php',
-							"PreUpdateEventArgs" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Event/PreUpdateEventArgs.php',
-						],
-					],
-					"Mapping" => [
-						"Driver" => [
-							"_Items" => [
-								"AnnotationDriver" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/Driver/AnnotationDriver.php',
-								"DefaultFileLocator" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/Driver/DefaultFileLocator.php',
-								"FileDriver" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/Driver/FileDriver.php',
-								"FileLocator" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/Driver/FileLocator.php',
-								"MappingDriver" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/Driver/MappingDriver.php',
-								"MappingDriverChain" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/Driver/MappingDriverChain.php',
-								"PHPDriver" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/Driver/PHPDriver.php',
-								"StaticPHPDriver" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/Driver/StaticPHPDriver.php',
-								"SymfonyFileLocator" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/Driver/SymfonyFileLocator.php',
-							],
-						],
-						"_Items" => [
-							"AbstractClassMetadataFactory" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/AbstractClassMetadataFactory.php',
-							"ClassMetadata" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/ClassMetadata.php',
-							"ClassMetadataFactory" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/ClassMetadataFactory.php',
-							"MappingException" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/MappingException.php',
-							"ReflectionService" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/ReflectionService.php',
-							"RuntimeReflectionService" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/RuntimeReflectionService.php',
-							"StaticReflectionService" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Mapping/StaticReflectionService.php',
-						],
-					],
-					"_Items" => [
-						"AbstractManagerRegistry" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/AbstractManagerRegistry.php',
-						"ConnectionRegistry" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/ConnectionRegistry.php',
-						"ManagerRegistry" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/ManagerRegistry.php',
-						"NotifyPropertyChanged" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/NotifyPropertyChanged.php',
-						"ObjectManager" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/ObjectManager.php',
-						"ObjectManagerAware" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/ObjectManagerAware.php',
-						"ObjectManagerDecorator" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/ObjectManagerDecorator.php',
-						"ObjectRepository" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/ObjectRepository.php',
-						"PropertyChangedListener" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/PropertyChangedListener.php',
-						"Proxy" => self::$hahaha_dir . '/vendor/doctrine/persistence/lib/Doctrine/Persistence/Proxy.php',
-					],
-				],
 				"_Items" => [
 				],
 			],
@@ -1954,94 +1757,92 @@ class hahaha_loader
 				"EmailValidator" => [
 					"Exception" => [
 						"_Items" => [
-							"AtextAfterCFWS" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/AtextAfterCFWS.php',
-							"CharNotAllowed" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/CharNotAllowed.php',
-							"CommaInDomain" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/CommaInDomain.php',
-							"ConsecutiveAt" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/ConsecutiveAt.php',
-							"ConsecutiveDot" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/ConsecutiveDot.php',
-							"CRLFAtTheEnd" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/CRLFAtTheEnd.php',
-							"CRLFX2" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/CRLFX2.php',
-							"CRNoLF" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/CRNoLF.php',
-							"DomainAcceptsNoMail" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/DomainAcceptsNoMail.php',
-							"DomainHyphened" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/DomainHyphened.php',
-							"DotAtEnd" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/DotAtEnd.php',
-							"DotAtStart" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/DotAtStart.php',
-							"ExpectingAT" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/ExpectingAT.php',
-							"ExpectingATEXT" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/ExpectingATEXT.php',
-							"ExpectingCTEXT" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/ExpectingCTEXT.php',
-							"ExpectingDomainLiteralClose" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/ExpectingDomainLiteralClose.php',
-							"ExpectingDTEXT" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/ExpectingDTEXT.php',
-							"ExpectingQPair" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/ExpectingQPair.php',
-							"InvalidEmail" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/InvalidEmail.php',
-							"LocalOrReservedDomain" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/LocalOrReservedDomain.php',
-							"NoDNSRecord" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/NoDNSRecord.php',
-							"NoDomainPart" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/NoDomainPart.php',
-							"NoLocalPart" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/NoLocalPart.php',
-							"UnclosedComment" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/UnclosedComment.php',
-							"UnclosedQuotedString" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/UnclosedQuotedString.php',
-							"UnopenedComment" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Exception/UnopenedComment.php',
+							"AtextAfterCFWS" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/AtextAfterCFWS.php',
+							"CharNotAllowed" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/CharNotAllowed.php',
+							"CommaInDomain" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/CommaInDomain.php',
+							"ConsecutiveAt" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/ConsecutiveAt.php',
+							"ConsecutiveDot" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/ConsecutiveDot.php',
+							"CRLFAtTheEnd" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/CRLFAtTheEnd.php',
+							"CRLFX2" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/CRLFX2.php',
+							"CRNoLF" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/CRNoLF.php',
+							"DomainHyphened" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/DomainHyphened.php',
+							"DotAtEnd" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/DotAtEnd.php',
+							"DotAtStart" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/DotAtStart.php',
+							"ExpectingAT" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingAT.php',
+							"ExpectingATEXT" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingATEXT.php',
+							"ExpectingCTEXT" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingCTEXT.php',
+							"ExpectingDomainLiteralClose" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingDomainLiteralClose.php',
+							"ExpectingDTEXT" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingDTEXT.php',
+							"ExpectingQPair" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/ExpectingQPair.php',
+							"InvalidEmail" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/InvalidEmail.php',
+							"NoDNSRecord" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/NoDNSRecord.php',
+							"NoDomainPart" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/NoDomainPart.php',
+							"NoLocalPart" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/NoLocalPart.php',
+							"UnclosedComment" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/UnclosedComment.php',
+							"UnclosedQuotedString" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/UnclosedQuotedString.php',
+							"UnopenedComment" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Exception/UnopenedComment.php',
 						],
 					],
 					"Parser" => [
 						"_Items" => [
-							"DomainPart" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Parser/DomainPart.php',
-							"LocalPart" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Parser/LocalPart.php',
-							"Parser" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Parser/Parser.php',
+							"DomainPart" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Parser/DomainPart.php',
+							"LocalPart" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Parser/LocalPart.php',
+							"Parser" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Parser/Parser.php',
 						],
 					],
 					"Validation" => [
 						"Error" => [
 							"_Items" => [
-								"RFCWarnings" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Validation/Error/RFCWarnings.php',
-								"SpoofEmail" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Validation/Error/SpoofEmail.php',
+								"RFCWarnings" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Validation/Error/RFCWarnings.php',
+								"SpoofEmail" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Validation/Error/SpoofEmail.php',
 							],
 						],
 						"Exception" => [
 							"_Items" => [
-								"EmptyValidationList" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Validation/Exception/EmptyValidationList.php',
+								"EmptyValidationList" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Validation/Exception/EmptyValidationList.php',
 							],
 						],
 						"_Items" => [
-							"DNSCheckValidation" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php',
-							"EmailValidation" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Validation/EmailValidation.php',
-							"MultipleErrors" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Validation/MultipleErrors.php',
-							"MultipleValidationWithAnd" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php',
-							"NoRFCWarningsValidation" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php',
-							"RFCValidation" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Validation/RFCValidation.php',
-							"SpoofCheckValidation" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Validation/SpoofCheckValidation.php',
+							"DNSCheckValidation" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Validation/DNSCheckValidation.php',
+							"EmailValidation" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Validation/EmailValidation.php',
+							"MultipleErrors" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Validation/MultipleErrors.php',
+							"MultipleValidationWithAnd" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Validation/MultipleValidationWithAnd.php',
+							"NoRFCWarningsValidation" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Validation/NoRFCWarningsValidation.php',
+							"RFCValidation" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Validation/RFCValidation.php',
+							"SpoofCheckValidation" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Validation/SpoofCheckValidation.php',
 						],
 					],
 					"Warning" => [
 						"_Items" => [
-							"AddressLiteral" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/AddressLiteral.php',
-							"CFWSNearAt" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/CFWSNearAt.php',
-							"CFWSWithFWS" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/CFWSWithFWS.php',
-							"Comment" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/Comment.php',
-							"DeprecatedComment" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/DeprecatedComment.php',
-							"DomainLiteral" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/DomainLiteral.php',
-							"DomainTooLong" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/DomainTooLong.php',
-							"EmailTooLong" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/EmailTooLong.php',
-							"IPV6BadChar" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/IPV6BadChar.php',
-							"IPV6ColonEnd" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/IPV6ColonEnd.php',
-							"IPV6ColonStart" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/IPV6ColonStart.php',
-							"IPV6Deprecated" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/IPV6Deprecated.php',
-							"IPV6DoubleColon" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/IPV6DoubleColon.php',
-							"IPV6GroupCount" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/IPV6GroupCount.php',
-							"IPV6MaxGroups" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/IPV6MaxGroups.php',
-							"LabelTooLong" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/LabelTooLong.php',
-							"LocalTooLong" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/LocalTooLong.php',
-							"NoDNSMXRecord" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/NoDNSMXRecord.php',
-							"ObsoleteDTEXT" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/ObsoleteDTEXT.php',
-							"QuotedPart" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/QuotedPart.php',
-							"QuotedString" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/QuotedString.php',
-							"TLD" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/TLD.php',
-							"Warning" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/Warning/Warning.php',
+							"AddressLiteral" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/AddressLiteral.php',
+							"CFWSNearAt" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/CFWSNearAt.php',
+							"CFWSWithFWS" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/CFWSWithFWS.php',
+							"Comment" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/Comment.php',
+							"DeprecatedComment" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/DeprecatedComment.php',
+							"DomainLiteral" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/DomainLiteral.php',
+							"DomainTooLong" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/DomainTooLong.php',
+							"EmailTooLong" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/EmailTooLong.php',
+							"IPV6BadChar" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/IPV6BadChar.php',
+							"IPV6ColonEnd" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/IPV6ColonEnd.php',
+							"IPV6ColonStart" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/IPV6ColonStart.php',
+							"IPV6Deprecated" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/IPV6Deprecated.php',
+							"IPV6DoubleColon" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/IPV6DoubleColon.php',
+							"IPV6GroupCount" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/IPV6GroupCount.php',
+							"IPV6MaxGroups" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/IPV6MaxGroups.php',
+							"LabelTooLong" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/LabelTooLong.php',
+							"LocalTooLong" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/LocalTooLong.php',
+							"NoDNSMXRecord" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/NoDNSMXRecord.php',
+							"ObsoleteDTEXT" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/ObsoleteDTEXT.php',
+							"QuotedPart" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/QuotedPart.php',
+							"QuotedString" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/QuotedString.php',
+							"TLD" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/TLD.php',
+							"Warning" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/Warning/Warning.php',
 						],
 					],
 					"_Items" => [
-						"EmailLexer" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/EmailLexer.php',
-						"EmailParser" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/EmailParser.php',
-						"EmailValidator" => self::$hahaha_dir . '/vendor/egulias/email-validator/src/EmailValidator.php',
+						"EmailLexer" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/EmailLexer.php',
+						"EmailParser" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/EmailParser.php',
+						"EmailValidator" => self::$hahaha_dir . '/vendor/egulias/email-validator/EmailValidator/EmailValidator.php',
 					],
 				],
 				"_Items" => [
@@ -2548,7 +2349,6 @@ class hahaha_loader
 						"CircularException" => self::$hahaha_dir . '/vendor/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/CircularException.php',
 						"CurlException" => self::$hahaha_dir . '/vendor/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/CurlException.php',
 						"EmptyCollectionException" => self::$hahaha_dir . '/vendor/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/EmptyCollectionException.php',
-						"LogicalException" => self::$hahaha_dir . '/vendor/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/LogicalException.php',
 						"NotLoadedException" => self::$hahaha_dir . '/vendor/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/NotLoadedException.php',
 						"ParentNotFoundException" => self::$hahaha_dir . '/vendor/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/ParentNotFoundException.php',
 						"StrictException" => self::$hahaha_dir . '/vendor/paquettg/php-html-parser/src/PHPHtmlParser/Exceptions/StrictException.php',
@@ -2732,8 +2532,6 @@ class hahaha_loader
 						"ConnectorInterface" => self::$hahaha_dir . '/vendor/react/socket/src/ConnectorInterface.php',
 						"DnsConnector" => self::$hahaha_dir . '/vendor/react/socket/src/DnsConnector.php',
 						"FixedUriConnector" => self::$hahaha_dir . '/vendor/react/socket/src/FixedUriConnector.php',
-						"HappyEyeBallsConnectionBuilder" => self::$hahaha_dir . '/vendor/react/socket/src/HappyEyeBallsConnectionBuilder.php',
-						"HappyEyeBallsConnector" => self::$hahaha_dir . '/vendor/react/socket/src/HappyEyeBallsConnector.php',
 						"LimitingServer" => self::$hahaha_dir . '/vendor/react/socket/src/LimitingServer.php',
 						"SecureConnector" => self::$hahaha_dir . '/vendor/react/socket/src/SecureConnector.php',
 						"SecureServer" => self::$hahaha_dir . '/vendor/react/socket/src/SecureServer.php',
@@ -2831,15 +2629,12 @@ class hahaha_loader
 								"InvalidArgumentException" => self::$hahaha_dir . '/vendor/symfony/console/Exception/InvalidArgumentException.php',
 								"InvalidOptionException" => self::$hahaha_dir . '/vendor/symfony/console/Exception/InvalidOptionException.php',
 								"LogicException" => self::$hahaha_dir . '/vendor/symfony/console/Exception/LogicException.php',
-								"MissingInputException" => self::$hahaha_dir . '/vendor/symfony/console/Exception/MissingInputException.php',
 								"NamespaceNotFoundException" => self::$hahaha_dir . '/vendor/symfony/console/Exception/NamespaceNotFoundException.php',
 								"RuntimeException" => self::$hahaha_dir . '/vendor/symfony/console/Exception/RuntimeException.php',
 							],
 						],
 						"Formatter" => [
 							"_Items" => [
-								"NullOutputFormatter" => self::$hahaha_dir . '/vendor/symfony/console/Formatter/NullOutputFormatter.php',
-								"NullOutputFormatterStyle" => self::$hahaha_dir . '/vendor/symfony/console/Formatter/NullOutputFormatterStyle.php',
 								"OutputFormatter" => self::$hahaha_dir . '/vendor/symfony/console/Formatter/OutputFormatter.php',
 								"OutputFormatterInterface" => self::$hahaha_dir . '/vendor/symfony/console/Formatter/OutputFormatterInterface.php',
 								"OutputFormatterStyle" => self::$hahaha_dir . '/vendor/symfony/console/Formatter/OutputFormatterStyle.php',
@@ -2925,8 +2720,6 @@ class hahaha_loader
 						"_Items" => [
 							"Application" => self::$hahaha_dir . '/vendor/symfony/console/Application.php',
 							"ConsoleEvents" => self::$hahaha_dir . '/vendor/symfony/console/ConsoleEvents.php',
-							"Cursor" => self::$hahaha_dir . '/vendor/symfony/console/Cursor.php',
-							"SingleCommandApplication" => self::$hahaha_dir . '/vendor/symfony/console/SingleCommandApplication.php',
 							"Terminal" => self::$hahaha_dir . '/vendor/symfony/console/Terminal.php',
 						],
 					],
@@ -3017,7 +2810,6 @@ class hahaha_loader
 					"HttpFoundation" => [
 						"Exception" => [
 							"_Items" => [
-								"BadRequestException" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Exception/BadRequestException.php',
 								"ConflictingHeadersException" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Exception/ConflictingHeadersException.php',
 								"RequestExceptionInterface" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Exception/RequestExceptionInterface.php',
 								"SuspiciousOperationException" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Exception/SuspiciousOperationException.php',
@@ -3038,6 +2830,17 @@ class hahaha_loader
 									"PartialFileException" => self::$hahaha_dir . '/vendor/symfony/http-foundation/File/Exception/PartialFileException.php',
 									"UnexpectedTypeException" => self::$hahaha_dir . '/vendor/symfony/http-foundation/File/Exception/UnexpectedTypeException.php',
 									"UploadException" => self::$hahaha_dir . '/vendor/symfony/http-foundation/File/Exception/UploadException.php',
+								],
+							],
+							"MimeType" => [
+								"_Items" => [
+									"ExtensionGuesser" => self::$hahaha_dir . '/vendor/symfony/http-foundation/File/MimeType/ExtensionGuesser.php',
+									"ExtensionGuesserInterface" => self::$hahaha_dir . '/vendor/symfony/http-foundation/File/MimeType/ExtensionGuesserInterface.php',
+									"FileBinaryMimeTypeGuesser" => self::$hahaha_dir . '/vendor/symfony/http-foundation/File/MimeType/FileBinaryMimeTypeGuesser.php',
+									"FileinfoMimeTypeGuesser" => self::$hahaha_dir . '/vendor/symfony/http-foundation/File/MimeType/FileinfoMimeTypeGuesser.php',
+									"MimeTypeExtensionGuesser" => self::$hahaha_dir . '/vendor/symfony/http-foundation/File/MimeType/MimeTypeExtensionGuesser.php',
+									"MimeTypeGuesser" => self::$hahaha_dir . '/vendor/symfony/http-foundation/File/MimeType/MimeTypeGuesser.php',
+									"MimeTypeGuesserInterface" => self::$hahaha_dir . '/vendor/symfony/http-foundation/File/MimeType/MimeTypeGuesserInterface.php',
 								],
 							],
 							"_Items" => [
@@ -3065,8 +2868,6 @@ class hahaha_loader
 								"Handler" => [
 									"_Items" => [
 										"AbstractSessionHandler" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Session/Storage/Handler/AbstractSessionHandler.php',
-										"IdentityMarshaller" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php',
-										"MarshallingSessionHandler" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Session/Storage/Handler/MarshallingSessionHandler.php',
 										"MemcachedSessionHandler" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php',
 										"MigratingSessionHandler" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Session/Storage/Handler/MigratingSessionHandler.php',
 										"MongoDbSessionHandler" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php',
@@ -3074,7 +2875,6 @@ class hahaha_loader
 										"NullSessionHandler" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php',
 										"PdoSessionHandler" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php',
 										"RedisSessionHandler" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php',
-										"SessionHandlerFactory" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Session/Storage/Handler/SessionHandlerFactory.php',
 										"StrictSessionHandler" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php',
 									],
 								],
@@ -3104,13 +2904,13 @@ class hahaha_loader
 						"_Items" => [
 							"AcceptHeader" => self::$hahaha_dir . '/vendor/symfony/http-foundation/AcceptHeader.php',
 							"AcceptHeaderItem" => self::$hahaha_dir . '/vendor/symfony/http-foundation/AcceptHeaderItem.php',
+							"ApacheRequest" => self::$hahaha_dir . '/vendor/symfony/http-foundation/ApacheRequest.php',
 							"BinaryFileResponse" => self::$hahaha_dir . '/vendor/symfony/http-foundation/BinaryFileResponse.php',
 							"Cookie" => self::$hahaha_dir . '/vendor/symfony/http-foundation/Cookie.php',
 							"ExpressionRequestMatcher" => self::$hahaha_dir . '/vendor/symfony/http-foundation/ExpressionRequestMatcher.php',
 							"FileBag" => self::$hahaha_dir . '/vendor/symfony/http-foundation/FileBag.php',
 							"HeaderBag" => self::$hahaha_dir . '/vendor/symfony/http-foundation/HeaderBag.php',
 							"HeaderUtils" => self::$hahaha_dir . '/vendor/symfony/http-foundation/HeaderUtils.php',
-							"InputBag" => self::$hahaha_dir . '/vendor/symfony/http-foundation/InputBag.php',
 							"IpUtils" => self::$hahaha_dir . '/vendor/symfony/http-foundation/IpUtils.php',
 							"JsonResponse" => self::$hahaha_dir . '/vendor/symfony/http-foundation/JsonResponse.php',
 							"ParameterBag" => self::$hahaha_dir . '/vendor/symfony/http-foundation/ParameterBag.php',
@@ -3126,33 +2926,85 @@ class hahaha_loader
 							"UrlHelper" => self::$hahaha_dir . '/vendor/symfony/http-foundation/UrlHelper.php',
 						],
 					],
-					"String" => [
+					"Mime" => [
+						"DependencyInjection" => [
+							"_Items" => [
+								"AddMimeTypeGuesserPass" => self::$hahaha_dir . '/vendor/symfony/mime/DependencyInjection/AddMimeTypeGuesserPass.php',
+							],
+						],
+						"Encoder" => [
+							"_Items" => [
+								"AddressEncoderInterface" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/AddressEncoderInterface.php',
+								"Base64ContentEncoder" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/Base64ContentEncoder.php',
+								"Base64Encoder" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/Base64Encoder.php',
+								"Base64MimeHeaderEncoder" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/Base64MimeHeaderEncoder.php',
+								"ContentEncoderInterface" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/ContentEncoderInterface.php',
+								"EightBitContentEncoder" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/EightBitContentEncoder.php',
+								"EncoderInterface" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/EncoderInterface.php',
+								"IdnAddressEncoder" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/IdnAddressEncoder.php',
+								"MimeHeaderEncoderInterface" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/MimeHeaderEncoderInterface.php',
+								"QpContentEncoder" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/QpContentEncoder.php',
+								"QpEncoder" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/QpEncoder.php',
+								"QpMimeHeaderEncoder" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/QpMimeHeaderEncoder.php',
+								"Rfc2231Encoder" => self::$hahaha_dir . '/vendor/symfony/mime/Encoder/Rfc2231Encoder.php',
+							],
+						],
 						"Exception" => [
 							"_Items" => [
-								"ExceptionInterface" => self::$hahaha_dir . '/vendor/symfony/string/Exception/ExceptionInterface.php',
-								"InvalidArgumentException" => self::$hahaha_dir . '/vendor/symfony/string/Exception/InvalidArgumentException.php',
-								"RuntimeException" => self::$hahaha_dir . '/vendor/symfony/string/Exception/RuntimeException.php',
+								"AddressEncoderException" => self::$hahaha_dir . '/vendor/symfony/mime/Exception/AddressEncoderException.php',
+								"ExceptionInterface" => self::$hahaha_dir . '/vendor/symfony/mime/Exception/ExceptionInterface.php',
+								"InvalidArgumentException" => self::$hahaha_dir . '/vendor/symfony/mime/Exception/InvalidArgumentException.php',
+								"LogicException" => self::$hahaha_dir . '/vendor/symfony/mime/Exception/LogicException.php',
+								"RfcComplianceException" => self::$hahaha_dir . '/vendor/symfony/mime/Exception/RfcComplianceException.php',
+								"RuntimeException" => self::$hahaha_dir . '/vendor/symfony/mime/Exception/RuntimeException.php',
 							],
 						],
-						"Inflector" => [
+						"Header" => [
 							"_Items" => [
-								"EnglishInflector" => self::$hahaha_dir . '/vendor/symfony/string/Inflector/EnglishInflector.php',
-								"InflectorInterface" => self::$hahaha_dir . '/vendor/symfony/string/Inflector/InflectorInterface.php',
+								"AbstractHeader" => self::$hahaha_dir . '/vendor/symfony/mime/Header/AbstractHeader.php',
+								"DateHeader" => self::$hahaha_dir . '/vendor/symfony/mime/Header/DateHeader.php',
+								"HeaderInterface" => self::$hahaha_dir . '/vendor/symfony/mime/Header/HeaderInterface.php',
+								"Headers" => self::$hahaha_dir . '/vendor/symfony/mime/Header/Headers.php',
+								"IdentificationHeader" => self::$hahaha_dir . '/vendor/symfony/mime/Header/IdentificationHeader.php',
+								"MailboxHeader" => self::$hahaha_dir . '/vendor/symfony/mime/Header/MailboxHeader.php',
+								"MailboxListHeader" => self::$hahaha_dir . '/vendor/symfony/mime/Header/MailboxListHeader.php',
+								"ParameterizedHeader" => self::$hahaha_dir . '/vendor/symfony/mime/Header/ParameterizedHeader.php',
+								"PathHeader" => self::$hahaha_dir . '/vendor/symfony/mime/Header/PathHeader.php',
+								"UnstructuredHeader" => self::$hahaha_dir . '/vendor/symfony/mime/Header/UnstructuredHeader.php',
 							],
 						],
-						"Slugger" => [
+						"Part" => [
+							"Multipart" => [
+								"_Items" => [
+									"AlternativePart" => self::$hahaha_dir . '/vendor/symfony/mime/Part/Multipart/AlternativePart.php',
+									"DigestPart" => self::$hahaha_dir . '/vendor/symfony/mime/Part/Multipart/DigestPart.php',
+									"FormDataPart" => self::$hahaha_dir . '/vendor/symfony/mime/Part/Multipart/FormDataPart.php',
+									"MixedPart" => self::$hahaha_dir . '/vendor/symfony/mime/Part/Multipart/MixedPart.php',
+									"RelatedPart" => self::$hahaha_dir . '/vendor/symfony/mime/Part/Multipart/RelatedPart.php',
+								],
+							],
 							"_Items" => [
-								"AsciiSlugger" => self::$hahaha_dir . '/vendor/symfony/string/Slugger/AsciiSlugger.php',
-								"SluggerInterface" => self::$hahaha_dir . '/vendor/symfony/string/Slugger/SluggerInterface.php',
+								"AbstractMultipartPart" => self::$hahaha_dir . '/vendor/symfony/mime/Part/AbstractMultipartPart.php',
+								"AbstractPart" => self::$hahaha_dir . '/vendor/symfony/mime/Part/AbstractPart.php',
+								"DataPart" => self::$hahaha_dir . '/vendor/symfony/mime/Part/DataPart.php',
+								"MessagePart" => self::$hahaha_dir . '/vendor/symfony/mime/Part/MessagePart.php',
+								"TextPart" => self::$hahaha_dir . '/vendor/symfony/mime/Part/TextPart.php',
 							],
 						],
 						"_Items" => [
-							"AbstractString" => self::$hahaha_dir . '/vendor/symfony/string/AbstractString.php',
-							"AbstractUnicodeString" => self::$hahaha_dir . '/vendor/symfony/string/AbstractUnicodeString.php',
-							"ByteString" => self::$hahaha_dir . '/vendor/symfony/string/ByteString.php',
-							"CodePointString" => self::$hahaha_dir . '/vendor/symfony/string/CodePointString.php',
-							"LazyString" => self::$hahaha_dir . '/vendor/symfony/string/LazyString.php',
-							"UnicodeString" => self::$hahaha_dir . '/vendor/symfony/string/UnicodeString.php',
+							"Address" => self::$hahaha_dir . '/vendor/symfony/mime/Address.php',
+							"BodyRendererInterface" => self::$hahaha_dir . '/vendor/symfony/mime/BodyRendererInterface.php',
+							"CharacterStream" => self::$hahaha_dir . '/vendor/symfony/mime/CharacterStream.php',
+							"Email" => self::$hahaha_dir . '/vendor/symfony/mime/Email.php',
+							"FileBinaryMimeTypeGuesser" => self::$hahaha_dir . '/vendor/symfony/mime/FileBinaryMimeTypeGuesser.php',
+							"FileinfoMimeTypeGuesser" => self::$hahaha_dir . '/vendor/symfony/mime/FileinfoMimeTypeGuesser.php',
+							"Message" => self::$hahaha_dir . '/vendor/symfony/mime/Message.php',
+							"MessageConverter" => self::$hahaha_dir . '/vendor/symfony/mime/MessageConverter.php',
+							"MimeTypeGuesserInterface" => self::$hahaha_dir . '/vendor/symfony/mime/MimeTypeGuesserInterface.php',
+							"MimeTypes" => self::$hahaha_dir . '/vendor/symfony/mime/MimeTypes.php',
+							"MimeTypesInterface" => self::$hahaha_dir . '/vendor/symfony/mime/MimeTypesInterface.php',
+							"NamedAddress" => self::$hahaha_dir . '/vendor/symfony/mime/NamedAddress.php',
+							"RawMessage" => self::$hahaha_dir . '/vendor/symfony/mime/RawMessage.php',
 						],
 					],
 					"VarDumper" => [
@@ -3174,15 +3026,12 @@ class hahaha_loader
 								"ExceptionCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/ExceptionCaster.php',
 								"FrameStub" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/FrameStub.php',
 								"GmpCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/GmpCaster.php',
-								"ImagineCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/ImagineCaster.php',
-								"ImgStub" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/ImgStub.php',
 								"IntlCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/IntlCaster.php',
 								"LinkStub" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/LinkStub.php',
 								"MemcachedCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/MemcachedCaster.php',
 								"PdoCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/PdoCaster.php',
 								"PgSqlCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/PgSqlCaster.php',
 								"ProxyManagerCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/ProxyManagerCaster.php',
-								"RdKafkaCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/RdKafkaCaster.php',
 								"RedisCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/RedisCaster.php',
 								"ReflectionCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/ReflectionCaster.php',
 								"ResourceCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/ResourceCaster.php',
@@ -3190,7 +3039,6 @@ class hahaha_loader
 								"StubCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/StubCaster.php',
 								"SymfonyCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/SymfonyCaster.php',
 								"TraceStub" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/TraceStub.php',
-								"UuidCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/UuidCaster.php',
 								"XmlReaderCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/XmlReaderCaster.php',
 								"XmlResourceCaster" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Caster/XmlResourceCaster.php',
 							],
@@ -3230,7 +3078,6 @@ class hahaha_loader
 							"_Items" => [
 								"AbstractDumper" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Dumper/AbstractDumper.php',
 								"CliDumper" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Dumper/CliDumper.php',
-								"ContextualizedDumper" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Dumper/ContextualizedDumper.php',
 								"DataDumperInterface" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Dumper/DataDumperInterface.php',
 								"HtmlDumper" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Dumper/HtmlDumper.php',
 								"ServerDumper" => self::$hahaha_dir . '/vendor/symfony/var-dumper/Dumper/ServerDumper.php',
@@ -3279,30 +3126,9 @@ class hahaha_loader
 						],
 					],
 					"Intl" => [
-						"Grapheme" => [
-							"_Items" => [
-								"Grapheme" => self::$hahaha_dir . '/vendor/symfony/polyfill-intl-grapheme/Grapheme.php',
-							],
-						],
 						"Idn" => [
-							"Resources" => [
-								"unidata" => [
-									"_Items" => [
-										"DisallowedRanges" => self::$hahaha_dir . '/vendor/symfony/polyfill-intl-idn/Resources/unidata/DisallowedRanges.php',
-										"Regex" => self::$hahaha_dir . '/vendor/symfony/polyfill-intl-idn/Resources/unidata/Regex.php',
-									],
-								],
-								"_Items" => [
-								],
-							],
 							"_Items" => [
 								"Idn" => self::$hahaha_dir . '/vendor/symfony/polyfill-intl-idn/Idn.php',
-								"Info" => self::$hahaha_dir . '/vendor/symfony/polyfill-intl-idn/Info.php',
-							],
-						],
-						"Normalizer" => [
-							"_Items" => [
-								"Normalizer" => self::$hahaha_dir . '/vendor/symfony/polyfill-intl-normalizer/Normalizer.php',
 							],
 						],
 						"_Items" => [
@@ -3311,11 +3137,6 @@ class hahaha_loader
 					"Mbstring" => [
 						"_Items" => [
 							"Mbstring" => self::$hahaha_dir . '/vendor/symfony/polyfill-mbstring/Mbstring.php',
-						],
-					],
-					"Php70" => [
-						"_Items" => [
-							"Php70" => self::$hahaha_dir . '/vendor/symfony/polyfill-php70/Php70.php',
 						],
 					],
 					"Php72" => [
@@ -3328,21 +3149,11 @@ class hahaha_loader
 							"Php73" => self::$hahaha_dir . '/vendor/symfony/polyfill-php73/Php73.php',
 						],
 					],
-					"Php80" => [
-						"_Items" => [
-							"Php80" => self::$hahaha_dir . '/vendor/symfony/polyfill-php80/Php80.php',
-						],
-					],
 					"_Items" => [
 					],
 				],
 				"Contracts" => [
 					"Service" => [
-						"Attribute" => [
-							"_Items" => [
-								"Required" => self::$hahaha_dir . '/vendor/symfony/service-contracts/Attribute/Required.php',
-							],
-						],
 						"_Items" => [
 							"ResetInterface" => self::$hahaha_dir . '/vendor/symfony/service-contracts/ResetInterface.php',
 							"ServiceLocatorTrait" => self::$hahaha_dir . '/vendor/symfony/service-contracts/ServiceLocatorTrait.php',
@@ -3373,17 +3184,14 @@ class hahaha_loader
 					"Support" => [
 						"Traits" => [
 							"_Items" => [
-								"EnumeratesValues" => self::$hahaha_dir . '/vendor/tightenco/collect/src/Collect/Support/Traits/EnumeratesValues.php',
 								"Macroable" => self::$hahaha_dir . '/vendor/tightenco/collect/src/Collect/Support/Traits/Macroable.php',
 							],
 						],
 						"_Items" => [
 							"Arr" => self::$hahaha_dir . '/vendor/tightenco/collect/src/Collect/Support/Arr.php',
 							"Collection" => self::$hahaha_dir . '/vendor/tightenco/collect/src/Collect/Support/Collection.php',
-							"Enumerable" => self::$hahaha_dir . '/vendor/tightenco/collect/src/Collect/Support/Enumerable.php',
 							"HigherOrderCollectionProxy" => self::$hahaha_dir . '/vendor/tightenco/collect/src/Collect/Support/HigherOrderCollectionProxy.php',
-							"HigherOrderWhenProxy" => self::$hahaha_dir . '/vendor/tightenco/collect/src/Collect/Support/HigherOrderWhenProxy.php',
-							"LazyCollection" => self::$hahaha_dir . '/vendor/tightenco/collect/src/Collect/Support/LazyCollection.php',
+							"HtmlString" => self::$hahaha_dir . '/vendor/tightenco/collect/src/Collect/Support/HtmlString.php',
 						],
 					],
 					"_Items" => [
@@ -3597,18 +3405,7 @@ class hahaha_loader
 				"Swift_Transport" => self::$hahaha_dir . '/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport.php',
 				"Swift_TransportException" => self::$hahaha_dir . '/vendor/swiftmailer/swiftmailer/lib/classes/Swift/TransportException.php',
 				"Swift" => self::$hahaha_dir . '/vendor/swiftmailer/swiftmailer/lib/classes/Swift.php',
-				"Normalizer" => self::$hahaha_dir . '/vendor/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
-				"ArithmeticError" => self::$hahaha_dir . '/vendor/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
-				"AssertionError" => self::$hahaha_dir . '/vendor/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
-				"DivisionByZeroError" => self::$hahaha_dir . '/vendor/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
-				"Error" => self::$hahaha_dir . '/vendor/symfony/polyfill-php70/Resources/stubs/Error.php',
-				"ParseError" => self::$hahaha_dir . '/vendor/symfony/polyfill-php70/Resources/stubs/ParseError.php',
-				"SessionUpdateTimestampHandlerInterface" => self::$hahaha_dir . '/vendor/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
-				"TypeError" => self::$hahaha_dir . '/vendor/symfony/polyfill-php70/Resources/stubs/TypeError.php',
 				"JsonException" => self::$hahaha_dir . '/vendor/symfony/polyfill-php73/Resources/stubs/JsonException.php',
-				"Stringable" => self::$hahaha_dir . '/vendor/symfony/polyfill-php80/Resources/stubs/Stringable.php',
-				"UnhandledMatchError" => self::$hahaha_dir . '/vendor/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
-				"ValueError" => self::$hahaha_dir . '/vendor/symfony/polyfill-php80/Resources/stubs/ValueError.php',
 			],
 		];
 	}
@@ -3620,17 +3417,11 @@ class hahaha_loader
 				'2692c8007f216c044b30161f9a0ea1f7' => self::$hahaha_dir . '/vendor/react/promise/src/functions_include.php',
 				'bbb734b748bcbbed3f75fe65aebdba08' => self::$hahaha_dir . '/vendor/react/promise-timer/src/functions_include.php',
 				'c63465383f4946b7e1b8dafe40797a88' => self::$hahaha_dir . '/vendor/swiftmailer/swiftmailer/lib/swift_required.php',
-				'bf500fe82ec4953acbd7eef22e2773e5' => self::$hahaha_dir . '/vendor/symfony/deprecation-contracts/function.php',
 				'631e27653e6b6eab4467fee685cdcd60' => self::$hahaha_dir . '/vendor/symfony/polyfill-ctype/bootstrap.php',
-				'b68df7ac8e6e8b45ac39242195a9fa37' => self::$hahaha_dir . '/vendor/symfony/polyfill-intl-grapheme/bootstrap.php',
 				'b00be51f2f39ae517e78135278b7e0c9' => self::$hahaha_dir . '/vendor/symfony/polyfill-intl-idn/bootstrap.php',
-				'd4ec6dc8f339681df7f454b85a4aaacd' => self::$hahaha_dir . '/vendor/symfony/polyfill-intl-normalizer/bootstrap.php',
 				'cb46e787aba770a09023ef52ee9c6b42' => self::$hahaha_dir . '/vendor/symfony/polyfill-mbstring/bootstrap.php',
-				'a218ccdd0bebcfe0b0c1d56cf16303f0' => self::$hahaha_dir . '/vendor/symfony/polyfill-php70/bootstrap.php',
 				'930b0cc67bf61df8ddd305a09235870a' => self::$hahaha_dir . '/vendor/symfony/polyfill-php72/bootstrap.php',
 				'174730de74cbd282e4a0cbc2be4dc7bd' => self::$hahaha_dir . '/vendor/symfony/polyfill-php73/bootstrap.php',
-				'76aa88cfee32e9ec7d1f46cac50e1cc0' => self::$hahaha_dir . '/vendor/symfony/polyfill-php80/bootstrap.php',
-				'36c10526685de461abd5c2b33ddcda5a' => self::$hahaha_dir . '/vendor/symfony/string/Resources/functions.php',
 				'e70f9cd6d5da639c76256ecbe2cf3de8' => self::$hahaha_dir . '/vendor/symfony/var-dumper/Resources/functions/dump.php',
 				'242d1de116a4fad8d44965c367df1751' => self::$hahaha_dir . '/vendor/tightenco/collect/src/Collect/Support/helpers.php',
 				'd33a622ab963cf8c165c661ff871e9e9' => self::$hahaha_dir . '/vendor/tightenco/collect/src/Collect/Support/alias.php',
