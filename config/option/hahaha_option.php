@@ -59,6 +59,7 @@ class hahaha_option
 		// Mysql
 		$option->Mysql = new \stdClass;
 		$option->Mysql->Driver = 'pdo_mysql';
+		// $option->Mysql->Driver = 'mysqli';
 		$option->Mysql->Host = 'localhost';
 		$option->Mysql->User = '';
 		$option->Mysql->Password = '';
